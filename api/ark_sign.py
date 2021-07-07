@@ -3,9 +3,9 @@ import sys
 from btalib.indicators.rsi import rsi
 from flask import *
 from datetime import *
-pre_path = os.path.abspath("../backfix")
+pre_path = os.path.abspath("../backfix/json")
 sys.path.append(pre_path)
-# from arkmodule import *
+
 
 appArkSign=Blueprint("appArkSign",__name__)
 
@@ -13,7 +13,6 @@ appArkSign=Blueprint("appArkSign",__name__)
 def sign_data():
         with open(pre_path+"/arksignbuy.json") as f:
             data=json.load(f)
-
         # raw=signbuy[["Date","ticker"]].sort_values(by=["Date"],ascending=False).reset_index(drop=True)
         stock={}
         all_data={}

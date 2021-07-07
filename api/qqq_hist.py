@@ -5,7 +5,7 @@ from flask import *
 
 pre_path = os.path.abspath("../backtraded")
 sys.path.append(pre_path)
-from qqqmodule import *
+
 
 appQqqHist=Blueprint("appQqqHist",__name__)
 

@@ -3,7 +3,7 @@ import sys
 from btalib.indicators.rsi import rsi
 from flask import *
 from datetime import *
-pre_path = os.path.abspath("../backfix")
+pre_path = os.path.abspath("../backfix/json")
 sys.path.append(pre_path)
 
 appSpySign=Blueprint("appSpySign",__name__)

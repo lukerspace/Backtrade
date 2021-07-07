@@ -81,3 +81,18 @@ a {
   font-size: 10px;
   margin: auto;
 }
+
+.head {
+  align-items: center;
+}
+.png {
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  margin: auto;
+  opacity: 90%;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 400px;
+}

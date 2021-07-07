@@ -29,6 +29,11 @@ async function GetData(number) {
       date.innerText = "SIGNAL DATE : " + buy[number]["date"];
       pic.src = "https://finviz.com/chart.ashx?t=" + buy[number]["ticker"];
       root.innerText = "Previous Sell Signal : " + sell_date;
+      ////////////////////////////////////////////
+      let test = document.getElementById("test");
+      test.src = "./static/png/" + buy[number]["ticker"] + ".png";
+
+      ///////////////////////////////
       return (size = Object.keys(buy).length) & (id = number);
     } else {
       //pass

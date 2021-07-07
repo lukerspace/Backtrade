@@ -7,3 +7,5 @@ ARK FUND
 ARKK ARKF ARKG ARKQ ARKW ARKX
 SPY
 QQQ
+
+run init / run app.py

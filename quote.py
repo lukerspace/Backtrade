@@ -4,6 +4,8 @@ import config
 import datetime
 from datetime import *
 
+
+
 def spydata():
     holdings = open('data/csv/spy.csv').readlines()
     symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
@@ -39,6 +41,8 @@ def spydata():
                 f.write(line)
     return  print("spy loaded")
 spydata()
+
+
 
 def read_qqq():
     # read_ticker
@@ -80,6 +84,9 @@ def read_qqq():
 
 read_qqq()
 
+
+
+
 def arkdata():
     holdings = open('data/csv/ark.csv').readlines()
     symbols=[i.strip() for i in holdings][1:]
@@ -114,7 +121,5 @@ def arkdata():
     return print("ark loaded")
 
 arkdata()
-
-
 
 

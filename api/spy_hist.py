@@ -5,7 +5,7 @@ from flask import *
 
 pre_path = os.path.abspath("../backtraded")
 sys.path.append(pre_path)
-from spymodule import *
+
 
 appSpyHist=Blueprint("appSpyHist",__name__)
 

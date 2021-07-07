@@ -1,23 +1,16 @@
 # MAKE THE CHART
-import sys
-from matplotlib import markers
+from matplotlib import *
 import yfinance as yf
-import pandas as pd
 import matplotlib.pyplot as plt 
-import requests
-import config
-import datetime
 from datetime import *
 
 
-def chart():
-    # ma1=input("ma1:")
-    # ma2=input("ma2:")
+def chart(name):
     ma1="5"
     ma2="6"
     MA1=int(ma1)
     MA2=int(ma2)
-    name=input("Input Ticker:")
+    name=name
     df = yf.download(name,start="2021-1-1")
     df[ma1]=df["Adj Close"].rolling(MA1).mean()
     df[ma2]=df["Adj Close"].rolling(MA2).mean()
@@ -41,16 +34,33 @@ def chart():
     plt.legend(fontsize=8)
     
     
-    return plt.show(block=True)
+    return plt.savefig("./static/png/"+name+".png")
 
-chart()
 
-# MAKE THE DF 
+# ark=open('data/csv/ark.csv').readlines()
+# symbols=[holding.strip() for holding in ark][1:]
+# for i in symbols:
+#     try:
+#         chart(i)
+#     except:
+#         pass
+# print("img done")
 
-# ma1="5"C
-# ma2="6"
-# MA1=int(ma1)
-# MA2=int(ma2)
-# name=input("Input Ticker:")
-# df = yf.download("AMZN",start="2021-1-1")
-# print(df)
+# spy = open('data/csv/spy.csv').readlines()
+# symbols = [holding.split(',')[2].strip() for holding in spy][1:]
+# for i in symbols:
+#     try:
+#         chart(i)
+#     except:
+#         pass
+# print("img done")
+
+
+# qqq = open('data/csv/qqq.csv').readlines()
+# symbols = [holding.split(',')[2].strip() for holding in qqq][1:]
+# for i in symbols:
+#     try:
+#         chart(i)
+#     except:
+#         pass
+# print("img done")
