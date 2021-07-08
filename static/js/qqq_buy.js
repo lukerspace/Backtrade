@@ -49,7 +49,7 @@ function rankgo() {
   let rank = getrank.value;
   if (size) {
     if ((rank > size) | (rank < 0)) {
-      alert("out of range");
+      alert("OUT OF RANGE");
     } else {
       GetData(parseInt(rank));
     }
@@ -65,9 +65,12 @@ function tickergo() {
     ticklist.push(buy[i]["ticker"]);
   }
   const tickindex = ticklist.findIndex((element) => element == findsymbol);
-  GetData((number = tickindex));
+  if (tickindex !== -1) {
+    GetData((number = tickindex));
+  } else {
+    alert("PLEASE USE UPPER LETTER OR NO THIS TICKER IN ETF");
+  }
 }
-
 function nextgo() {
   const next = document.getElementById("next");
   if (id < size) {
