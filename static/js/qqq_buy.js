@@ -48,7 +48,7 @@ function rankgo() {
   const getrank = document.getElementById("search");
   let rank = getrank.value;
   if (size) {
-    if ((rank > size) | (rank < 0)) {
+    if ((rank >= size) | (rank < 0)) {
       alert("OUT OF RANGE");
     } else {
       GetData(parseInt(rank));
@@ -59,7 +59,8 @@ function rankgo() {
 }
 
 function tickergo() {
-  const findsymbol = document.getElementById("find").value;
+  const findsymbol = document.getElementById("find").value.toUpperCase();
+  console.log(findsymbol);
   ticklist = [];
   for (i = 0; i < Object.keys(buy).length; i++) {
     ticklist.push(buy[i]["ticker"]);
@@ -68,12 +69,12 @@ function tickergo() {
   if (tickindex !== -1) {
     GetData((number = tickindex));
   } else {
-    alert("PLEASE USE UPPER LETTER OR NO THIS TICKER IN ETF");
+    alert("NO THIS TICKER");
   }
 }
 function nextgo() {
   const next = document.getElementById("next");
-  if (id < size) {
+  if (id < size - 1) {
     GetData(id + 1);
   } else {
     alert("NO DATA");

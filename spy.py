@@ -161,11 +161,14 @@ def chart(name):
     
     return plt.savefig("./static/png/"+name+".png")
 
+
 spy = open('data/csv/spy.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in spy][1:]
+symbols = [holding.split(',')[2].strip() for holding in spy][1:250]
 for i in symbols:
     try:
         chart(i)
     except:
         pass
 print("img done")
+
+
