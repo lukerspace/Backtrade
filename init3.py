@@ -3,7 +3,7 @@ from matplotlib import *
 import yfinance as yf
 import matplotlib.pyplot as plt 
 from datetime import *
-
+import json
 
 def chart(name):
     ma1="5"
@@ -39,6 +39,8 @@ def chart(name):
 
 spy = open('data/csv/spy.csv').readlines()
 symbols = [holding.split(',')[2].strip() for holding in spy][250:]
+# print(symbols)
+
 for i in symbols:
     try:
         chart(i)
