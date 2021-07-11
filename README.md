@@ -9,4 +9,4 @@ ARKK ARKF ARKG ARKQ ARKW ARKX
 SPY
 QQQ
 
-run init / run app.py
+run init1 init2 init3 to update data / run app.py
