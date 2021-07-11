@@ -1,12 +1,15 @@
 #BACKTRADED
 
-USING BACKTRADING TO FIND THE POTENTIAL BULLISH MARKET
-TICKERS INCLUDE THE FOLLOWING FUND
-https://mrjbq7.github.io/ta-lib/func_groups/pattern_recognition.html
+USING BACKTRADING TO FIND THE POTENTIAL BULLISH MARKET.
 
-ARK FUND
-ARKK ARKF ARKG ARKQ ARKW ARKX
-SPY
-QQQ
+1. TICKERS INCLUDE THE FOLLOWING FUND
+   ARKK ARKF ARKG ARKQ ARKW ARKX
+   SPY
+   QQQ
+
+2. Technique Scanner follow the library
+   https://mrjbq7.github.io/ta-lib/func_groups/pattern_recognition.html
+
+#Operating:
 
 run init1 init2 init3 to update data / run app.py
