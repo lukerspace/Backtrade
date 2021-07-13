@@ -4,7 +4,7 @@ from btalib.indicators.rsi import rsi
 from flask import *
 
 from datetime import *
-pre_path = os.path.abspath("../backfix/json")
+pre_path = os.path.abspath("../backtrade/json")
 sys.path.append(pre_path)
 
 appQqqSign=Blueprint("appQqqSign",__name__)

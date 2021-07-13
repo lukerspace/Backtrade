@@ -4,7 +4,7 @@ from typing import Pattern
 from flask import *
 from pattern import *
 import pandas as pd
-pre_path = os.path.abspath("../backtraded")
+pre_path = os.path.abspath("../backtrade")
 sys.path.append(pre_path)
 app=Flask(__name__)
 import talib
@@ -83,14 +83,6 @@ def snap():
 					# print("{} trigger style : {}".format(filename,url))
 			except:
 				pass
-			# print(df)
-		# ticker.add([i for i in file3])
-		# print(len(list(ticker2)))
-		# print(len(list(ticker)))
-		# print(file1)
-		# print(len(file1))
-		# print(len(file2))
-		# print(len(file3))
 
 	return render_template("snap.html",patterns=patterns,stocks=stocks , current_style=pattern)
 

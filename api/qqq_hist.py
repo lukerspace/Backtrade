@@ -3,7 +3,7 @@ import sys
 from btalib.indicators.rsi import rsi
 from flask import *
 
-pre_path = os.path.abspath("../backtraded")
+pre_path = os.path.abspath("../backtrade/json")
 sys.path.append(pre_path)
 
 
