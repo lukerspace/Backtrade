@@ -15,7 +15,7 @@ def macd_data():
         data=json.load(f)
         # raw=signbuy[["Date","ticker"]].sort_values(by=["Date"],ascending=False).reset_index(drop=True)
         stock={}
-        all_data={}
+        all_data={} 
         for i in range(len(data)):
         # for i in range(len(raw)+1):
             try:
