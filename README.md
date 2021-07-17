@@ -13,3 +13,7 @@ USING BACKTRADING TO FIND THE POTENTIAL BULLISH MARKET.
 #Operating:
 
 run init1 init2 init3 to update data / run app.py
+
+<img src="data/1.png" />
+<img src=data/2.png />
+<img src=data/3.png />
