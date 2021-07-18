@@ -176,4 +176,3 @@ class IndexScraper:
         plt.legend(fontsize=8)
         plt.savefig("./static/png/" + name + ".png")
         plt.close('all')
-        time.sleep(0.25)

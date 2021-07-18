@@ -1,12 +1,17 @@
+import os
+from dotenv import *
 
-API_KEY="PK6LZPXUPE95ME620OBI"
-SECRET_KEY="IFRq60PngeddhIgjMCY4nPSERaVcoQwVDnaoA68f"
+load_dotenv()
+
+API_KEY=os.getenv("API_KEY")
+SECRET_KEY=os.getenv("SECRET_KEY")
 
 HEADERS = {
     'APCA-API-KEY-ID': API_KEY,
     'APCA-API-SECRET-KEY': SECRET_KEY
 }
-BARS_URL = 'https://data.alpaca.markets/v1/bars'
+BARS_URL = os.getenv("BARS_URL")
+
 API_MAX_LENGTH = 100
 
 # {"action": "auth", "key": "PK6LZPXUPE95ME620OBI", "secret": "IFRq60PngeddhIgjMCY4nPSERaVcoQwVDnaoA68f"}
