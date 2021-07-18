@@ -157,9 +157,11 @@ def chart(name):
     plt.scatter(df.iloc[buy].index,df.iloc[buy]["Adj Close"],marker="^",color="green",s=40,zorder=10)
     plt.scatter(df.iloc[sell].index,df.iloc[sell]["Adj Close"],marker="v",color="red",s=40,zorder=10)
     plt.legend(fontsize=8)
+    plt.savefig("./static/png/"+name+".png")
+    plt.close()
     
-    
-    return plt.savefig("./static/png/"+name+".png")
+    # return plt.savefig("./static/png/"+name+".png")
+    return None
 
 
 spy = open('data/csv/spy.csv').readlines()

@@ -7,6 +7,6 @@ HEADERS = {
     'APCA-API-SECRET-KEY': SECRET_KEY
 }
 BARS_URL = 'https://data.alpaca.markets/v1/bars'
-
+API_MAX_LENGTH = 100
 
 # {"action": "auth", "key": "PK6LZPXUPE95ME620OBI", "secret": "IFRq60PngeddhIgjMCY4nPSERaVcoQwVDnaoA68f"}
