@@ -49,7 +49,6 @@ def ark():
 def spy():
 	return render_template("spy.html")
 
-print("test")
 # @app.route("/snap")
 # def snap():
 # 	pattern=request.args.get("pattern",None)
