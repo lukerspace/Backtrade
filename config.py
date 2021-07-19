@@ -13,5 +13,3 @@ HEADERS = {
 BARS_URL = os.getenv("BARS_URL")
 
 API_MAX_LENGTH = 100
-
-# {"action": "auth", "key": "PK6LZPXUPE95ME620OBI", "secret": "IFRq60PngeddhIgjMCY4nPSERaVcoQwVDnaoA68f"}

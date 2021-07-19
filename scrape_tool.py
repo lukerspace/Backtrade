@@ -152,7 +152,7 @@ class IndexScraper:
         MA1 = int(ma1)
         MA2 = int(ma2)
         name = ticker
-        df = yf.download(name, start="2021-1-1")
+        df = yf.download(name, start="2021-1-1",progress=False)
         df[ma1] = df["Adj Close"].rolling(MA1).mean()
         df[ma2] = df["Adj Close"].rolling(MA2).mean()
         df = df[["Adj Close", ma1, ma2]]
