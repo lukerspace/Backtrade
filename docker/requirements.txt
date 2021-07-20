@@ -1,6 +1,14 @@
 # To ensure app dependencies are ported from your virtual environment/host machine into your container, run 'pip freeze > requirements.txt' in the terminal to overwrite this file
 flask==1.1.2
 gunicorn==20.0.4
-pandas
-TA_Lib
-
+pandas~=1.3.0
+#TA-lib
+bta-lib
+yfinance~=0.1.63
+matplotlib~=3.4.2
+numpy~=1.21.0
+requests~=2.26.0
+tqdm
+python-dotenv
+yahoo_fin
+html5lib
