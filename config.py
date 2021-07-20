@@ -11,5 +11,5 @@ HEADERS = {
     'APCA-API-SECRET-KEY': SECRET_KEY
 }
 BARS_URL = os.getenv("BARS_URL")
-
+FINANCIAL_URL = 'https://data.alpaca.markets/v2/reference/financials/'
 API_MAX_LENGTH = 100
