@@ -33,6 +33,8 @@ app.register_blueprint(appArkSign, url_prefix='/api')
 app.register_blueprint(appSpySign, url_prefix='/api')
 # app.register_blueprint(appSpyHist, url_prefix='/api')
 
+
+
 @app.route("/")
 def menu():
 	return render_template("menu.html")
@@ -85,7 +87,7 @@ def spy():
 
 	# return render_template("snap.html",patterns=patterns,stocks=stocks , current_style=pattern)
 
-# app.run(port=3000)
+
 
 app.run(host='127.0.0.1', port=3000)		
 
