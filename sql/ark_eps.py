@@ -14,10 +14,8 @@ sys.path.append(pre_path)
 
 connection_pool = pooling.MySQLConnectionPool(
     host = "localhost",
-    # user = getpass("SERVER_USER: "),
-    # password = getpass("SERVER_PASSWORD:"),
-    password = "0000",
-    user = "root",
+    user = getpass("SERVER_USER: "),
+    password = getpass("SERVER_PASSWORD:"),
     database = "fund",
     charset = "utf8",
     auth_plugin='mysql_native_password' )
