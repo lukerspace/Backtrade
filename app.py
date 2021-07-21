@@ -14,7 +14,7 @@ from api.qqq_sign import appQqqSign
 # from api.qqq_hist import appQqqHist
 
 from api.ark_sign import appArkSign
-from api.ark_hist import appArkHist
+# from api.ark_hist import appArkHist
 
 from api.spy_sign import appSpySign
 # from api.spy_hist import appSpyHist
@@ -28,7 +28,7 @@ app.register_blueprint(appQqqSign, url_prefix='/api')
 # app.register_blueprint(appQqqHist, url_prefix='/api')
 
 app.register_blueprint(appArkSign, url_prefix='/api')
-app.register_blueprint(appArkHist, url_prefix='/api')
+# app.register_blueprint(appArkHist, url_prefix='/api')
 
 app.register_blueprint(appSpySign, url_prefix='/api')
 # app.register_blueprint(appSpyHist, url_prefix='/api')
