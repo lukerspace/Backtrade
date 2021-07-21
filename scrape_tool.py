@@ -99,12 +99,13 @@ class IndexScraper:
             end = min(end + config.API_MAX_LENGTH, num)
             tickers_str = ",".join(self.tickers[start:end])
             day_bars_url = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, tickers_str)
+            print("Quote from %d to %d" % (start, end))
             start = end
 
             r = requests.get(day_bars_url, headers=config.HEADERS)
             data = r.json()
-
-            for symbol in data:
+            for symbol in tqdm(data, leave=False):
+                # Process bars
                 filename = 'data/' + self.index_ticker + '/{}.txt'.format(symbol)
                 f = open(filename, 'w+')
                 f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
@@ -117,11 +118,24 @@ class IndexScraper:
                     line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
                     f.write(line)
 
+                # Process earnings
                 try:
-                    earning = si.get_analysts_info(symbol)
-                    print(symbol)
+                    earnings = si.get_earnings_history(symbol)
                 except:
-                    pass
+                    earnings = None
+
+                if not earnings:
+                    continue
+
+                filename = 'data/' + self.index_ticker + '/{}_EPS.txt'.format(symbol)
+                f = open(filename, 'w+')
+                f.write('Date,Estimate,Actual\n')
+                for eps in earnings:
+                    t = datetime.strptime(eps['startdatetime'], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    day = t.strftime('%Y-%m-%d')
+
+                    line = '{},{},{}\n'.format(day, eps['epsestimate'], eps['epsactual'])
+                    f.write(line)
 
             print(self.index_ticker + ' is loaded')
 
