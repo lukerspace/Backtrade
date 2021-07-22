@@ -14,7 +14,7 @@ from api.qqq_sign import appQqqSign
 # from api.qqq_hist import appQqqHist
 
 from api.ark_sign import appArkSign
-from api.ark_hist import appArkHist
+# from api.ark_hist import appArkHist
 
 from api.spy_sign import appSpySign
 # from api.spy_hist import appSpyHist
@@ -28,10 +28,12 @@ app.register_blueprint(appQqqSign, url_prefix='/api')
 # app.register_blueprint(appQqqHist, url_prefix='/api')
 
 app.register_blueprint(appArkSign, url_prefix='/api')
-app.register_blueprint(appArkHist, url_prefix='/api')
+# app.register_blueprint(appArkHist, url_prefix='/api')
 
 app.register_blueprint(appSpySign, url_prefix='/api')
 # app.register_blueprint(appSpyHist, url_prefix='/api')
+
+
 
 @app.route("/")
 def menu():
@@ -48,7 +50,6 @@ def ark():
 @app.route("/spy")
 def spy():
 	return render_template("spy.html")
-
 
 # @app.route("/snap")
 # def snap():
@@ -86,7 +87,7 @@ def spy():
 
 	# return render_template("snap.html",patterns=patterns,stocks=stocks , current_style=pattern)
 
-# app.run(port=3000)
+
 
 app.run(host='127.0.0.1', port=3000)		
 

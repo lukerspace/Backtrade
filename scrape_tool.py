@@ -46,7 +46,7 @@ class IndexScraper:
             try:
                 raw_df = self.read_raw_data(ticker)
 
-                if not raw_df:
+                if not len(raw_df)>0:
                     skip_list.append(ticker)
                     continue
 
