@@ -14,8 +14,8 @@ sys.path.append(pre_path)
 
 connection_pool = pooling.MySQLConnectionPool(
     host = "localhost",
-    user = getpass("SERVER_USER: "),
-    password = getpass("SERVER_PASSWORD:"),
+    user = 'root',#getpass("SERVER_USER: "),
+    password ='0000',#getpass("SERVER_PASSWORD:"),
     database = "fund",
     charset = "utf8",
     auth_plugin='mysql_native_password' )
@@ -25,7 +25,6 @@ def sql_disconnect(connection_obj,table):
     if connection_obj.is_connected():
         table.close()
         connection_obj.close
-
 
 
 def syntax_str(**kwarg):
@@ -43,6 +42,7 @@ def syntax_int(**kwarg):
     return (insert_values_int[:-1])
 
 
+
 def ark_eps_insert():
     ark=open('data/csv/ark.csv').readlines()
     symbols=[holding.strip() for holding in ark][1:]
@@ -53,7 +53,6 @@ def ark_eps_insert():
             if len(df)<5:
                 df["ticker"]=symbol
                 less_than_yaer.append(symbol)
-                
             else:
                 df["ticker"]=symbol
                 df=df.head()
@@ -64,7 +63,6 @@ def ark_eps_insert():
                     dt=str(row["Date"])
                     est=row["Estimate"]
                     act=row["Actual"]
-
                     val=syntax_str(ticker=tick,date=dt)+syntax_int(estimate=est,actual=act)
                     sql_cmd=f"""INSERT INTO arkeps(ticker,date,est,act) VALUES ({val})"""
 
@@ -74,12 +72,26 @@ def ark_eps_insert():
                         table_cursor.execute(sql_cmd)
                         connection_obj.commit()
                         connection_obj.close()
-                        print(sql_cmd)
-                
+                        print(sql_cmd)       
         except:
             print(symbol+" FIND NO EPS DATA")
-
     return print("ARK EPS UPDATE")
 
 
-ark_eps_insert()
+
+def ark_eps_select(symbols):
+    connection_obj=connection_pool.get_connection()
+    if connection_obj.is_connected():
+        table_cursor=connection_obj.cursor()
+        sql_cmd=f""" select date,est,act from arkeps where ticker ='{symbols}' order by date desc"""
+        table_cursor.execute(sql_cmd)
+        symbol_eps_data=table_cursor.fetchall()
+        for i in range(len(symbol_eps_data)):
+            eps_date=symbol_eps_data[i][0]
+            eps_est=symbol_eps_data[i][1]
+            eps_act=symbol_eps_data[i][2]
+            print("DATE: ",eps_date,"ESTIMATE: ",eps_est,"ACTUAL: ",eps_act)
+        connection_obj.close()
+    return print(f"SELECT SUCCESSFULLY {symbols} ")
+    # return eps_date,eps_est,eps_act
+
