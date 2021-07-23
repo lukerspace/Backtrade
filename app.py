@@ -2,10 +2,11 @@ import os
 import sys
 from typing import Pattern
 from flask import *
-from pattern import *
+
 import pandas as pd
-pre_path = os.path.abspath("../backtrade")
+pre_path = os.path.abspath("../backtrade/py/")
 sys.path.append(pre_path)
+from pattern import *
 app=Flask(__name__)
 # import talib
 import csv
@@ -51,9 +52,9 @@ def ark():
 def spy():
 	return render_template("spy.html")
 
-# @app.route("/snap")
-# def snap():
-# 	pattern=request.args.get("pattern",None)
+@app.route("/snap")
+def snap():
+	# pattern=request.args.get("pattern",None)
 # 	stocks={}
 # 	with open("data/csv/spy.csv") as f:
 # 		for row in csv.reader(f):
@@ -85,7 +86,7 @@ def spy():
 # 			except:
 # 				pass
 
-	# return render_template("snap.html",patterns=patterns,stocks=stocks , current_style=pattern)
+	return render_template("snap.html",patterns=patterns)#,stocks=stocks , current_style=pattern)
 
 
 
