@@ -4,11 +4,11 @@ from flask import *
 from datetime import *
 pre_path = os.path.abspath("../backtrade/sql")
 sys.path.append(pre_path)
-from ark_eps import ark_eps_select
+from ark_eps import *
 
 ark=open('data/csv/ark.csv').readlines()
 symbols=[holding.strip() for holding in ark][1:]
-
+# ark_eps_select("TSLA")
 
 appArkEps=Blueprint("appArkEps",__name__)
 

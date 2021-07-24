@@ -14,10 +14,14 @@
 2. Technique Scanner follow the library
    https://mrjbq7.github.io/ta-lib/func_groups/pattern_recognition.html
 
+   
+3. TA-LIB
+   https://www.lfd.uci.edu/~gohlke/pythonlibs/
+
 #Operating:
 
 Run main.py update data / Run app.py
 
-<img src="data/1.png" />
-<img src=data/2.png />
-<img src=data/3.png />
+<img src="data/readme/2.png" />
+<img src=data/readme/3.png />
+<img src=data/readme/1.png />

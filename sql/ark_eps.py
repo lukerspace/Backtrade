@@ -93,5 +93,4 @@ def ark_eps_select(symbols):
             # print(eps_date,eps_est,eps_act)
         connection_obj.close()
     return {"ticker":symbols,"date":eps_date,"estimate":eps_est,"actual":eps_act}
-    # return eps_date,eps_est,eps_act
-
+    # return print(eps_date,eps_est,eps_act)
