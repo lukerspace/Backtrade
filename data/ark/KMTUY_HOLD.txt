@@ -1,6 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-"ARK Investment Management, LLC",3412965,"Mar 30, 2021",0.35%,106586896
-Parametric Portfolio Associates,1522389,"Mar 30, 2021",0.16%,47544208
-Todd Asset Management LLC,562291,"Mar 30, 2021",0.06%,17560347
-Kentucky (State Of) Teachers Retirement System,312080,"Mar 30, 2021",0.03%,9746258
-"Scout Investments, Inc.",103068,"Mar 30, 2021",0.01%,3218813

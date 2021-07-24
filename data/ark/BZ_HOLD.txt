@@ -1,2 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-TB Alternative Assets Ltd.,26000,"Jun 29, 2021",0.05%,1030900

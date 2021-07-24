@@ -1,8 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-"Fisher Asset Management, LLC",35838820,"Mar 30, 2021",0.37%,2859937836
-"ARK Investment Management, LLC",6867476,"Mar 30, 2021",0.07%,548024584
-"DSM Capital Partners, LLC",6298397,"Mar 30, 2021",0.07%,502612080
-Parametric Portfolio Associates,1514496,"Mar 30, 2021",0.02%,120856780
-"Alecta Pensionsforsakring, Omsesidigt",1405000,"Mar 30, 2021",0.01%,112119000
-"Douglas Lane & Associates, LLC",627024,"Jun 29, 2021",0.01%,47214907
-"Cortland Associates, Inc.",573295,"Mar 30, 2021",0.01%,45748941

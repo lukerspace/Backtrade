@@ -1,8 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-"ARK Investment Management, LLC",8105763,"Mar 30, 2021",0.14%,328769747
-Parametric Portfolio Associates,5881746,"Mar 30, 2021",0.10%,238563617
-"Fisher Asset Management, LLC",1518374,"Mar 30, 2021",0.03%,61585249
-"Cullen Capital Management, Llc",846907,"Mar 30, 2021",0.02%,34350547
-Saratoga Research & Investment Management,758542,"Mar 30, 2021",0.01%,30766463
-"Boston Common Asset Management, LLC",377064,"Mar 30, 2021",0.01%,15293715
-Kornitzer Capital Management Inc /ks,293375,"Mar 30, 2021",0.01%,11899290

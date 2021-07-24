@@ -1,9 +1,0 @@
-0,1
-Net Assets,
-Beta (5Y Monthly),
-Yield,
-5y Average Return,
-Holdings Turnover,
-Last Dividend,
-Average for Category,
-Inception Date,

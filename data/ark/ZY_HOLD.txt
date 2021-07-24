@@ -1,6 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-ARK ETF Tr-ARK Genomic Revolution ETF,1054560,"May 30, 2021",1.05%,34146652
-Fidelity Select Portfolios - Biotechnology,117290,"Apr 29, 2021",0.12%,5439910
-Putnam Sustainable Future Fund,77015,"Apr 29, 2021",0.08%,3571955
-Voya Inv Tr-VY/JP Morgan Small Cap Core Equity Portfolio,31054,"Apr 29, 2021",0.03%,1440284
-Fidelity NASDAQ Composite Index ETF,16800,"Apr 29, 2021",0.02%,779184

@@ -1,2 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-ARK ETF Tr-ARK Genomic Revolution ETF,2001970,"May 30, 2021",10.01%,20019700

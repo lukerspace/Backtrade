@@ -1,4 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-"ARK Investment Management, LLC",1234435,"Mar 30, 2021",0.24%,53407830
-Parametric Portfolio Associates,166618,"Mar 30, 2021",0.03%,7208727
-"Boston Common Asset Management, LLC",30954,"Mar 30, 2021",0.01%,1339224

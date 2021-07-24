@@ -1,4 +1,0 @@
-Holder,Shares,Date Reported,% Out,Value
-"ARK Investment Management, LLC",6252905,"Mar 30, 2021",0.59%,442705674
-Parametric Portfolio Associates,1339642,"Mar 30, 2021",0.13%,94846653
-"Renaissance Group, LLC",144050,"Mar 30, 2021",0.01%,10198740
