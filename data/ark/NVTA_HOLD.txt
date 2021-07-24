@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",23977808,"Mar 30, 2021",12.00%,916192043
+"Vanguard Group, Inc. (The)",16749159,"Mar 30, 2021",8.38%,639985365
+"Baker Brothers Advisors, LLC",15749182,"Mar 30, 2021",7.88%,601776244
+"Nikko Asset Management Americas, Inc.",13661155,"Mar 30, 2021",6.84%,521992732
+"Sumitomo Mitsui Trust Holdings, Inc.",13546145,"Mar 30, 2021",6.78%,517598200
+"Casdin Capital, LLC",12203669,"Mar 30, 2021",6.11%,466302192
+Blackrock Inc.,11079876,"Mar 30, 2021",5.54%,423362061
+"Gilder, Gagnon, Howe & Co.",6977691,"Mar 30, 2021",3.49%,266617573
+Perceptive Advisors Llc,5360673,"Mar 30, 2021",2.68%,204831315
+"Redmile Group, LLC",4852163,"Mar 30, 2021",2.43%,185401148

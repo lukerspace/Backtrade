@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Third Security, LLC",18219824,"Mar 30, 2021",25.65%,122072820
+"ARK Investment Management, LLC",7247378,"Mar 30, 2021",10.20%,48557432
+"Vanguard Group, Inc. (The)",2360377,"Mar 30, 2021",3.32%,15814525
+Blackrock Inc.,1368702,"Mar 30, 2021",1.93%,9170303
+"Two Sigma Investments, LP",1349316,"Mar 30, 2021",1.90%,9040417
+"Two Sigma Advisers, LP",1168600,"Mar 30, 2021",1.65%,7829620
+"Susquehanna International Group, LLP",788186,"Mar 30, 2021",1.11%,5280846
+"EPIQ Partners, LLC",674500,"Mar 30, 2021",0.95%,4519150
+"Geode Capital Management, LLC",497890,"Mar 30, 2021",0.70%,3335863
+"Goldman Sachs Group, Inc.",385408,"Mar 30, 2021",0.54%,2582233

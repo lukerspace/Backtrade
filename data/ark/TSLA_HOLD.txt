@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",58596739,"Mar 30, 2021",6.08%,39138519880
+Blackrock Inc.,50242363,"Mar 30, 2021",5.22%,33558381518
+Capital World Investors,40925678,"Mar 30, 2021",4.25%,27335488106
+State Street Corporation,29430587,"Mar 30, 2021",3.06%,19657571974
+Baillie Gifford and Company,16216060,"Mar 30, 2021",1.68%,10831192955
+"Geode Capital Management, LLC",11971355,"Mar 30, 2021",1.24%,7996027145
+Jennison Associates LLC,10739998,"Mar 30, 2021",1.11%,7173566864
+"FMR, LLC",10708950,"Mar 30, 2021",1.11%,7152828973
+Northern Trust Corporation,8262415,"Mar 30, 2021",0.86%,5518714850
+Norges Bank Investment Management,7790070,"Dec 30, 2020",0.81%,5497218696

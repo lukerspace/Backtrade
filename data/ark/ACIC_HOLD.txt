@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Linden Advisors LP,3168735,"Dec 30, 2020",6.34%,31877474
+Canyon Capital Advisors LLC,2500000,"Dec 30, 2020",5.00%,25150000
+Millennium Management LLC,1999998,"Dec 30, 2020",4.00%,20119979
+"HBK Investments, L.P.",750000,"Dec 30, 2020",1.50%,7545000
+BAMCO Inc.,502000,"Dec 30, 2020",1.00%,5050120
+UBS O'Connor LLC,456250,"Dec 30, 2020",0.91%,4589875
+"Wolverine Asset Management, LLC",455326,"Dec 30, 2020",0.91%,4580579
+"MMCAP International, Inc. SPC",399999,"Dec 30, 2020",0.80%,4023989
+"HighTower Advisors, LLC",390272,"Dec 30, 2020",0.78%,3926136
+Kingstown Capital Management L.P.,350000,"Dec 30, 2020",0.70%,3521000

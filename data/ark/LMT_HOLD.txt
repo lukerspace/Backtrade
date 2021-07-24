@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+State Street Corporation,40741411,"Mar 30, 2021",14.66%,15053951364
+"Vanguard Group, Inc. (The)",21481666,"Mar 30, 2021",7.73%,7937475587
+Blackrock Inc.,16293547,"Mar 30, 2021",5.86%,6020465616
+Capital World Investors,13993232,"Mar 30, 2021",5.03%,5170499224
+"Wellington Management Group, LLP",10416793,"Mar 30, 2021",3.75%,3849005013
+Bank of America Corporation,5114653,"Mar 30, 2021",1.84%,1889864283
+"Geode Capital Management, LLC",4141309,"Mar 30, 2021",1.49%,1530213675
+Morgan Stanley,4018123,"Mar 30, 2021",1.45%,1484696448
+"Charles Schwab Investment Management, Inc.",4012408,"Mar 30, 2021",1.44%,1482584756
+Wells Fargo & Company,3022369,"Mar 30, 2021",1.09%,1116765345

@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",13545512,"Mar 30, 2021",10.66%,2731723405
+Blackrock Inc.,10044366,"Mar 30, 2021",7.90%,2025647291
+Price (T.Rowe) Associates Inc,8344831,"Mar 30, 2021",6.57%,1682902067
+State Street Corporation,4870925,"Mar 30, 2021",3.83%,982319444
+"Wellington Management Group, LLP",4283624,"Mar 30, 2021",3.37%,863878452
+"FMR, LLC",3701800,"Mar 30, 2021",2.91%,746542006
+"Geode Capital Management, LLC",2472011,"Mar 30, 2021",1.94%,498530458
+"Renaissance Technologies, LLC",2308208,"Mar 30, 2021",1.82%,465496307
+"Ameriprise Financial, Inc.",2003252,"Mar 30, 2021",1.58%,403995830
+"AllianceBernstein, L.P.",1979423,"Mar 30, 2021",1.56%,399190236

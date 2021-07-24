@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+ARK ETF Tr-ARK Innovation ETF,4590460,"May 30, 2021",2.48%,175998236
+Fidelity Blue Chip Growth Fund,1019529,"Apr 29, 2021",0.55%,39180499
+ARK ETF Tr-ARK Autonomous Technology & Robotics ETF,773321,"May 30, 2021",0.42%,29649127
+Fidelity Advisor Growth Opportunities Fund,433800,"Apr 29, 2021",0.23%,16670934
+Fidelity Advisor New Insights Fund,133100,"Apr 29, 2021",0.07%,5115033
+Fidelity Series Blue Chip Growth Fund,124100,"Apr 29, 2021",0.07%,4769163
+Fidelity Stock Selector All Cap Fund,119997,"Apr 29, 2021",0.06%,4611484
+Fidelity Blue Chip Growth K6 Fund,112900,"Apr 29, 2021",0.06%,4338747
+Variable Insurance Products Fund II-Contrafund Portfolio,112700,"Apr 29, 2021",0.06%,4331061
+Fidelity NASDAQ Composite Index Fund,104883,"Apr 29, 2021",0.06%,4030653

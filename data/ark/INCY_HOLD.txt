@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Baker Brothers Advisors, LLC",32001387,"Mar 30, 2021",14.55%,2600752721
+Price (T.Rowe) Associates Inc,30058822,"Mar 30, 2021",13.67%,2442880463
+"Vanguard Group, Inc. (The)",20409783,"Mar 30, 2021",9.28%,1658703064
+Blackrock Inc.,17675289,"Mar 30, 2021",8.04%,1436470737
+"Wellington Management Group, LLP",12949220,"Mar 30, 2021",5.89%,1052383109
+State Street Corporation,8351249,"Mar 30, 2021",3.80%,678706006
+Capital International Investors,5502635,"Mar 30, 2021",2.50%,447199146
+"Renaissance Technologies, LLC",4898733,"Mar 30, 2021",2.23%,398120030
+Dodge & Cox Inc,4317392,"Mar 30, 2021",1.96%,350874447
+"Geode Capital Management, LLC",3383226,"Mar 30, 2021",1.54%,274954777

@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"FMR, LLC",8457557,"Mar 30, 2021",14.93%,423047001
+Artal Group S.A.,5588366,"Mar 30, 2021",9.87%,279530067
+Price (T.Rowe) Associates Inc,5441702,"Mar 30, 2021",9.61%,272193934
+Maverick Capital Ltd.,5419843,"Mar 30, 2021",9.57%,271100546
+SB Investment Advisers (UK) LTD,5135383,"Mar 30, 2021",9.07%,256871857
+Capital World Investors,1184899,"Mar 30, 2021",2.09%,59268647
+Blackrock Inc.,1102136,"Mar 30, 2021",1.95%,55128842
+Aju Ib Investment Company Limited,1066375,"Mar 30, 2021",1.88%,53340077
+JP Morgan Chase & Company,948316,"Mar 30, 2021",1.67%,47434766
+"ARK Investment Management, LLC",848274,"Mar 30, 2021",1.50%,42430665

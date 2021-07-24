@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+SB Investment Advisers (UK) LTD,104532165,"Mar 30, 2021",11.67%,5956242761
+Baillie Gifford and Company,20167175,"Mar 30, 2021",2.25%,1149125631
+JP Morgan Chase & Company,11021581,"Mar 30, 2021",1.23%,628009685
+"ARK Investment Management, LLC",9592049,"Mar 30, 2021",1.07%,546554952
+Blackrock Inc.,7138511,"Mar 30, 2021",0.80%,406752356
+Capital World Investors,6402056,"Mar 30, 2021",0.71%,364789150
+Tybourne Capital Management (HK) Limited,6387128,"Mar 30, 2021",0.71%,363938553
+Whale Rock Capital Management LLC,6369603,"Mar 30, 2021",0.71%,362939978
+"Sumitomo Mitsui Trust Holdings, Inc.",5364751,"Mar 30, 2021",0.60%,305683511
+"Nikko Asset Management Americas, Inc.",5081858,"Mar 30, 2021",0.57%,289564268

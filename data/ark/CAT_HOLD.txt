@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",46269463,"Mar 30, 2021",8.45%,10728500385
+State Street Corporation,40946961,"Mar 30, 2021",7.47%,9494371847
+Blackrock Inc.,34824400,"Mar 30, 2021",6.36%,8074733628
+State Farm Mutual Automobile Insurance Co,19186297,"Mar 30, 2021",3.50%,4448726685
+Price (T.Rowe) Associates Inc,14492830,"Mar 30, 2021",2.65%,3360452492
+Capital World Investors,12168006,"Mar 30, 2021",2.22%,2821395551
+Bill & Melinda Gates Foundation Trust,10156756,"Mar 30, 2021",1.85%,2355047013
+Capital International Investors,8454057,"Mar 30, 2021",1.54%,1960242196
+"Geode Capital Management, LLC",8331794,"Mar 30, 2021",1.52%,1931893074
+"FMR, LLC",7374596,"Mar 30, 2021",1.35%,1709947574

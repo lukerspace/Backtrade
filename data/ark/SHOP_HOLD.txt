@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Morgan Stanley,6032425,"Mar 30, 2021",5.34%,6674878262
+Baillie Gifford and Company,5868340,"Mar 30, 2021",5.20%,6493318210
+Capital World Investors,5306681,"Mar 30, 2021",4.70%,5871842526
+"FMR, LLC",5109637,"Mar 30, 2021",4.53%,5653813340
+Jennison Associates LLC,4651415,"Mar 30, 2021",4.12%,5146790697
+"Vanguard Group, Inc. (The)",3270753,"Mar 30, 2021",2.90%,3619088194
+Price (T.Rowe) Associates Inc,2772038,"Mar 30, 2021",2.46%,3067260047
+"WCM Investment Management, LLC",1985217,"Mar 30, 2021",1.76%,2196642610
+"Lone Pine Capital, LLC",1712490,"Mar 30, 2021",1.52%,1894870185
+"Sands Capital Management, LLC",1278320,"Mar 30, 2021",1.13%,1414461080

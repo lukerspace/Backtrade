@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",11837072,"Mar 30, 2021",15.91%,452531262
+ArrowMark Colorado Holdings LLC,7507601,"Mar 30, 2021",10.09%,287015586
+"Vanguard Group, Inc. (The)",6955039,"Mar 30, 2021",9.35%,265891140
+"Nikko Asset Management Americas, Inc.",5499618,"Mar 30, 2021",7.39%,210250396
+"Sumitomo Mitsui Trust Holdings, Inc.",5458277,"Mar 30, 2021",7.34%,208669929
+Blackrock Inc.,3332639,"Mar 30, 2021",4.48%,127406788
+Riverbridge Partners LLC,3239743,"Mar 30, 2021",4.35%,123855374
+"Wellington Management Group, LLP",2985620,"Mar 30, 2021",4.01%,114140252
+"Greenvale Capital, LLP",2650000,"Mar 30, 2021",3.56%,101309500
+Granahan Investment Management Inc.,2469408,"Mar 30, 2021",3.32%,94405467

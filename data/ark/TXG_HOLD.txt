@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"FMR, LLC",9742163,"Mar 30, 2021",11.16%,1763331503
+"Vanguard Group, Inc. (The)",6528337,"Mar 30, 2021",7.48%,1181628997
+Blackrock Inc.,5307139,"Mar 30, 2021",6.08%,960592159
+Morgan Stanley,4136066,"Mar 30, 2021",4.74%,748627946
+"ARK Investment Management, LLC",3504121,"Mar 30, 2021",4.02%,634245901
+"Foresite Capital Management II, LLC",2253528,"Mar 30, 2021",2.58%,407888568
+"Meritech Capital Associates V, LLC",2123356,"Mar 30, 2021",2.43%,384327436
+"12 West Capital Management, LP",1922000,"Mar 30, 2021",2.20%,347882000
+"Ameriprise Financial, Inc.",1409207,"Mar 30, 2021",1.61%,255066467
+Baillie Gifford and Company,1396126,"Mar 30, 2021",1.60%,252698806

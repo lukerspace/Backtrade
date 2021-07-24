@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",2676905,"Mar 30, 2021",12.05%,83947740
+"Nikko Asset Management Americas, Inc.",1475897,"Mar 30, 2021",6.64%,46284129
+"Sumitomo Mitsui Trust Holdings, Inc.",1457036,"Mar 30, 2021",6.56%,45692648
+Blackrock Inc.,1023090,"Mar 30, 2021",4.61%,32084102
+"Vanguard Group, Inc. (The)",777979,"Mar 30, 2021",3.50%,24397421
+State Street Corporation,443635,"Mar 30, 2021",2.00%,13912393
+Rafferty Asset Management,363731,"Mar 30, 2021",1.64%,11406604
+Morgan Stanley,316413,"Mar 30, 2021",1.42%,9922711
+Invesco Ltd.,268577,"Mar 30, 2021",1.21%,8422574
+"Geode Capital Management, LLC",241864,"Mar 30, 2021",1.09%,7584855

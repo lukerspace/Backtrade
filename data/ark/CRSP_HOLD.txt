@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",8290350,"Mar 30, 2021",10.94%,1010179147
+Capital International Investors,4868689,"Mar 30, 2021",6.43%,593249754
+"Nikko Asset Management Americas, Inc.",3659865,"Mar 30, 2021",4.83%,445954550
+"NEA Management Company, LLC",1590002,"Mar 30, 2021",2.10%,193741743
+"Versant Venture Management, LLC",1554960,"Mar 30, 2021",2.05%,189471876
+Price (T.Rowe) Associates Inc,1298329,"Mar 30, 2021",1.71%,158201388
+Blackrock Inc.,1290335,"Mar 30, 2021",1.70%,157227319
+"Two Sigma Investments, LP",1138108,"Mar 30, 2021",1.50%,138678459
+Waddell & Reed Financial Inc.,1071487,"Mar 30, 2021",1.41%,130560690
+"Two Sigma Advisers, LP",1027700,"Mar 30, 2021",1.36%,125225245

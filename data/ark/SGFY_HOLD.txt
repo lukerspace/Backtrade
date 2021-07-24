@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"New Mountain Vantage Advisers, L.L.C.",139614806,"Mar 30, 2021",83.10%,4085129223
+"Bain Capital Venture Investors, LLC",6679420,"Mar 30, 2021",3.98%,195439829
+"Fred Alger Management, LLC",3607932,"Mar 30, 2021",2.15%,105568090
+"Vanguard Group, Inc. (The)",2104078,"Mar 30, 2021",1.25%,61565322
+"FMR, LLC",1984462,"Mar 30, 2021",1.18%,58065358
+Blackrock Inc.,1817067,"Mar 30, 2021",1.08%,53167380
+"ARK Investment Management, LLC",1694034,"Mar 30, 2021",1.01%,49567434
+Janus Henderson Group PLC,1150391,"Mar 30, 2021",0.68%,33660440
+Marshall Wace North America L.P.,1083016,"Mar 30, 2021",0.64%,31689048
+JP Morgan Chase & Company,1081541,"Mar 30, 2021",0.64%,31645889

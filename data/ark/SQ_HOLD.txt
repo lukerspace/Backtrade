@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Morgan Stanley,28466309,"Mar 30, 2021",7.26%,6463275458
+"Vanguard Group, Inc. (The)",24565270,"Mar 30, 2021",6.27%,5577544553
+Blackrock Inc.,21786042,"Mar 30, 2021",5.56%,4946520836
+"FMR, LLC",15675034,"Mar 30, 2021",4.00%,3559016469
+"ARK Investment Management, LLC",10978316,"Mar 30, 2021",2.80%,2492626647
+Jennison Associates LLC,9680336,"Mar 30, 2021",2.47%,2197920288
+"Sands Capital Management, LLC",7928201,"Mar 30, 2021",2.02%,1800098037
+State Street Corporation,7384128,"Mar 30, 2021",1.88%,1676566262
+"Sumitomo Mitsui Trust Holdings, Inc.",6929857,"Mar 30, 2021",1.77%,1573424031
+"Nikko Asset Management Americas, Inc.",5662354,"Mar 30, 2021",1.44%,1285637475

@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",11324987,"Mar 30, 2021",7.21%,2813466520
+Baillie Gifford and Company,10232905,"Mar 30, 2021",6.52%,2542160589
+Blackrock Inc.,9221485,"Mar 30, 2021",5.87%,2290893518
+"Wellington Management Group, LLP",9039874,"Mar 30, 2021",5.76%,2245775897
+Price (T.Rowe) Associates Inc,8576619,"Mar 30, 2021",5.46%,2130689458
+"FMR, LLC",4737849,"Mar 30, 2021",3.02%,1177023827
+Jennison Associates LLC,4503481,"Mar 30, 2021",2.87%,1118799784
+JP Morgan Chase & Company,4164139,"Mar 30, 2021",2.65%,1034497051
+"Tiger Global Management, LLC",4127450,"Mar 30, 2021",2.63%,1025382403
+Morgan Stanley,3688092,"Mar 30, 2021",2.35%,916232695

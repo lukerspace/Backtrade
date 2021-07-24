@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",6045520,"Mar 30, 2021",12.36%,748798107
+Blackrock Inc.,4054921,"Mar 30, 2021",8.29%,502242515
+"Vanguard Group, Inc. (The)",3959329,"Mar 30, 2021",8.10%,490402489
+Capital World Investors,3343124,"Mar 30, 2021",6.84%,414079338
+"Nikko Asset Management Americas, Inc.",2063164,"Mar 30, 2021",4.22%,255543493
+"Sumitomo Mitsui Trust Holdings, Inc.",2045931,"Mar 30, 2021",4.18%,253409013
+Invesco Ltd.,2001801,"Mar 30, 2021",4.09%,247943071
+JP Morgan Chase & Company,1790227,"Mar 30, 2021",3.66%,221737516
+Allianz Asset Management GmbH,1703610,"Mar 30, 2021",3.48%,211009134
+Credit Suisse AG,1360208,"Mar 30, 2021",2.78%,168475362

@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",25541955,"Mar 30, 2021",14.92%,153507149
+"Baker Brothers Advisors, LLC",13713195,"Mar 30, 2021",8.01%,82416301
+"Nikko Asset Management Americas, Inc.",13394255,"Mar 30, 2021",7.83%,80499472
+"Sumitomo Mitsui Trust Holdings, Inc.",13281184,"Mar 30, 2021",7.76%,79819915
+Blackrock Inc.,12686269,"Mar 30, 2021",7.41%,76244476
+Primecap Management Company,10187200,"Mar 30, 2021",5.95%,61225072
+"Vanguard Group, Inc. (The)",8954670,"Mar 30, 2021",5.23%,53817566
+Wasatch Advisors Inc,6022961,"Mar 30, 2021",3.52%,36197995
+State Street Corporation,4559218,"Mar 30, 2021",2.66%,27400900
+"Geode Capital Management, LLC",2913633,"Mar 30, 2021",1.70%,17510934

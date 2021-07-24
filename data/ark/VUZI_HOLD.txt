@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+State Street Corporation,4679808,"Mar 30, 2021",7.42%,119054315
+"Mitsubishi UFJ Kokusai Asset Management Co., Ltd",2783343,"Mar 30, 2021",4.41%,70808245
+"Vanguard Group, Inc. (The)",2465852,"Mar 30, 2021",3.91%,62731274
+"ARK Investment Management, LLC",2084017,"Mar 30, 2021",3.30%,53017392
+"Susquehanna International Group, LLP",1080242,"Mar 30, 2021",1.71%,27481356
+Rafferty Asset Management,1037983,"Mar 30, 2021",1.65%,26406287
+Blackrock Inc.,1001000,"Mar 30, 2021",1.59%,25465440
+"Jane Street Group, LLC",628592,"Mar 30, 2021",1.00%,15991380
+Marshall Wace LLP,602423,"Mar 30, 2021",0.96%,15325641
+Citadel Advisors LLC,520013,"Mar 30, 2021",0.82%,13229130

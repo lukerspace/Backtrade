@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",2597288,"Mar 30, 2021",10.37%,177810336
+Wasatch Advisors Inc,2353479,"Mar 30, 2021",9.39%,161119172
+Blackrock Inc.,1363836,"Mar 30, 2021",5.44%,93368212
+Invesco Ltd.,1026705,"Mar 30, 2021",4.10%,70288224
+"Vanguard Group, Inc. (The)",1015122,"Mar 30, 2021",4.05%,69495252
+Matrix Capital Management,1000000,"Mar 30, 2021",3.99%,68460000
+"Highland Capital Management, L.P.",916270,"Mar 30, 2021",3.66%,62727844
+RTW Investments LP,799009,"Mar 30, 2021",3.19%,54700156
+Wells Fargo & Company,513891,"Mar 30, 2021",2.05%,35180977
+"Pembroke Management, LTD",461222,"Mar 30, 2021",1.84%,31575258

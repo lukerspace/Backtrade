@@ -1,0 +1,6 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",1810940,"Mar 30, 2021",0.12%,81003346
+Parametric Portfolio Associates,840424,"Mar 30, 2021",0.06%,37592165
+"Vigilant Capital Management, Llc",240045,"Mar 30, 2021",0.02%,10737212
+North Star Asset Management Inc.,121630,"Mar 30, 2021",0.01%,5440509
+Equitable Trust Co,100862,"Mar 30, 2021",0.01%,4511557

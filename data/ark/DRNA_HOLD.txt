@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+RTW Investments LP,7463291,"Mar 30, 2021",9.71%,190836350
+Blackrock Inc.,6117166,"Mar 30, 2021",7.95%,156415934
+"Wellington Management Group, LLP",4320900,"Mar 30, 2021",5.62%,110485413
+"Vanguard Group, Inc. (The)",3567645,"Mar 30, 2021",4.64%,91224682
+"Bain Capital Life Sciences Investors, LLC",3080237,"Mar 30, 2021",4.01%,78761660
+State Street Corporation,3045557,"Mar 30, 2021",3.96%,77874892
+Woodline Partners LP,1777000,"Mar 30, 2021",2.31%,45437890
+"Aquilo Capital Management, LLC",1705392,"Mar 30, 2021",2.22%,43606873
+Price (T.Rowe) Associates Inc,1693182,"Mar 30, 2021",2.20%,43294663
+"Loomis Sayles & Company, LP",1591568,"Mar 30, 2021",2.07%,40696393

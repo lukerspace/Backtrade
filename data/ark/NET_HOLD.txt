@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"FMR, LLC",31188812,"Mar 30, 2021",12.17%,2191325931
+Baillie Gifford and Company,29995218,"Mar 30, 2021",11.70%,2107464016
+"Vanguard Group, Inc. (The)",18598074,"Mar 30, 2021",7.26%,1306700679
+"Venrock Management V, LLC",13352187,"Mar 30, 2021",5.21%,938124658
+Morgan Stanley,13049620,"Mar 30, 2021",5.09%,916866301
+Blackrock Inc.,11003860,"Mar 30, 2021",4.29%,773131203
+"Gilder, Gagnon, Howe & Co.",4925653,"Mar 30, 2021",1.92%,346076379
+Norges Bank Investment Management,4435910,"Dec 30, 2020",1.73%,337084800
+State Street Corporation,3032945,"Mar 30, 2021",1.18%,213094715
+First Trust Advisors LP,2843495,"Mar 30, 2021",1.11%,199783958

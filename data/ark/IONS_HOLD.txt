@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"FMR, LLC",21093896,"Mar 30, 2021",14.96%,948381564
+"Vanguard Group, Inc. (The)",12604149,"Mar 30, 2021",8.94%,566682539
+Price (T.Rowe) Associates Inc,12580056,"Mar 30, 2021",8.92%,565599317
+Blackrock Inc.,9808562,"Mar 30, 2021",6.96%,440992947
+Bellevue Group AG,8984234,"Mar 30, 2021",6.37%,403931160
+"ClearBridge Investments, LLC",7402967,"Mar 30, 2021",5.25%,332837396
+"ARK Investment Management, LLC",5142271,"Mar 30, 2021",3.65%,231196504
+State Street Corporation,3409571,"Mar 30, 2021",2.42%,153294312
+Invesco Ltd.,2359434,"Mar 30, 2021",1.67%,106080152
+JP Morgan Chase & Company,1963223,"Mar 30, 2021",1.39%,88266506

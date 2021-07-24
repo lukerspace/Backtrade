@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Maverick Capital Ltd.,3000000,"Mar 30, 2021",8.70%,30750000
+Citadel Advisors LLC,2284423,"Mar 30, 2021",6.62%,23415335
+"Empyrean Capital Partners, LP",1806388,"Mar 30, 2021",5.24%,18515477
+"Falcon Edge Capital, LP",1699491,"Mar 30, 2021",4.93%,17419782
+Soroban Capital Partners LP,1690500,"Mar 30, 2021",4.90%,17327625
+"TOMS Capital Investment Management, LP",1479563,"Mar 30, 2021",4.29%,15165520
+Millennium Management LLC,1177352,"Mar 30, 2021",3.41%,12067858
+"ARK Investment Management, LLC",796478,"Mar 30, 2021",2.31%,8163899
+"TIG Advisors, LLC",647196,"Mar 30, 2021",1.88%,6633759
+"Alyeska Investment Group, L.P.",633752,"Mar 30, 2021",1.84%,6495958

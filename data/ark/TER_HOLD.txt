@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",18990887,"Mar 30, 2021",10.94%,2310811130
+Blackrock Inc.,14171703,"Mar 30, 2021",8.16%,1724412821
+Baillie Gifford and Company,7731310,"Mar 30, 2021",4.45%,940745800
+"Ameriprise Financial, Inc.",6896333,"Mar 30, 2021",3.97%,839145799
+State Street Corporation,6721843,"Mar 30, 2021",3.87%,817913856
+JP Morgan Chase & Company,5898143,"Mar 30, 2021",3.40%,717686040
+Alkeon Capital Management LLC,3989981,"Mar 30, 2021",2.30%,485500888
+Kayne Anderson Rudnick Investment Management LLC,3468324,"Mar 30, 2021",2.00%,422025664
+"Geode Capital Management, LLC",3119796,"Mar 30, 2021",1.80%,379616777
+"ARK Investment Management, LLC",2877103,"Mar 30, 2021",1.66%,350085893

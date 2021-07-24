@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Price (T.Rowe) Associates Inc,13477263,"Mar 30, 2021",4.47%,1186538234
+Royal Bank of Canada,12389152,"Mar 30, 2021",4.11%,1090740942
+"Jarislowsky, Fraser Ltd",8403679,"Mar 30, 2021",2.79%,739859899
+"Vanguard Group, Inc. (The)",8397286,"Mar 30, 2021",2.79%,739297059
+"Hotchkis & Wiley Capital Management, LLC",7906237,"Mar 30, 2021",2.62%,696065105
+Mackenzie Financial Corporation,7371500,"Mar 30, 2021",2.44%,648986860
+"TD Asset Management, Inc",6713842,"Mar 30, 2021",2.23%,591086649
+"Beutel, Goodman & Company Ltd",5361116,"Mar 30, 2021",1.78%,471992652
+Caisse De Depot Et Placement Du Quebec,4460000,"Mar 30, 2021",1.48%,392658400
+Bank of Montreal/Can/,3951876,"Mar 30, 2021",1.31%,347923163

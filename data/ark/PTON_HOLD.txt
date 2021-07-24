@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",22012199,"Mar 30, 2021",8.19%,2475051655
+Baillie Gifford and Company,16149465,"Mar 30, 2021",6.01%,1815845844
+Blackrock Inc.,15201040,"Mar 30, 2021",5.66%,1709204937
+Jennison Associates LLC,11569126,"Mar 30, 2021",4.30%,1300832527
+Capital Research Global Investors,11151972,"Mar 30, 2021",4.15%,1253927731
+Capital World Investors,9031022,"Mar 30, 2021",3.36%,1015448113
+"Tiger Global Management, LLC",7857772,"Mar 30, 2021",2.92%,883527883
+"FMR, LLC",6191978,"Mar 30, 2021",2.30%,696226006
+State Street Corporation,4847196,"Mar 30, 2021",1.80%,545018718
+Whale Rock Capital Management LLC,3444987,"Mar 30, 2021",1.28%,387354338

@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",5117526,"Mar 30, 2021",11.26%,103425200
+Capital International Investors,1339336,"Mar 30, 2021",2.95%,27067980
+Credit Suisse AG,1200357,"Mar 30, 2021",2.64%,24259214
+Capital International Ltd /ca/,913231,"Mar 30, 2021",2.01%,18456398
+"Nikko Asset Management Americas, Inc.",890511,"Mar 30, 2021",1.96%,17997227
+"Sumitomo Mitsui Trust Holdings, Inc.",890511,"Mar 30, 2021",1.96%,17997227
+Capital World Investors,875000,"Mar 30, 2021",1.92%,17683750
+Bpifrance SA,425726,"Mar 30, 2021",0.94%,8603922
+"FMR, LLC",406211,"Mar 30, 2021",0.89%,8209524
+"Capital Impact Advisors, Llc",346530,"Mar 30, 2021",0.76%,7003371

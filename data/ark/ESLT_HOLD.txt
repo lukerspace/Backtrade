@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Clal Insurance Enterprises Holdings Ltd,1143444,"Mar 30, 2021",2.59%,163512492
+Altshuler Shaham Ltd,783130,"Mar 30, 2021",1.77%,111987590
+"Vanguard Group, Inc. (The)",680792,"Mar 30, 2021",1.54%,97353256
+"FMR, LLC",358677,"Mar 30, 2021",0.81%,51290811
+"ARK Investment Management, LLC",344279,"Mar 30, 2021",0.78%,49231897
+Invesco Ltd.,95426,"Mar 30, 2021",0.22%,13645918
+Meitav Dash Investments Ltd,93643,"Mar 30, 2021",0.21%,13390949
+"Systematic Financial Management, L.P.",93459,"Mar 30, 2021",0.21%,13364637
+JP Morgan Chase & Company,90571,"Mar 30, 2021",0.20%,12951653
+State Street Corporation,74592,"Mar 30, 2021",0.17%,10666656

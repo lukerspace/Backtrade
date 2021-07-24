@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Dodge & Cox Inc,21670237,"Mar 30, 2021",0.88%,1852371858
+Primecap Management Company,20543800,"Mar 30, 2021",0.83%,1756084024
+"Loomis Sayles & Company, LP",19768777,"Mar 30, 2021",0.80%,1689835057
+"Fisher Asset Management, LLC",9657603,"Mar 30, 2021",0.39%,825531904
+Bank of America Corporation,9189032,"Mar 30, 2021",0.37%,785478455
+"Franklin Resources, Inc.",8444411,"Mar 30, 2021",0.34%,721828252
+"Aristotle Capital Management, LLC",7908653,"Mar 30, 2021",0.32%,676031658
+Boston Partners,5860571,"Mar 30, 2021",0.24%,500961609
+Wells Fargo & Company,5812499,"Mar 30, 2021",0.24%,496852414
+UBS Group AG,5031466,"Mar 30, 2021",0.20%,430089713

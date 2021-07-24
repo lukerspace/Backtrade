@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",43282322,"Mar 30, 2021",7.69%,4833769720
+Blackrock Inc.,39675049,"Mar 30, 2021",7.05%,4430909472
+State Street Corporation,24720695,"Mar 30, 2021",4.39%,2760807217
+Capital International Investors,22302306,"Mar 30, 2021",3.96%,2490721534
+Magellan Asset Management Ltd,21882418,"Mar 30, 2021",3.89%,2443828442
+Capital World Investors,19304963,"Mar 30, 2021",3.43%,2155978267
+Lazard Asset Management LLC,14181836,"Mar 30, 2021",2.52%,1583827444
+Price (T.Rowe) Associates Inc,14063295,"Mar 30, 2021",2.50%,1570588785
+Morgan Stanley,13731771,"Mar 30, 2021",2.44%,1533564185
+Northern Trust Corporation,10153116,"Mar 30, 2021",1.80%,1133899994

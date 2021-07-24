@@ -1,3 +1,0 @@
-Date,Estimate,Actual
-2021-05-24,None,None
-2021-03-30,None,None

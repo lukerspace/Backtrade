@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",9611911,"Mar 30, 2021",14.10%,771403917
+"Vanguard Group, Inc. (The)",5578744,"Mar 30, 2021",8.19%,447722099
+Blackrock Inc.,5271626,"Mar 30, 2021",7.73%,423074344
+"Nikko Asset Management Americas, Inc.",4843270,"Mar 30, 2021",7.11%,388696633
+"Sumitomo Mitsui Trust Holdings, Inc.",4807294,"Mar 30, 2021",7.05%,385809379
+Price (T.Rowe) Associates Inc,2324490,"Mar 30, 2021",3.41%,186551944
+State Street Corporation,1828639,"Mar 30, 2021",2.68%,146757422
+"AllianceBernstein, L.P.",1757812,"Mar 30, 2021",2.58%,141073202
+"Chevy Chase Trust Holdings, Inc.",1324429,"Mar 30, 2021",1.94%,106292049
+Invesco Ltd.,1231564,"Mar 30, 2021",1.81%,98839168

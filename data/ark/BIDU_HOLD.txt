@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Blackrock Inc.,13217017,"Mar 30, 2021",4.66%,2875362048
+"Vanguard Group, Inc. (The)",9841832,"Mar 30, 2021",3.47%,2141090551
+Primecap Management Company,9434879,"Mar 30, 2021",3.33%,2052557926
+"Jane Street Group, LLC",5862063,"Mar 30, 2021",2.07%,1275291805
+State Street Corporation,5691958,"Mar 30, 2021",2.01%,1238285462
+"ARK Investment Management, LLC",5127543,"Mar 30, 2021",1.81%,1115496979
+Baillie Gifford and Company,3908862,"Mar 30, 2021",1.38%,850372928
+Norges Bank Investment Management,3513043,"Dec 30, 2020",1.24%,759660418
+"Renaissance Technologies, LLC",3204791,"Mar 30, 2021",1.13%,697202282
+Dodge & Cox Inc,2891692,"Mar 30, 2021",1.02%,629087594

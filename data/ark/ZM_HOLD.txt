@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Price (T.Rowe) Associates Inc,12537274,"Mar 30, 2021",5.29%,4028100763
+"Vanguard Group, Inc. (The)",12402941,"Mar 30, 2021",5.24%,3984940913
+Morgan Stanley,11642461,"Mar 30, 2021",4.92%,3740606294
+Blackrock Inc.,11251610,"Mar 30, 2021",4.75%,3615029776
+Baillie Gifford and Company,8100660,"Mar 30, 2021",3.42%,2602661051
+State Street Corporation,3927768,"Mar 30, 2021",1.66%,1261952580
+"ARK Investment Management, LLC",3002347,"Mar 30, 2021",1.27%,964624067
+"Renaissance Technologies, LLC",2520863,"Mar 30, 2021",1.06%,809928073
+"Tiger Global Management, LLC",2450204,"Mar 30, 2021",1.03%,787226043
+"Geode Capital Management, LLC",2369440,"Mar 30, 2021",1.00%,761277377

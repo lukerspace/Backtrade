@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Morgan Stanley,27144995,"Mar 30, 2021",32.36%,528784502
+"ARK Investment Management, LLC",10988392,"Mar 30, 2021",13.10%,214053876
+Baillie Gifford and Company,7061634,"Mar 30, 2021",8.42%,137560630
+Nuveen Asset Management,5522468,"Mar 30, 2021",6.58%,107577676
+Capital World Investors,4563665,"Mar 30, 2021",5.44%,88900194
+FIL LTD,3782623,"Mar 30, 2021",4.51%,73685496
+Blackrock Inc.,3454180,"Mar 30, 2021",4.12%,67287426
+Capital International Investors,3369109,"Mar 30, 2021",4.02%,65630243
+"Sumitomo Mitsui Trust Holdings, Inc.",2833823,"Mar 30, 2021",3.38%,55202872
+"Nikko Asset Management Americas, Inc.",2658338,"Mar 30, 2021",3.17%,51784424

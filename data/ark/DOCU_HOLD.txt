@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",16323108,"Mar 30, 2021",8.39%,3304613214
+Blackrock Inc.,12416652,"Mar 30, 2021",6.38%,2513751197
+Price (T.Rowe) Associates Inc,8820751,"Mar 30, 2021",4.53%,1785761039
+"Tiger Global Management, LLC",5151000,"Mar 30, 2021",2.65%,1042819950
+Morgan Stanley,4719844,"Mar 30, 2021",2.43%,955532417
+State Street Corporation,3567129,"Mar 30, 2021",1.83%,722165266
+"American Century Companies, Inc.",3206429,"Mar 30, 2021",1.65%,649141551
+"ARK Investment Management, LLC",3197720,"Mar 30, 2021",1.64%,647378414
+"FMR, LLC",3080722,"Mar 30, 2021",1.58%,623692168
+"Franklin Resources, Inc.",2678073,"Mar 30, 2021",1.38%,542175878

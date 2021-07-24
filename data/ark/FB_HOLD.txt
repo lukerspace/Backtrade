@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",183156795,"Mar 30, 2021",7.64%,53945170831
+Blackrock Inc.,157946327,"Mar 30, 2021",6.59%,46519931691
+"FMR, LLC",124984398,"Mar 30, 2021",5.22%,36811654742
+Price (T.Rowe) Associates Inc,104548050,"Mar 30, 2021",4.36%,30792537166
+State Street Corporation,91877184,"Mar 30, 2021",3.83%,27060587003
+Capital International Investors,48686174,"Mar 30, 2021",2.03%,14339538828
+Capital World Investors,43313543,"Mar 30, 2021",1.81%,12757137819
+Capital Research Global Investors,37805001,"Mar 30, 2021",1.58%,11134706944
+"Geode Capital Management, LLC",37780412,"Mar 30, 2021",1.58%,11127464746
+Norges Bank Investment Management,29365846,"Dec 30, 2020",1.23%,8021574493

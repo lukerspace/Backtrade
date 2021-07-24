@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"FMR, LLC",7328586,"Dec 30, 2020",11.72%,598305761
+"Redmile Group, LLC",3778262,"Dec 30, 2020",6.04%,308457309
+Temasek Holdings (Private) Limited,3354641,"Dec 30, 2020",5.36%,273872891
+Blackrock Inc.,3159510,"Dec 30, 2020",5.05%,257942396
+Hillhouse Capital Advisors Ltd.,2966403,"Dec 30, 2020",4.74%,242177140
+"Vanguard Group, Inc. (The)",2815630,"Dec 30, 2020",4.50%,229868033
+State Street Corporation,1430410,"Dec 30, 2020",2.29%,116778672
+"ARK Investment Management, LLC",1131623,"Dec 30, 2020",1.81%,92385701
+SC China Holding Ltd,1127934,"Dec 30, 2020",1.80%,92084531
+"Cormorant Asset Management, LP",924249,"Dec 30, 2020",1.48%,75455688

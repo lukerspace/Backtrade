@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",7441821,"Mar 30, 2021",14.21%,267533464
+Invesco Ltd.,2954879,"Mar 30, 2021",5.64%,106227900
+"Nikko Asset Management Americas, Inc.",2640699,"Mar 30, 2021",5.04%,94933129
+"Sumitomo Mitsui Trust Holdings, Inc.",2612016,"Mar 30, 2021",4.99%,93901975
+"Vident Investment Advisory, LLC",759003,"Mar 30, 2021",1.45%,27286157
+Legal & General Group PLC,579703,"Mar 30, 2021",1.11%,20840322
+Primecap Management Company,403724,"Mar 30, 2021",0.77%,14513877
+Citadel Advisors LLC,203280,"Mar 30, 2021",0.39%,7307916
+"Voloridge Investment Management, LLC",178573,"Mar 30, 2021",0.34%,6419699
+Millennium Management LLC,170619,"Mar 30, 2021",0.33%,6133753

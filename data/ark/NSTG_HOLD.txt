@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"FMR, LLC",6659791,"Mar 30, 2021",14.73%,437614866
+Blackrock Inc.,4621858,"Mar 30, 2021",10.22%,303702289
+Morgan Stanley,4301379,"Mar 30, 2021",9.51%,282643614
+"ARK Investment Management, LLC",3314947,"Mar 30, 2021",7.33%,217825167
+"Vanguard Group, Inc. (The)",3273551,"Mar 30, 2021",7.24%,215105036
+"Fred Alger Management, LLC",2641700,"Mar 30, 2021",5.84%,173586107
+"Wellington Management Group, LLP",2058483,"Mar 30, 2021",4.55%,135262917
+Marshall Wace LLP,1752619,"Mar 30, 2021",3.88%,115164594
+"Eminence Capital, LP",1250025,"Mar 30, 2021",2.76%,82139142
+"Pura Vida Investments, LLC",1009027,"Mar 30, 2021",2.23%,66303164

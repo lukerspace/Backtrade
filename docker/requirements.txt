@@ -12,3 +12,5 @@ tqdm
 python-dotenv
 yahoo_fin
 html5lib
+mysql-connector-python
+regex

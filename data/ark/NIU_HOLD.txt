@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Yiheng Capital Management, L.P.",2261315,"Mar 30, 2021",3.36%,82877194
+Pictet Asset Management Ltd,1957255,"Mar 30, 2021",2.91%,71733395
+"ARK Investment Management, LLC",1862592,"Mar 30, 2021",2.77%,68263996
+"Wellington Management Group, LLP",1752237,"Mar 30, 2021",2.60%,64219486
+"Vanguard Group, Inc. (The)",952280,"Mar 30, 2021",1.42%,34901062
+"Mirae Asset Global Investments Co., Ltd.",696574,"Mar 30, 2021",1.04%,25529437
+Macquarie Group Limited,624601,"Mar 30, 2021",0.93%,22891626
+State Street Corporation,615072,"Mar 30, 2021",0.91%,22542388
+Blackrock Inc.,595232,"Mar 30, 2021",0.88%,21815252
+Aubrey Capital Management Ltd,579200,"Mar 30, 2021",0.86%,21227680

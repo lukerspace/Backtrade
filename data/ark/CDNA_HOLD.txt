@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",4999523,"Mar 30, 2021",9.60%,340417521
+"ARK Investment Management, LLC",4460824,"Mar 30, 2021",8.57%,303737506
+"Fred Alger Management, LLC",4106310,"Mar 30, 2021",7.89%,279598647
+Blackrock Inc.,4099418,"Mar 30, 2021",7.88%,279129371
+Invesco Ltd.,3004056,"Mar 30, 2021",5.77%,204546173
+State Street Corporation,1664206,"Mar 30, 2021",3.20%,113315786
+Waddell & Reed Financial Inc.,1527424,"Mar 30, 2021",2.93%,104002300
+"ClearBridge Investments, LLC",1508384,"Mar 30, 2021",2.90%,102705866
+Matrix Capital Management,1439000,"Mar 30, 2021",2.76%,97981510
+"Shaw D.E. & Co., Inc.",1215931,"Mar 30, 2021",2.34%,82792741

@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Meritech Capital Associates V, LLC",45799284,"Mar 30, 2021",8.87%,2969167581
+"Tiger Global Management, LLC",40428863,"Mar 30, 2021",7.83%,2621003188
+Price (T.Rowe) Associates Inc,14329818,"Mar 30, 2021",2.78%,929002100
+Temasek Holdings (Private) Limited,13832090,"Mar 30, 2021",2.68%,896734394
+"Vanguard Group, Inc. (The)",7837979,"Mar 30, 2021",1.52%,508136178
+Morgan Stanley,5078363,"Mar 30, 2021",0.98%,329230273
+Jennison Associates LLC,4427236,"Mar 30, 2021",0.86%,287017709
+Massachusetts Financial Services Co.,3180411,"Mar 30, 2021",0.62%,206186045
+"FMR, LLC",3038099,"Mar 30, 2021",0.59%,196959958
+"Altimeter Capital Management, LP",2777777,"Mar 30, 2021",0.54%,180083282

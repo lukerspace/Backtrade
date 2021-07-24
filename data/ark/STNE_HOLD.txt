@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Price (T.Rowe) Associates Inc,31383571,"Dec 30, 2020",11.89%,2633709278
+Capital Research Global Investors,29189624,"Dec 30, 2020",11.06%,2449593246
+"Berkshire Hathaway, Inc",14166748,"Dec 30, 2020",5.37%,1188873492
+"Wellington Management Group, LLP",11066658,"Dec 30, 2020",4.19%,928713939
+Blackrock Inc.,9706265,"Dec 30, 2020",3.68%,814549758
+"Lone Pine Capital, LLC",6368457,"Dec 30, 2020",2.41%,534440911
+Durable Capital Partners LP,5260000,"Dec 30, 2020",1.99%,441419200
+Egerton Capital (UK) LLP,3504985,"Dec 30, 2020",1.33%,294138341
+Tybourne Capital Management (HK) Limited,3483885,"Mar 30, 2021",1.32%,213283439
+Absoluto Partners Gestao de Recursos Ltda,3442830,"Dec 30, 2020",1.30%,288922293

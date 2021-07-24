@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",8751923,"Mar 30, 2021",12.90%,367580766
+"Vanguard Group, Inc. (The)",6347754,"Mar 30, 2021",9.36%,266605668
+Blackrock Inc.,5737376,"Mar 30, 2021",8.46%,240969792
+"Nikko Asset Management Americas, Inc.",4257556,"Mar 30, 2021",6.28%,178817352
+"Sumitomo Mitsui Trust Holdings, Inc.",4222802,"Mar 30, 2021",6.23%,177357684
+State Street Corporation,2323718,"Mar 30, 2021",3.43%,97596156
+Capital World Investors,1300000,"Mar 30, 2021",1.92%,54600000
+"Geode Capital Management, LLC",1153365,"Mar 30, 2021",1.70%,48441330
+Morgan Stanley,966297,"Mar 30, 2021",1.42%,40584474
+JP Morgan Chase & Company,965469,"Mar 30, 2021",1.42%,40549698

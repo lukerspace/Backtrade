@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",5115992,"Mar 30, 2021",7.67%,256976278
+SC US (TTGP) Ltd,4828808,"Mar 30, 2021",7.24%,242551025
+"Vanguard Group, Inc. (The)",2868168,"Mar 30, 2021",4.30%,144068078
+"Fred Alger Management, LLC",2857897,"Mar 30, 2021",4.28%,143552166
+JP Morgan Chase & Company,1337801,"Mar 30, 2021",2.00%,67197744
+Wells Fargo & Company,1149321,"Mar 30, 2021",1.72%,57730393
+Baillie Gifford and Company,1119343,"Mar 30, 2021",1.68%,56224598
+"AllianceBernstein, L.P.",1104259,"Mar 30, 2021",1.65%,55466929
+Blackrock Inc.,1083322,"Mar 30, 2021",1.62%,54415264
+Price (T.Rowe) Associates Inc,1067689,"Mar 30, 2021",1.60%,53630018

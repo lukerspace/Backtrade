@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",11362307,"Mar 30, 2021",9.18%,309963734
+Blackrock Inc.,9494172,"Mar 30, 2021",7.67%,259001012
+"ARK Investment Management, LLC",5241941,"Mar 30, 2021",4.23%,143000150
+"FMR, LLC",5096849,"Mar 30, 2021",4.12%,139042040
+State Street Corporation,4383780,"Mar 30, 2021",3.54%,119589518
+Capital International Investors,4155647,"Mar 30, 2021",3.36%,113366050
+Price (T.Rowe) Associates Inc,4025423,"Mar 30, 2021",3.25%,109813539
+BAMCO Inc.,3957839,"Mar 30, 2021",3.20%,107969847
+"Neuberger Berman Group, LLC",2978595,"Mar 30, 2021",2.41%,81256071
+Stephens Investment Management Group,2783806,"Mar 30, 2021",2.25%,75942227

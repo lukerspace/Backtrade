@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",3802393,"Dec 30, 2020",8.84%,3045716793
+Baillie Gifford and Company,2912374,"Dec 30, 2020",6.77%,2332811574
+Blackrock Inc.,2483610,"Dec 30, 2020",5.77%,1989371610
+Jennison Associates LLC,2209554,"Dec 30, 2020",5.14%,1769852754
+Morgan Stanley,2157400,"Dec 30, 2020",5.01%,1728077400
+JP Morgan Chase & Company,1316441,"Dec 30, 2020",3.06%,1054469241
+State Street Corporation,807849,"Dec 30, 2020",1.88%,647087049
+"Geode Capital Management, LLC",476604,"Dec 30, 2020",1.11%,381759804
+Invesco Ltd.,461557,"Dec 30, 2020",1.07%,369707157
+"FMR, LLC",446036,"Dec 30, 2020",1.04%,357274836

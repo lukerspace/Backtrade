@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Blackrock Inc.,13786920,"Mar 30, 2021",10.33%,568710450
+BAMCO Inc.,12610696,"Mar 30, 2021",9.45%,520191210
+"Vanguard Group, Inc. (The)",11807170,"Mar 30, 2021",8.85%,487045762
+"ARK Investment Management, LLC",10355147,"Mar 30, 2021",7.76%,427149813
+Capital International Investors,6928410,"Mar 30, 2021",5.19%,285796912
+Dimensional Fund Advisors LP,4130423,"Mar 30, 2021",3.09%,170379948
+State Street Corporation,3736688,"Mar 30, 2021",2.80%,154138380
+Invesco Ltd.,2946959,"Mar 30, 2021",2.21%,121562058
+Van Berkom & Associates Inc.,2873738,"Mar 30, 2021",2.15%,118541692
+"Nikko Asset Management Americas, Inc.",2691329,"Mar 30, 2021",2.02%,111017321

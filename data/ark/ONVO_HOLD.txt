@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",1404620,"Dec 30, 2020",19.74%,17276826
+"Nikko Asset Management Americas, Inc.",483811,"Mar 30, 2021",6.80%,4663938
+"Sumitomo Mitsui Trust Holdings, Inc.",478570,"Mar 30, 2021",6.72%,4613414
+"Renaissance Technologies, LLC",381353,"Dec 30, 2020",5.36%,4690641
+"Vanguard Group, Inc. (The)",215544,"Dec 30, 2020",3.03%,2651191
+Blackrock Inc.,87785,"Dec 30, 2020",1.23%,1079755
+"Geode Capital Management, LLC",43709,"Dec 30, 2020",0.61%,537620
+UBS Group AG,32776,"Dec 30, 2020",0.46%,403144
+"Jane Street Group, LLC",16540,"Dec 30, 2020",0.23%,203442
+Qube Research & Technologies Ltd,16403,"Dec 30, 2020",0.23%,201756

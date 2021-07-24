@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",4796679,"Mar 30, 2021",11.87%,24175262
+Morgan Stanley,778430,"Mar 30, 2021",1.93%,3923287
+Senvest Management LLC,742027,"Mar 30, 2021",1.84%,3739816
+"SilverArc Capital Management, LLC",350000,"Mar 30, 2021",0.87%,1764000
+Millennium Management LLC,292015,"Mar 30, 2021",0.72%,1471755
+JP Morgan Chase & Company,200118,"Mar 30, 2021",0.50%,1008594
+"PDT Partners, LLC",185512,"Mar 30, 2021",0.46%,934980
+Citadel Advisors LLC,152756,"Mar 30, 2021",0.38%,769890
+Squarepoint Ops LLC,114225,"Mar 30, 2021",0.28%,575694
+Royal Bank of Canada,81513,"Mar 30, 2021",0.20%,410825

@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+SB Investment Advisers (UK) LTD,73620282,"Mar 30, 2021",12.74%,1560013775
+"VK Services, LLC",46120934,"Mar 30, 2021",7.98%,977302591
+"Vanguard Group, Inc. (The)",28718984,"Mar 30, 2021",4.97%,608555270
+Magnetar Financial LLC,21460399,"Mar 30, 2021",3.71%,454745854
+"General Atlantic, LLC",18733928,"Mar 30, 2021",3.24%,396971934
+Price (T.Rowe) Associates Inc,14285035,"Mar 30, 2021",2.47%,302699891
+"Norwest Venture Partners XIII, LP",12293508,"Mar 30, 2021",2.13%,260499434
+Lakestar II (G.P.) Ltd,11912732,"Mar 30, 2021",2.06%,252430791
+"ARK Investment Management, LLC",11641318,"Mar 30, 2021",2.02%,246679528
+Blackrock Inc.,9440664,"Mar 30, 2021",1.63%,200047670

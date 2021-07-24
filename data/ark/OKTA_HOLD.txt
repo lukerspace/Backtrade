@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Vanguard Group, Inc. (The)",11071836,"Mar 30, 2021",7.61%,2440564809
+Morgan Stanley,10476428,"Mar 30, 2021",7.20%,2309319024
+Blackrock Inc.,10300627,"Mar 30, 2021",7.08%,2270567209
+Price (T.Rowe) Associates Inc,8162118,"Mar 30, 2021",5.61%,1799175670
+"FMR, LLC",7548567,"Mar 30, 2021",5.19%,1663930623
+State Street Corporation,2362129,"Mar 30, 2021",1.62%,520684095
+Capital International Investors,2294049,"Mar 30, 2021",1.58%,505677221
+Allianz Asset Management GmbH,2078829,"Mar 30, 2021",1.43%,458236276
+First Trust Advisors LP,1848538,"Mar 30, 2021",1.27%,407473231
+"Sands Capital Management, LLC",1836713,"Mar 30, 2021",1.26%,404866646

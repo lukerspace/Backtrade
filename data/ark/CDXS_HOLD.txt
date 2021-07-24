@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",6281617,"Mar 30, 2021",9.74%,143786213
+Baillie Gifford and Company,5930551,"Mar 30, 2021",9.20%,135750312
+Blackrock Inc.,5124216,"Mar 30, 2021",7.95%,117293304
+"Casdin Capital, LLC",4330000,"Mar 30, 2021",6.71%,99113700
+"Nantahala Capital Management, LLC",4191834,"Mar 30, 2021",6.50%,95951080
+"Vanguard Group, Inc. (The)",3171816,"Mar 30, 2021",4.92%,72602868
+"Gilder, Gagnon, Howe & Co.",2456793,"Mar 30, 2021",3.81%,56235991
+"Telemark Asset Management, LLC",2454500,"Mar 30, 2021",3.81%,56183505
+"William Blair Investment Management, LLC",2353106,"Mar 30, 2021",3.65%,53862596
+Wells Fargo & Company,1984609,"Mar 30, 2021",3.08%,45427700

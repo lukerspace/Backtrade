@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",12967241,"Mar 30, 2021",7.54%,111388600
+"Renaissance Technologies, LLC",6684932,"Mar 30, 2021",3.89%,57423565
+State Street Corporation,2808714,"Mar 30, 2021",1.63%,24126853
+"Jane Street Group, LLC",2282026,"Mar 30, 2021",1.33%,19602603
+Citadel Advisors LLC,2175934,"Mar 30, 2021",1.27%,18691273
+"Susquehanna International Group, LLP",2024984,"Mar 30, 2021",1.18%,17394612
+"Group One Trading, L.P.",1362291,"Mar 30, 2021",0.79%,11702079
+"Private Advisor Group, LLC",1021472,"Mar 30, 2021",0.59%,8774444
+Wolverine Trading LLC,1004302,"Mar 30, 2021",0.58%,8626954
+"Mitsubishi UFJ Kokusai Asset Management Co., Ltd",936896,"Mar 30, 2021",0.54%,8047936

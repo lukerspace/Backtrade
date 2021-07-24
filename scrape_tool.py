@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 import btalib
 import yfinance as yf
@@ -8,6 +7,8 @@ import config
 from datetime import *
 from tqdm.auto import tqdm
 import yahoo_fin.stock_info as si
+import re
+from os import path
 
 
 class IndexScraper:
@@ -46,7 +47,7 @@ class IndexScraper:
             try:
                 raw_df = self.read_raw_data(ticker)
 
-                if not len(raw_df)>0:
+                if not len(raw_df) > 0:
                     skip_list.append(ticker)
                     continue
 
@@ -105,39 +106,36 @@ class IndexScraper:
             r = requests.get(day_bars_url, headers=config.HEADERS)
             data = r.json()
             for symbol in tqdm(data, leave=False):
+                self.get_other(symbol)
+
                 # Process bars
-                filename = 'data/' + self.index_ticker + '/{}.txt'.format(symbol)
-                f = open(filename, 'w+')
-                f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
-                # print(data[symbol])
+                # filename = 'data/' + self.index_ticker + '/{}.txt'.format(symbol)
+                #
+                # f = open(filename, 'w+')
+                # f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
+                # # print(data[symbol])
+                #
+                # for bar in data[symbol]:
+                #     t = datetime.fromtimestamp(bar['t'])
+                #     day = t.strftime('%Y-%m-%d')
+                #
+                #     line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
+                #     f.write(line)
+                #
+                # f.close()
 
-                for bar in data[symbol]:
-                    t = datetime.fromtimestamp(bar['t'])
-                    day = t.strftime('%Y-%m-%d')
+        print(self.index_ticker + ' is loaded')
 
-                    line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
-                    f.write(line)
+    def get_other(self, ticker):
+        # Process dividends
+        # self.get_dividends(ticker)
 
-                # Process earnings
-                try:
-                    earnings = si.get_earnings_history(symbol)
-                except:
-                    earnings = None
+        # Process earnings
+        self.get_earnings(ticker)
 
-                if not earnings:
-                    continue
+        # Process holder
+        # self.get_holders(ticker)
 
-                filename = 'data/' + self.index_ticker + '/{}_EPS.txt'.format(symbol)
-                f = open(filename, 'w+')
-                f.write('Date,Estimate,Actual\n')
-                for eps in earnings:
-                    t = datetime.strptime(eps['startdatetime'], "%Y-%m-%dT%H:%M:%S.%fZ")
-                    day = t.strftime('%Y-%m-%d')
-
-                    line = '{},{},{}\n'.format(day, eps['epsestimate'], eps['epsactual'])
-                    f.write(line)
-
-            print(self.index_ticker + ' is loaded')
 
     def read_raw_data(self, ticker):
         # print(self.path + ticker + '.txt')
@@ -183,7 +181,7 @@ class IndexScraper:
         MA1 = int(ma1)
         MA2 = int(ma2)
         name = ticker
-        df = yf.download(name, start="2021-1-1",progress=False)
+        df = yf.download(name, start="2021-1-1", progress=False)
         df[ma1] = df["Adj Close"].rolling(MA1).mean()
         df[ma2] = df["Adj Close"].rolling(MA2).mean()
         df = df[["Adj Close", ma1, ma2]]
@@ -207,3 +205,134 @@ class IndexScraper:
         plt.legend(fontsize=8)
         plt.savefig("./static/png/" + name + ".png")
         plt.close('all')
+
+    def get_earnings(self, symbol):
+        filename = 'data/' + self.index_ticker + '/{}_EPS.txt'.format(symbol)
+
+        try:
+            earnings = si.get_earnings_history(symbol)
+        except:
+            return False
+        count = 0
+        analyst_dict = {'date': [], 'actual eps': [], 'estimate eps': [], 'actual revenue': [None],
+                        'estimate revenue': [None] * 5}
+        for eps in earnings:
+            if eps['epsestimate'] is None:
+                continue
+
+            if count > 4:
+                break
+
+            t = datetime.strptime(eps['startdatetime'], "%Y-%m-%dT%H:%M:%S.%fZ")
+            day = t.strftime('%Y-%m-%d')
+            analyst_dict['date'].append(day)
+            analyst_dict['actual eps'].append(eps['epsactual'])
+            analyst_dict['estimate eps'].append(eps['epsestimate'])
+            count += 1
+
+        revenue = si.get_earnings(symbol)['quarterly_revenue_earnings']
+        if len(revenue) == 0:
+            return False
+        revenue = list(revenue['revenue'])
+        revenue.reverse()
+        analyst_dict['actual revenue'].extend(revenue)
+
+        for exchange in ['NASDAQ', 'NYSE']:
+            try:
+                analyst_dict['estimate revenue'] = self.get_estimate_revenue(exchange, symbol)
+                break
+            except:
+                pass
+
+        revenue_exp = si.get_analysts_info(symbol)['Revenue Estimate']
+        if len(revenue_exp) == 0:
+            return False
+        s = revenue_exp[revenue_exp.columns[1]][1]
+        try:
+            num = float(s[:-1])
+            if s[-1].lower() == 'b':
+                num = num * 1000000000
+            elif s[-1].lower() == 'm':
+                num = num * 1000000
+            elif s[-1].lower() == 't':
+                num = num * 1000000000000
+        except:
+            num = None
+        analyst_dict['estimate revenue'][0] = num
+
+        try:
+            analyst_df = pd.DataFrame.from_dict(analyst_dict)
+            analyst_df.to_csv(filename)
+        except:
+            return False
+
+        return True
+
+    def get_dividends(self, symbol):
+        filename = 'data/' + self.index_ticker + '/{}_DIV.txt'.format(symbol)
+
+        if path.exists(filename):
+            record = pd.read_csv(filename)
+            if len(record) > 0 and 'Date' in record.columns:
+                recent_date = datetime.strptime(record['Date'][len(record) - 1], "%Y-%m-%d")
+                if recent_date == datetime.today():
+                    return False
+
+        try:
+            dividends = si.get_dividends(symbol)
+        except:
+            return False
+
+        if len(dividends) == 0:
+            return False
+
+        dividends.reset_index(inplace=True)
+        dividends.rename(columns={'index': 'Date', 'dividend': 'Dividend'}, inplace=True)
+        dividends.drop(['ticker'], inplace=True, axis=1)
+
+        dividends.to_csv(filename, index=False)
+        return True
+
+    def get_holders(self, symbol):
+        filename = 'data/' + self.index_ticker + '/{}_HOLD.txt'.format(symbol)
+
+        if path.exists(filename):
+            return
+        try:
+            holders = si.get_holders(symbol)
+        except:
+            return
+
+        if len(holders) == 0:
+            return
+
+        if 'Direct Holders (Forms 3 and 4)' not in holders:
+            return
+
+        holders['Direct Holders (Forms 3 and 4)'].to_csv(filename, index=False)
+
+    @staticmethod
+    def get_estimate_revenue(exchange, symbol):
+        output = []
+        url = 'https://www.marketbeat.com/stocks/' + exchange + '/' + symbol + '/earnings/'
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+        resp = requests.get(url, headers=headers)
+        content = resp.content.decode(encoding='utf-8', errors='strict')
+        df = pd.read_html(content)[1]
+        df = df.head(5)
+        for s in df['Revenue Estimate']:
+            if pd.isna(s):
+                output.append(None)
+                continue
+            num = float(re.sub(r'[^\d.]', "", s))
+            word = s.split(" ")[1]
+            if word[0].lower() == 'b':
+                num = num * 1000000000
+            elif word[0].lower() == 'm':
+                num = num * 1000000
+            elif word[0].lower() == 't':
+                num = num * 1000000000000
+            output.append(num)
+
+        return output

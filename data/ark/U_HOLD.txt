@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"Silver Lake Group, LLC",43304557,"Dec 30, 2020",15.50%,6645950362
+SC US (TTGP) Ltd,32955889,"Dec 30, 2020",11.80%,5057740284
+"Resolute Advisors, LLC",31737651,"Dec 30, 2020",11.36%,4870777298
+SC XII Management LLC,24500180,"Dec 30, 2020",8.77%,3760042624
+"D1 Capital Partners, LP",12966567,"Dec 30, 2020",4.64%,1989979037
+Canada Pension Plan Investment Board,8308081,"Dec 30, 2020",2.97%,1275041191
+"SCHF (GPE), LLC",5019340,"Dec 30, 2020",1.80%,770318109
+"Light Street Capital Management, LLC",4812816,"Dec 30, 2020",1.72%,738622871
+"Altimeter Capital Management, LP",3796544,"Dec 30, 2020",1.36%,582655607
+Morgan Stanley,3575338,"Dec 30, 2020",1.28%,548707122

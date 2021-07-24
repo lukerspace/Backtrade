@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+Caledonia (Private) Investments Pty Ltd,36394056,"Mar 30, 2021",20.21%,4718125419
+"Vanguard Group, Inc. (The)",12048668,"Mar 30, 2021",6.69%,1561989319
+Morgan Stanley,11380577,"Mar 30, 2021",6.32%,1475378002
+JP Morgan Chase & Company,10199088,"Mar 30, 2021",5.66%,1322209768
+"ARK Investment Management, LLC",10032650,"Mar 30, 2021",5.57%,1300632746
+Blackrock Inc.,8668338,"Mar 30, 2021",4.81%,1123763338
+Baillie Gifford and Company,7732331,"Mar 30, 2021",4.29%,1002419390
+"Srs Investment Management, Llc",7304499,"Mar 30, 2021",4.06%,946955250
+"Sumitomo Mitsui Trust Holdings, Inc.",6150978,"Mar 30, 2021",3.42%,797412787
+"Nikko Asset Management Americas, Inc.",5230252,"Mar 30, 2021",2.90%,678049869

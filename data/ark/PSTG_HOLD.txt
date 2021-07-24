@@ -1,0 +1,11 @@
+Holder,Shares,Date Reported,% Out,Value
+"ARK Investment Management, LLC",32887736,"Mar 30, 2021",11.61%,708401833
+"Vanguard Group, Inc. (The)",23509390,"Mar 30, 2021",8.30%,506392260
+"FMR, LLC",18684150,"Mar 30, 2021",6.60%,402456591
+"William Blair Investment Management, LLC",15461407,"Mar 30, 2021",5.46%,333038706
+"Champlain Investment Partners, LLC",14723967,"Mar 30, 2021",5.20%,317154249
+Price (T.Rowe) Associates Inc,14193541,"Mar 30, 2021",5.01%,305728873
+Blackrock Inc.,11947031,"Mar 30, 2021",4.22%,257339047
+"Nikko Asset Management Americas, Inc.",9263745,"Mar 30, 2021",3.27%,199541067
+"Sumitomo Mitsui Trust Holdings, Inc.",9184446,"Mar 30, 2021",3.24%,197832966
+First Trust Advisors LP,6914484,"Mar 30, 2021",2.44%,148937985
