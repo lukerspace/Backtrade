@@ -8,8 +8,9 @@ pre_path = os.path.abspath("../backtrade/py/")
 sys.path.append(pre_path)
 from pattern import *
 app=Flask(__name__)
-# import talib
 import csv
+# import talib
+
 
 from api.qqq_sign import appQqqSign
 # from api.qqq_hist import appQqqHist
@@ -19,6 +20,10 @@ from api.ark_sign import appArkSign
 
 from api.spy_sign import appSpySign
 # from api.spy_hist import appSpyHist
+
+from api.arkeps import appArkEps
+
+
 
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
@@ -34,6 +39,7 @@ app.register_blueprint(appArkSign, url_prefix='/api')
 app.register_blueprint(appSpySign, url_prefix='/api')
 # app.register_blueprint(appSpyHist, url_prefix='/api')
 
+app.register_blueprint(appArkEps, url_prefix='/api')
 
 
 @app.route("/")

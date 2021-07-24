@@ -90,8 +90,8 @@ def ark_eps_select(symbols):
             eps_date=symbol_eps_data[i][0]
             eps_est=symbol_eps_data[i][1]
             eps_act=symbol_eps_data[i][2]
-            print("DATE: ",eps_date,"ESTIMATE: ",eps_est,"ACTUAL: ",eps_act)
+            # print(eps_date,eps_est,eps_act)
         connection_obj.close()
-    return print(f"SELECT SUCCESSFULLY {symbols} ")
+    return {"ticker":symbols,"date":eps_date,"estimate":eps_est,"actual":eps_act}
     # return eps_date,eps_est,eps_act
 
