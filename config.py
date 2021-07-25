@@ -13,3 +13,6 @@ HEADERS = {
 BARS_URL = os.getenv("BARS_URL")
 FINANCIAL_URL = 'https://data.alpaca.markets/v2/reference/financials/'
 API_MAX_LENGTH = 100
+
+
+IEX_API=os.getenv("IEX_API")
