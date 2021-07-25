@@ -96,3 +96,18 @@ a {
   margin-bottom: 20px;
   height: 400px;
 }
+
+footer{
+  /* height: px; */
+  margin-top: 20px;
+  background-color:#757575;
+  justify-content:center;
+  align-items:center;
+  display: flex;
+  
+}
+footer p{
+  margin:45px auto;
+  color: #fff;
+  font-weight: 700;
+}

@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import requests
 import config
 from datetime import *
+from tqdm.auto import tqdm
+import yahoo_fin.stock_info as si
+
 
 class IndexScraper:
     sma_period = 5
@@ -37,10 +40,16 @@ class IndexScraper:
         buy_signals_df = pd.DataFrame()
         sell_signals_df = pd.DataFrame()
         history_df = pd.DataFrame()
+        skip_list = []
 
-        for ticker in self.tickers:
+        for ticker in tqdm(self.tickers, leave=False):
             try:
                 raw_df = self.read_raw_data(ticker)
+
+                if not len(raw_df)>0:
+                    skip_list.append(ticker)
+                    continue
+
                 buy_signal = self.generate_buy_signal(raw_df)
                 sell_signal = self.generate_sell_signal(raw_df)
                 self.generate_chart(ticker)
@@ -53,15 +62,16 @@ class IndexScraper:
                 sell_signal['ticker'] = ticker
                 sell_signals_df = sell_signals_df.append(sell_signal)
 
-                raw_df.sort_values(by=["Date"],ascending=False, inplace=True)
+                raw_df.sort_values(by=["Date"], ascending=False, inplace=True)
                 raw_df.reset_index(drop=True, inplace=True)
                 raw_df["ticker"] = ticker
                 raw_df = raw_df.loc[:5, ["Date", "histogram", "ticker"]]
                 history_df = history_df.append(raw_df)
 
-                print('Finish ' + ticker)
             except:
-                print('Skip ' + ticker)
+                skip_list.append(ticker)
+
+        print('Skipped %d ticker: %s' % (len(skip_list), ", ".join(skip_list)))
 
         buy_signals_df.sort_values(by=["Date"], ascending=False, inplace=True)
         buy_signals_df.drop_duplicates(subset=["ticker"], keep="first", inplace=True)
@@ -79,23 +89,23 @@ class IndexScraper:
         history_df.to_json('./json/' + self.index_ticker + 'hist.json',
                            orient="index")
 
-        print('Finish scraping')
+        print('Finish scraping ' + self.index_ticker)
 
     def quote(self):
-        tickers_str = ",".join(self.tickers)
-
         num = len(self.tickers)
         start = 0
         end = 0
         while start < num:
             end = min(end + config.API_MAX_LENGTH, num)
-            day_bars_url = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, tickers_str[start:end])
+            tickers_str = ",".join(self.tickers[start:end])
+            day_bars_url = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, tickers_str)
+            print("Quote from %d to %d" % (start, end))
             start = end
 
             r = requests.get(day_bars_url, headers=config.HEADERS)
             data = r.json()
-
-            for symbol in data:
+            for symbol in tqdm(data, leave=False):
+                # Process bars
                 filename = 'data/' + self.index_ticker + '/{}.txt'.format(symbol)
                 f = open(filename, 'w+')
                 f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
@@ -108,13 +118,34 @@ class IndexScraper:
                     line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
                     f.write(line)
 
-        print(self.index_ticker + ' is loaded')
+                # Process earnings
+                try:
+                    earnings = si.get_earnings_history(symbol)
+                except:
+                    earnings = None
+
+                if not earnings:
+                    continue
+
+                filename = 'data/' + self.index_ticker + '/{}_EPS.txt'.format(symbol)
+                f = open(filename, 'w+')
+                f.write('Date,Estimate,Actual\n')
+                for eps in earnings:
+                    t = datetime.strptime(eps['startdatetime'], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    day = t.strftime('%Y-%m-%d')
+
+                    line = '{},{},{}\n'.format(day, eps['epsestimate'], eps['epsactual'])
+                    f.write(line)
+
+            print(self.index_ticker + ' is loaded')
 
     def read_raw_data(self, ticker):
-        print(self.path + ticker + '.txt')
+        # print(self.path + ticker + '.txt')
         df = pd.read_csv(self.path + ticker + '.txt',
                          parse_dates=True,
                          index_col='Date')
+        if len(df) == 0:
+            return None
         sma = btalib.sma(df, period=self.sma_period)
         rsi = btalib.rsi(df)
         macd = btalib.macd(df)
