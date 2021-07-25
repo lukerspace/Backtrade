@@ -4,7 +4,7 @@ from flask import *
 from datetime import *
 pre_path = os.path.abspath("../backtrade/sql")
 sys.path.append(pre_path)
-from ark_eps import *
+from sql_eps_ark import *
 
 ark=open('data/csv/ark.csv').readlines()
 symbols=[holding.strip() for holding in ark][1:]
@@ -13,7 +13,6 @@ symbols=[holding.strip() for holding in ark][1:]
 appArkEps=Blueprint("appArkEps",__name__)
 
 @appArkEps.route("/arkeps") 
-
 def ark_eps():
     data={}
     for i in symbols:

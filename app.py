@@ -17,28 +17,15 @@ from pattern import *
 app=Flask(__name__)
 
 # SIGNAL API
-from api.qqq_sign import appQqqSign
-# from api.qqq_hist import appQqqHist
-
-from api.ark_sign import appArkSign
-# from api.ark_hist import appArkHist
-
-from api.spy_sign import appSpySign
-# from api.spy_hist import appSpyHist
-
+from api.api_signal import appQqqSign,appArkSign,appSpySign
 # EPS API
-from api.arkeps import appArkEps
+from api.api_eps import appArkEps
 
 # REGISTER
 app.register_blueprint(appQqqSign, url_prefix='/api')
-# app.register_blueprint(appQqqHist, url_prefix='/api')
-
 app.register_blueprint(appArkSign, url_prefix='/api')
-# app.register_blueprint(appArkHist, url_prefix='/api')
-
 app.register_blueprint(appSpySign, url_prefix='/api')
-# app.register_blueprint(appSpyHist, url_prefix='/api')
-
+# REGITSTER EPS
 app.register_blueprint(appArkEps, url_prefix='/api')
 
 # CONFIG
