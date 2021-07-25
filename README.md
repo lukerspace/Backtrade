@@ -20,7 +20,7 @@
 
 #Operating:
 
-Run main.py update data / Run app.py
+Python main.py update data / Python app.py
 
 <img src="data/readme/2.png" />
 <img src=data/readme/3.png />
