@@ -1,7 +1,16 @@
+import os
+import sys
+from btalib.indicators.rsi import rsi
+from flask import *
+from datetime import *
 import pandas as pd
-# for filename in os.listdir("data/spy"):
-#     df=pd.read_csv("data/spy/{}".format(filename))
 
+# LOAD DATA
+holdings = open('data/csv/spy.csv').readlines()
+symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
+
+
+# module
 def is_consolidate(df,symbol):
     # df["ticker"]=symbol
     monthly_close=df[-30:]
@@ -29,20 +38,28 @@ def is_breaking(df,symbol):
                 return True
     except:
         return False
-    
 
-holdings = open('data/csv/spy.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
-
-for symbol in symbols:
-    df=pd.read_csv("data/spy/{}.txt".format(symbol))
-    if (is_consolidate(df,symbol)):
-        if (is_breaking(df,symbol)):
-            print("{} is breaking out".format(symbol))
-        else:
-            print("{} is consolidating".format(symbol))
-    
+# REGISTER
+appSpyConsolidate=Blueprint("appSpyConsolidate",__name__)
 
 
-
-
+# ROUTE
+@appSpyConsolidate.route("/spyconsolidate") 
+def spy_consolidate():
+    breakout_dict={}
+    consolidate_dict={}
+    index1=0
+    index2=0
+    for symbol in symbols:
+        df=pd.read_csv("data/spy/{}.txt".format(symbol))
+        if (is_consolidate(df,symbol)):
+            if (is_breaking(df,symbol)):
+                index1+=1
+                breakout_dict[int(index1)]=symbol
+                # print("{} is breaking out".format(symbol))
+            else:
+                index2+=1
+                consolidate_dict[int(index2)]=symbol
+                # print("{} is consolidating".format(symbol))
+    api_breakout={"breakout":breakout_dict,"consolidate":consolidate_dict}
+    return  jsonify({"data": api_breakout}) 

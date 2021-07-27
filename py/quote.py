@@ -1,125 +1,209 @@
-
+import numpy as np
+import pandas as pd
+import btalib
+import yfinance as yf
+import matplotlib.pyplot as plt
 import requests
 import config
-import datetime
 from datetime import *
+from tqdm.auto import tqdm
+import yahoo_fin.stock_info as si
 
 
+class IndexScraper:
+    sma_period = 5
 
-def spydata():
-    holdings = open('data/csv/spy.csv').readlines()
-    symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
+    def __init__(self):
+        self.index_ticker = None
+        self.tickers = None
+        self.path = None
 
-    ticker = ",".join(symbols)
-    # time_interval
+    def set_index_ticker(self, index_ticker):
+        self.index_ticker = index_ticker.lower()
+        index_csv = open('data/csv/' + self.index_ticker + '.csv')
+        if self.index_ticker == 'ark':
+            self.tickers = [holding.strip() for holding in index_csv.readlines()][1:]
+        else:
+            self.tickers = [holding.split(',')[2].strip() for holding in index_csv.readlines()][1:]
+        self.path = 'data/' + index_ticker + '/'
 
-    day_bars_1 = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, ticker[1:800])
+    def start(self):
+        if not self.index_ticker:
+            print('Please set index')
+            return
 
-    day_bars_2 = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, ticker[801:1598])
+        print('Start scraping ' + self.index_ticker)
+        print('Found %d tickers' % len(self.tickers))
 
-    day_bars_3 = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, ticker[1599:2113])
+        self.quote()
 
-    # minute_bars_url = config.BARS_URL + '/5Min?symbols=MSFT&limit=1000'
+        buy_signals_df = pd.DataFrame()
+        sell_signals_df = pd.DataFrame()
+        history_df = pd.DataFrame()
+        skip_list = []
 
-    day_bar_list=[day_bars_1,day_bars_2,day_bars_3 ]
+        for ticker in tqdm(self.tickers, leave=False):
+            try:
+                raw_df = self.read_raw_data(ticker)
 
-    for url in day_bar_list:
-        r = requests.get(url, headers=config.HEADERS)
-        data=r.json()
+                if not len(raw_df)>0:
+                    skip_list.append(ticker)
+                    continue
 
+                buy_signal = self.generate_buy_signal(raw_df)
+                sell_signal = self.generate_sell_signal(raw_df)
+                self.generate_chart(ticker)
 
-        for symbol in data:
-            filename = 'data/spy/{}.txt'.format(symbol)
-            f = open(filename, 'w+')
-            f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
+                buy_signal = buy_signal[1:]
+                buy_signal['ticker'] = ticker
+                buy_signals_df = buy_signals_df.append(buy_signal)
 
-            for bar in data[symbol]:
-                t = datetime.fromtimestamp(bar['t'])
-                day = t.strftime('%Y-%m-%d')
+                sell_signal = sell_signal[-1:]
+                sell_signal['ticker'] = ticker
+                sell_signals_df = sell_signals_df.append(sell_signal)
 
-                line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
-                f.write(line)
-    return  print("spy loaded")
-spydata()
+                raw_df.sort_values(by=["Date"], ascending=False, inplace=True)
+                raw_df.reset_index(drop=True, inplace=True)
+                raw_df["ticker"] = ticker
+                raw_df = raw_df.loc[:5, ["Date", "histogram", "ticker"]]
+                history_df = history_df.append(raw_df)
 
+            except:
+                skip_list.append(ticker)
 
+        print('Skipped %d ticker: %s' % (len(skip_list), ", ".join(skip_list)))
 
-def read_qqq():
-    # read_ticker
-    holdings = open('data/csv/qqq.csv').readlines()
-    symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
-    symbols = ",".join(symbols)
+        buy_signals_df.sort_values(by=["Date"], ascending=False, inplace=True)
+        buy_signals_df.drop_duplicates(subset=["ticker"], keep="first", inplace=True)
+        buy_signals_df.reset_index(drop=True, inplace=True)
+        buy_signals_df.to_json('./json/' + self.index_ticker + 'signbuy.json',
+                               orient="index")
 
-    # time_interval
-    day_bars_url = '{}/day?symbols={}&limit=1000'.format(config.BARS_URL, symbols)
-    # minute_bars_url = config.BARS_URL + '/5Min?symbols=MSFT&limit=1000'
+        sell_signals_df.sort_values(by=["Date"], ascending=False, inplace=True)
+        sell_signals_df.drop_duplicates(subset=["ticker"], keep="first", inplace=True)
+        sell_signals_df.reset_index(drop=True, inplace=True)
+        sell_signals_df.to_json('./json/' + self.index_ticker + 'signsell.json',
+                                orient="index")
 
+        history_df.reset_index(drop=True, inplace=True)
+        history_df.to_json('./json/' + self.index_ticker + 'hist.json',
+                           orient="index")
 
-    # # read_data
-    r = requests.get(day_bars_url, headers=config.HEADERS)
+        print('Finish scraping ' + self.index_ticker)
 
-    ## minute_data
-    # r = requests.get(minute_bars_url, headers=config.HEADERS)
-    # print(json.dumps(r.json(),indent=4))
+    def quote(self):
+        num = len(self.tickers)
+        start = 0
+        end = 0
+        while start < num:
+            end = min(end + config.API_MAX_LENGTH, num)
+            tickers_str = ",".join(self.tickers[start:end])
+            day_bars_url = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, tickers_str)
+            print("Quote from %d to %d" % (start, end))
+            start = end
 
+            r = requests.get(day_bars_url, headers=config.HEADERS)
+            data = r.json()
+            for symbol in tqdm(data, leave=False):
+                # Process bars
+                filename = 'data/' + self.index_ticker + '/{}.txt'.format(symbol)
+                f = open(filename, 'w+')
+                f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
+                # print(data[symbol])
 
-    #data_form 
-    # print(json.dumps(r.json(), indent=4))
-    data=r.json()
+                for bar in data[symbol]:
+                    t = datetime.fromtimestamp(bar['t'])
+                    day = t.strftime('%Y-%m-%d')
 
-    # show_stock_in_etf_QQQ
-    for symbol in data:
-        filename = 'data/qqq/{}.txt'.format(symbol)
-        f = open(filename, 'w+')
-        f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
-        # print(data[symbol])
+                    line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
+                    f.write(line)
 
-        for bar in data[symbol]:
-            t = datetime.fromtimestamp(bar['t'])
-            day = t.strftime('%Y-%m-%d')
+                # Process earnings
+                try:
+                    earnings = si.get_earnings_history(symbol)
+                except:
+                    earnings = None
 
-            line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
-            f.write(line)
-    return print("qqq loaded")
+                if not earnings:
+                    continue
 
-read_qqq()
+                filename = 'data/' + self.index_ticker + '/{}_EPS.txt'.format(symbol)
+                f = open(filename, 'w+')
+                f.write('Date,Estimate,Actual\n')
+                for eps in earnings:
+                    t = datetime.strptime(eps['startdatetime'], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    day = t.strftime('%Y-%m-%d')
 
+                    line = '{},{},{}\n'.format(day, eps['epsestimate'], eps['epsactual'])
+                    f.write(line)
 
+            print(self.index_ticker + ' is loaded')
 
+    def read_raw_data(self, ticker):
+        # print(self.path + ticker + '.txt')
+        df = pd.read_csv(self.path + ticker + '.txt',
+                         parse_dates=True,
+                         index_col='Date')
+        if len(df) == 0:
+            return None
+        sma = btalib.sma(df, period=self.sma_period)
+        rsi = btalib.rsi(df)
+        macd = btalib.macd(df)
+        df['sma'] = sma.df
+        df['rsi'] = rsi.df
+        df['macd'] = macd.df['macd']
+        df['signal'] = macd.df['signal']
+        df['histogram'] = macd.df['histogram']
+        df = df.reset_index()
+        return df
 
-def arkdata():
-    holdings = open('data/csv/ark.csv').readlines()
-    symbols=[i.strip() for i in holdings][1:]
-    ticker = ",".join(symbols)
-    # print(len(ticker))
+    def generate_buy_signal(self, df):
+        buy_signal = pd.DataFrame()
 
-    # time_interval
+        for i in range(len(df) - 1):
+            if df.loc[i, "macd"] < 0:
+                if df.loc[i + 1., "macd"] > 0:
+                    if df.loc[i + 1, "macd"] > df.loc[i + 1, "signal"]:
+                        buy_signal = buy_signal.append(df.loc[i + 1])
 
+        return buy_signal
 
-    day_bars_url = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, ticker[1:])
+    def generate_sell_signal(self, df):
+        sell_signal = pd.DataFrame()
+        for i in range(1, len(df) - 1):
+            if df.loc[i, "macd"] < 0:
+                if df.loc[i - 1., "macd"] > 0:
+                    if df.loc[i, "macd"] < df.loc[i, "signal"]:
+                        sell_signal = sell_signal.append(df.loc[i + 1])
+        return sell_signal
 
-    # minute_bars_url = config.BARS_URL + '/5Min?symbols=MSFT&limit=1000'
+    def generate_chart(self, ticker):
+        ma1 = "5"
+        ma2 = "6"
+        MA1 = int(ma1)
+        MA2 = int(ma2)
+        name = ticker
+        df = yf.download(name, start="2021-1-1",progress=False)
+        df[ma1] = df["Adj Close"].rolling(MA1).mean()
+        df[ma2] = df["Adj Close"].rolling(MA2).mean()
+        df = df[["Adj Close", ma1, ma2]]
+        df = df.dropna()
+        buy = []
+        sell = []
+        for i in range(len(df)):
+            if df[ma1].iloc[i] > df[ma2].iloc[i] and df[ma1].iloc[i - 1] < df[ma2].iloc[i - 1]:
+                buy.append(i)
+            elif df[ma1].iloc[i] < df[ma2].iloc[i] and df[ma1].iloc[i - 1] > df[ma2].iloc[i - 1]:
+                sell.append(i)
 
-
-    # # # read_data
-    r = requests.get(day_bars_url, headers=config.HEADERS)
-    data=r.json()
-
-
-    for symbol in data:
-        filename = 'data/ark/{}.txt'.format(symbol)
-        f = open(filename, 'w+')
-        f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
-        # print(data[symbol])
-
-        for bar in data[symbol]:
-            t = datetime.fromtimestamp(bar['t'])
-            day = t.strftime('%Y-%m-%d')
-
-            line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
-            f.write(line)
-    return print("ark loaded")
-
-arkdata()
-
-
+        plt.style.use("dark_background")
+        plt.figure(figsize=(10, 5))
+        plt.grid(linestyle='-', linewidth=0.1, data=(10, 10))
+        plt.plot(df['Adj Close'], label="stock price", c="orange", alpha=1)
+        plt.plot(df[ma1], label="MA" + ma1, c="white", alpha=1)
+        plt.plot(df[ma2], label="MA" + ma2, c="skyblue", alpha=0.5)
+        plt.scatter(df.iloc[buy].index, df.iloc[buy]["Adj Close"], marker="^", color="green", s=40, zorder=10)
+        plt.scatter(df.iloc[sell].index, df.iloc[sell]["Adj Close"], marker="v", color="red", s=40, zorder=10)
+        plt.legend(fontsize=8)
+        plt.savefig("./static/png/" + name + ".png")
+        plt.close('all')

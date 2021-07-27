@@ -1,5 +1,4 @@
 Date,Estimate,Actual
-2022-05-25,None,None
 2022-02-28,None,None
 2021-11-29,None,None
 2021-08-25,0.87,None
