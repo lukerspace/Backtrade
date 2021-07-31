@@ -21,7 +21,7 @@ from api.api_signal import appQqqSign,appArkSign,appSpySign
 # EPS API
 from api.api_eps import appArkEps
 # Consolidate
-from api.api_consolidate import appSpyConsolidate
+from api.api_consolidate import appSpyConsolidate,appArkConsolidate,appQqqConsolidate
 
 
 # REGISTER
@@ -36,6 +36,8 @@ app.register_blueprint(appArkEps, url_prefix='/api')
 
 # REGISTER CONSOLIDATE
 app.register_blueprint(appSpyConsolidate , url_prefix='/api')
+app.register_blueprint(appArkConsolidate , url_prefix='/api')
+app.register_blueprint(appQqqConsolidate , url_prefix='/api')
 
 
 # CONFIG

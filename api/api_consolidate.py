@@ -5,11 +5,6 @@ from flask import *
 from datetime import *
 import pandas as pd
 
-# LOAD DATA
-holdings = open('data/csv/spy.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
-
-
 # module
 def is_consolidate(df,symbol):
     # df["ticker"]=symbol
@@ -39,10 +34,13 @@ def is_breaking(df,symbol):
     except:
         return False
 
+
+
+# LOAD DATA
+holdings = open('data/csv/spy.csv').readlines()
+symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
 # REGISTER
 appSpyConsolidate=Blueprint("appSpyConsolidate",__name__)
-
-
 # ROUTE
 @appSpyConsolidate.route("/spyconsolidate") 
 def spy_consolidate():
@@ -63,3 +61,59 @@ def spy_consolidate():
                 # print("{} is consolidating".format(symbol))
     api_breakout={"breakout":breakout_dict,"consolidate":consolidate_dict}
     return  jsonify({"data": api_breakout}) 
+
+
+
+# LOAD DATA
+holdings = open('data/csv/qqq.csv').readlines()
+symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
+# REGISTER
+appQqqConsolidate=Blueprint("appQqqConsolidate",__name__)
+# ROUTE
+@appSpyConsolidate.route("/qqqconsolidate") 
+def qqq_consolidate():
+    breakout_dict={}
+    consolidate_dict={}
+    index1=0
+    index2=0
+    for symbol in symbols:
+        df=pd.read_csv("data/qqq/{}.txt".format(symbol))
+        if (is_consolidate(df,symbol)):
+            if (is_breaking(df,symbol)):
+                index1+=1
+                breakout_dict[int(index1)]=symbol
+                # print("{} is breaking out".format(symbol))
+            else:
+                index2+=1
+                consolidate_dict[int(index2)]=symbol
+                # print("{} is consolidating".format(symbol))
+    api_breakout={"breakout":breakout_dict,"consolidate":consolidate_dict}
+    return  jsonify({"data": api_breakout}) 
+
+
+# LOAD DATA
+ark=open('data/csv/ark.csv').readlines()
+symbols=[holding.strip() for holding in ark][1:]
+# REGISTER
+appArkConsolidate=Blueprint("appArkConsolidate",__name__)
+# ROUTE
+@appArkConsolidate.route("/arkconsolidate") 
+def ark_consolidate():
+    breakout_dict={}
+    consolidate_dict={}
+    index1=0
+    index2=0
+    for symbol in symbols:
+        df=pd.read_csv("data/ark/{}.txt".format(symbol))
+        if (is_consolidate(df,symbol)):
+            if (is_breaking(df,symbol)):
+                index1+=1
+                breakout_dict[int(index1)]=symbol
+                # print("{} is breaking out".format(symbol))
+            else:
+                index2+=1
+                consolidate_dict[int(index2)]=symbol
+                # print("{} is consolidating".format(symbol))
+    api_breakout={"breakout":breakout_dict,"consolidate":consolidate_dict}
+    return  jsonify({"data": api_breakout}) 
+
