@@ -127,7 +127,7 @@ class IndexScraper:
                 if not earnings:
                     continue
 
-                filename = 'data/' + self.index_ticker + '/{}_EPS.txt'.format(symbol)
+                filename = 'info/eps/' + self.index_ticker + '/{}_EPS.txt'.format(symbol)
                 f = open(filename, 'w+')
                 f.write('Date,Estimate,Actual\n')
                 for eps in earnings:
