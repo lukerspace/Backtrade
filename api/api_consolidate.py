@@ -37,8 +37,8 @@ def is_breaking(df,symbol):
 
 
 # LOAD DATA
-holdings = open('data/csv/spy.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
+spy = open('data/csv/spy.csv').readlines()
+symbols = [holding.split(',')[2].strip() for holding in spy][1:]
 # REGISTER
 appSpyConsolidate=Blueprint("appSpyConsolidate",__name__)
 # ROUTE
@@ -65,8 +65,8 @@ def spy_consolidate():
 
 
 # LOAD DATA
-holdings = open('data/csv/qqq.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
+qqq = open('data/csv/qqq.csv').readlines()
+symbols = [holding.split(',')[2].strip() for holding in qqq][1:]
 # REGISTER
 appQqqConsolidate=Blueprint("appQqqConsolidate",__name__)
 # ROUTE
@@ -117,3 +117,6 @@ def ark_consolidate():
     api_breakout={"breakout":breakout_dict,"consolidate":consolidate_dict}
     return  jsonify({"data": api_breakout}) 
 
+holdings = open('data/csv/qqq.csv').readlines()
+symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
+print(len(symbols))
