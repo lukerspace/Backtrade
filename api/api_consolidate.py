@@ -1,9 +1,11 @@
 import os
-import sys
 from btalib.indicators.rsi import rsi
 from flask import *
 from datetime import *
 import pandas as pd
+
+abs_path=os.path.abspath(os.getcwd())
+
 
 # module
 def is_consolidate(df,symbol):
@@ -36,9 +38,10 @@ def is_breaking(df,symbol):
 
 
 
-# LOAD DATA
+# # LOAD DATA
+
 spy = open('data/csv/spy.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in spy][1:]
+spy_list = [holding.split(',')[2].strip() for holding in spy][1:]
 # REGISTER
 appSpyConsolidate=Blueprint("appSpyConsolidate",__name__)
 # ROUTE
@@ -48,8 +51,8 @@ def spy_consolidate():
     consolidate_dict={}
     index1=0
     index2=0
-    for symbol in symbols:
-        df=pd.read_csv("data/spy/{}.txt".format(symbol))
+    for symbol in spy_list:
+        df=pd.read_csv(abs_path+"\\data\\spy\\"+"{}.txt".format(symbol))
         if (is_consolidate(df,symbol)):
             if (is_breaking(df,symbol)):
                 index1+=1
@@ -64,9 +67,10 @@ def spy_consolidate():
 
 
 
+
 # LOAD DATA
 qqq = open('data/csv/qqq.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in qqq][1:]
+qqq_list = [holding.split(',')[2].strip() for holding in qqq][1:]
 # REGISTER
 appQqqConsolidate=Blueprint("appQqqConsolidate",__name__)
 # ROUTE
@@ -76,8 +80,8 @@ def qqq_consolidate():
     consolidate_dict={}
     index1=0
     index2=0
-    for symbol in symbols:
-        df=pd.read_csv("data/qqq/{}.txt".format(symbol))
+    for symbol in qqq_list:
+        df=pd.read_csv(abs_path+"\\data\\qqq\\"+"{}.txt".format(symbol))
         if (is_consolidate(df,symbol)):
             if (is_breaking(df,symbol)):
                 index1+=1
@@ -92,8 +96,9 @@ def qqq_consolidate():
 
 
 # LOAD DATA
+
 ark=open('data/csv/ark.csv').readlines()
-symbols=[holding.strip() for holding in ark][1:]
+ark_list=[holding.strip() for holding in ark][1:]
 # REGISTER
 appArkConsolidate=Blueprint("appArkConsolidate",__name__)
 # ROUTE
@@ -103,8 +108,8 @@ def ark_consolidate():
     consolidate_dict={}
     index1=0
     index2=0
-    for symbol in symbols:
-        df=pd.read_csv("data/ark/{}.txt".format(symbol))
+    for symbol in ark_list:
+        df=pd.read_csv(abs_path+"\\data\\ark\\"+"{}.txt".format(symbol))
         if (is_consolidate(df,symbol)):
             if (is_breaking(df,symbol)):
                 index1+=1
@@ -117,6 +122,5 @@ def ark_consolidate():
     api_breakout={"breakout":breakout_dict,"consolidate":consolidate_dict}
     return  jsonify({"data": api_breakout}) 
 
-holdings = open('data/csv/qqq.csv').readlines()
-symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
-print(len(symbols))
+
+

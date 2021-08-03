@@ -86,11 +86,8 @@ def ark_eps_select(symbols):
         sql_cmd=f""" select date,est,act from arkeps where ticker ='{symbols}' order by date desc"""
         table_cursor.execute(sql_cmd)
         symbol_eps_data=table_cursor.fetchall()
-        for i in range(len(symbol_eps_data)):
-            eps_date=symbol_eps_data[i][0]
-            eps_est=symbol_eps_data[i][1]
-            eps_act=symbol_eps_data[i][2]
-            # print(eps_date,eps_est,eps_act)
+        
         connection_obj.close()
-    return {"ticker":symbols,"date":eps_date,"estimate":eps_est,"actual":eps_act}
+    return {"ticker":symbols,"info":symbol_eps_data}
     # return print(eps_date,eps_est,eps_act)
+
