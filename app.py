@@ -63,6 +63,9 @@ def ark():
 def spy():
 	return render_template("spy.html")
 
+@app.route("/squeeze")
+def squeeze():
+	return render_template("squeeze.html")
 
 @app.route("/snap")
 def snap():

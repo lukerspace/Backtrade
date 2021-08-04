@@ -2,20 +2,23 @@ async function GetData(number) {
   const url = "/api/arksign";
   const r = await fetch(url);
   const data = await r.json();
-
   const sell_url = "/api/arksignsell";
   const re = await fetch(sell_url);
   const selldata = await re.json();
+    
   buy = data["data"];
   sell = selldata["data"];
-  // console.log(buy);
-  // console.log(buy)
+
+  const eps_url ="/api/arkeps";
+  const r_eps=await fetch(eps_url);
+  const epsdata = await r_eps.json();
+
+
   let title = document.getElementById("ticker");
   let date = document.getElementById("date");
   let pic = document.getElementById("img");
   let root = document.getElementById("root");
   let symbol = buy[number]["ticker"];
-
   let sellindex = [];
   for (i = 0; i < Object.keys(sell).length; i++) {
     sellindex.push(sell[i]["ticker"]);
@@ -28,14 +31,18 @@ async function GetData(number) {
     if (sell_date !== undefined) {
       // text
       title.innerText = "TICKER : " + buy[number]["ticker"];
+      ///////////////// EPS_DATA
+      const epsTickerInfo= epsdata["data"][buy[number]["ticker"]]
+      console.log(buy[number]["ticker"],epsTickerInfo);
+      
+      // sinal_date
       date.innerText = "SIGNAL DATE : " + buy[number]["date"];
       pic.src = "https://finviz.com/chart.ashx?t=" + buy[number]["ticker"];
       root.innerText = "PREVIOUS SELL SIGNAL : " + sell_date;
-      ////////////////////////////////////////////
+      // ticker_chart
       let test = document.getElementById("test");
       test.src = "./static/png/" + buy[number]["ticker"] + ".png";
 
-      ///////////////////////////////
       return (size = Object.keys(buy).length) & (id = number);
     } else {
       console.log("wrong2")
