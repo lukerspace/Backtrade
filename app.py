@@ -67,7 +67,7 @@ def spy():
 def squeeze():
 	return render_template("squeeze.html")
 
-@app.route("/snap")
+@app.route("/spysnap")
 def snap():
 	pattern=request.args.get("pattern",None)
 	stocks={}
@@ -101,7 +101,46 @@ def snap():
 			except:
 				pass
 
-	return render_template("spysnap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+
+
+@app.route("/arksnap")
+def arksnap():
+	pattern=request.args.get("pattern",None)
+	stocks={}
+	with open(abs_path+"\\data\\csv\\ark.csv") as f:
+		for row in csv.reader(f):
+    			# print(row)
+			stocks[row[0]]={
+				"company":row[0]
+
+			}
+	if "Ticker" in stocks:
+		del stocks["Ticker"]
+
+	if pattern:
+		file1=os.listdir(abs_path+"\\data\\ark")
+
+		for filename in file1:
+			df=pd.read_csv(abs_path+"\\data\\ark\\{}".format(filename))
+			# df=df.head()
+			function_style=getattr(talib,pattern)
+			symbol=filename.split(".")[0]
+			try:
+				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
+				last=style.tail(1).values[0]
+				if last >0:
+					stocks[symbol][pattern]="bullish"
+				elif last<0:
+					stocks[symbol][pattern]="bearlish"
+				else:
+					stocks[symbol][pattern]=None
+					# print("{} trigger style : {}".format(filename,url))
+			except:
+				pass
+
+	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+
 
 
 
