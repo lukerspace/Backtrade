@@ -6,6 +6,7 @@ from flask import *
 import csv
 import talib
 import pandas as pd
+from model import *
 
 abs_path=os.path.abspath(os.getcwd())
 pre_path = os.path.abspath("../backtrade/py/")
@@ -14,7 +15,9 @@ sys.path.append(abs_path)
 
 from pattern import *
 
-app=Flask(__name__)
+# app=Flask(__name__)
+
+
 
 # SIGNAL API
 from api.api_signal import appQqqSign,appArkSign,appSpySign
@@ -40,6 +43,7 @@ app.register_blueprint(appArkConsolidate , url_prefix='/api')
 app.register_blueprint(appQqqConsolidate , url_prefix='/api')
 
 
+
 # CONFIG
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
@@ -47,6 +51,8 @@ app.config["JSON_SORT_KEYS"] = False
 app.secret_key="backtrader"
 
 
+
+# route
 @app.route("/")
 def menu():
 	return render_template("menu.html")
@@ -143,8 +149,8 @@ def arksnap():
 
 
 
-
-app.run(host='127.0.0.1', port=3000)		
+if __name__ == '__main__':
+	app.run(host='127.0.0.1', port=3000)		
 
 
 
