@@ -6,7 +6,7 @@ from flask import *
 import csv
 import talib
 import pandas as pd
-from model import *
+from models import *
 
 abs_path=os.path.abspath(os.getcwd())
 pre_path = os.path.abspath("../backtrade/py/")
@@ -74,14 +74,13 @@ def squeeze():
 	return render_template("squeeze.html")
 
 @app.route("/spysnap")
-def snap():
+def spysnap():
 	pattern=request.args.get("pattern",None)
 	stocks={}
 	with open(abs_path+"\\data\\csv\\spy.csv") as f:
 		for row in csv.reader(f):
 			stocks[row[2]]={
 				"company":row[1]
-
 			}
 	if "Ticker" in stocks:
 		del stocks["Ticker"]
@@ -146,6 +145,43 @@ def arksnap():
 				pass
 
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+
+
+@app.route("/qqqsnap")
+def qqqsnap():
+	pattern=request.args.get("pattern",None)
+	stocks={}
+	with open(abs_path+"\\data\\csv\\qqq.csv") as f:
+		for row in csv.reader(f):
+			stocks[row[2].replace(" ","")]={
+				"company":row[2].replace(" ","")
+			}
+		# print(stocks)
+	if "HoldingTicker" in stocks:
+		del stocks["HoldingTicker"]
+		# print(stocks)
+	if pattern:
+		file1=os.listdir(abs_path+"\\data\\qqq")
+	
+		for filename in file1:
+			try:
+				df=pd.read_csv(abs_path+"\\data\\qqq\\{}".format(filename))
+				function_style=getattr(talib,pattern)
+				symbol=filename.split(".")[0]
+				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
+				last=style.tail(1).values[0]
+				if last >0:
+					stocks[symbol][pattern]="bullish"
+				elif last<0:
+					stocks[symbol][pattern]="bearlish"
+				else:
+					stocks[symbol][pattern]=None
+					# print("{} trigger style : {}".format(filename,url))
+			except:
+				pass
+
+	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+
 
 
 

@@ -1,4 +1,4 @@
-from model import db
+from models import db
 
 class Company(db.Model):
     __tablename__="company"
@@ -14,4 +14,5 @@ class Company(db.Model):
         self.describe=describe
         self.industry=industry
         self.ceo=ceo
-        
+    def __repr__(self):
+        return "<Company %r>" %self.company
