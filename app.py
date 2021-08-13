@@ -4,18 +4,74 @@ import sys
 from typing import Pattern
 from flask import *
 import csv
+from flask_sqlalchemy import SQLAlchemy
 import talib
 import pandas as pd
-from models import *
-
-abs_path=os.path.abspath(os.getcwd())
-pre_path = os.path.abspath("../backtrade/py/")
-sys.path.append(pre_path)
-sys.path.append(abs_path)
-
+from config import *
 from pattern import *
+from company import *
 
-# app=Flask(__name__)
+app=Flask(__name__)
+db=SQLAlchemy(app)
+
+class Company_Ark(db.Model):
+    __tablename__="ark_company"
+    id=db.Column(db.Integer,primary_key=True)
+    company=db.Column(db.String(255))
+    describe=db.Column(db.String(255))
+    industry=db.Column(db.String(255))
+    ceo=db.Column(db.String(255))
+    def __init__(self,company,describe,industry,ceo):
+        self.company=company
+        self.describe=describe
+        self.industry=industry
+        self.ceo=ceo
+    def __repr__(self):
+        return "<Company %r>" %self.company
+
+class Company_Spy(db.Model):
+    __tablename__="spy_company"
+    id=db.Column(db.Integer,primary_key=True)
+    company=db.Column(db.String(255))
+    describe=db.Column(db.String(255))
+    industry=db.Column(db.String(255))
+    ceo=db.Column(db.String(255))
+    def __init__(self,company,describe,industry,ceo):
+        self.company=company
+        self.describe=describe
+        self.industry=industry
+        self.ceo=ceo
+    def __repr__(self):
+        return "<Company %r>" %self.company
+
+class Company_Qqq(db.Model):
+    __tablename__="qqq_company"
+    id=db.Column(db.Integer,primary_key=True)
+    company=db.Column(db.String(255))
+    describe=db.Column(db.String(255))
+    industry=db.Column(db.String(255))
+    ceo=db.Column(db.String(255))
+    def __init__(self,company,describe,industry,ceo):
+        self.company=company
+        self.describe=describe
+        self.industry=industry
+        self.ceo=ceo
+    def __repr__(self):
+        return "<Company %r>" %self.company
+
+
+# CONFIG
+app.secret_key="backtrader"
+app.config["JSON_AS_ASCII"]=False
+app.config["TEMPLATES_AUTO_RELOAD"]=True
+app.config["JSON_SORT_KEYS"] = False
+app.config['SQLALCHEMY_DATABASE_URI']="mysql://root:0000@localhost:3306/company"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+app.config['SQLALCHEMY_ECHO'] = True
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = False
+app.config["SQLALCHEMY_ENGINE_OPTIONS"]={"pool_pre_ping":True}
+
+# DB_INIT	
 
 
 
@@ -44,11 +100,6 @@ app.register_blueprint(appQqqConsolidate , url_prefix='/api')
 
 
 
-# CONFIG
-app.config["JSON_AS_ASCII"]=False
-app.config["TEMPLATES_AUTO_RELOAD"]=True
-app.config["JSON_SORT_KEYS"] = False
-app.secret_key="backtrader"
 
 
 
@@ -186,6 +237,7 @@ def qqqsnap():
 
 
 if __name__ == '__main__':
+
 	app.run(host='127.0.0.1', port=3000)		
 
 

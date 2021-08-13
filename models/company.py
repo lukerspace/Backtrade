@@ -15,8 +15,8 @@ my_cursor=cur.cursor()
 
 # my_cursor.execute("CREATE DATABASE company")
 
-my_cursor.execute("SHOW DATABASES")
-
+# my_cursor.execute("select * from arkeps")
+my_cursor.execute("show databases")
 # my_cursor.execute("USE fund")
 # my_cursor.execute("SHOW ables")
 for db in my_cursor:
