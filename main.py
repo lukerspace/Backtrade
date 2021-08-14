@@ -1,5 +1,4 @@
 from scrape_tool import *
-# from test import *
 
 
 scraper = IndexScraper()
