@@ -29,31 +29,31 @@ class IEX:
         r=requests.get(url)
         return r.json()
 
-    def get_dividends(self):
-        url=f"{self.BASE_URL}/stock/{self.symbol}/dividends/2y?token={self.token}"
-        r=requests.get(url)
-        return r.json()
+    # def get_dividends(self):
+    #     url=f"{self.BASE_URL}/stock/{self.symbol}/dividends/2y?token={self.token}"
+    #     r=requests.get(url)
+    #     return r.json()
 
-    def get_company_news(self, last=3):
-        url = f"{self.BASE_URL}/stock/{self.symbol}/news/last/{last}?token={self.token}"
-        r = requests.get(url)
-        return r.json()
+    # def get_company_news(self, last=3):
+    #     url = f"{self.BASE_URL}/stock/{self.symbol}/news/last/{last}?token={self.token}"
+    #     r = requests.get(url)
+    #     return r.json()
 
 
-# ark=open('data/csv/ark.csv').readlines()
-# symbols=[holding.strip() for holding in ark][1:]
-# for symbol in symbols:
-#     try:
-#         stock=IEX(config.os.getenv("IEX_API"),symbol=symbol)
+ark=open('data/csv/ark.csv').readlines()
+symbols=[holding.strip() for holding in ark][1:]
+for symbol in symbols:
+    # try:
+        stock=IEX(config.os.getenv("IEX_API"),symbol=symbol)
 
-#         dividend_list=stock.get_dividends()
-#         dividend_dict={}
-#         for i in range(len(dividend_list)):
-#             dividend_dict[i]=dividend_list[i]
-#         with open(pre_path+'/info/dividends/ark/{}.json'.format(symbol), 'w') as f:
-#             json.dump(dividend_dict, f)
-#     except:
-#         pass
+        dividend_list=stock.get_dividends()
+        dividend_dict={}
+        for i in range(len(dividend_list)):
+            dividend_dict[i]=dividend_list[i]
+        with open(pre_path+'/info/dividends/ark/{}.json'.format(symbol), 'w') as f:
+            json.dump(dividend_dict, f)
+    # except:
+        # pass
 # for k in stock_list:
 #     try:    
 #         stock=IEX(config.os.getenv("IEX_API"),symbol=k)

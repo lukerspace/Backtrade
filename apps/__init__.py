@@ -1,11 +1,7 @@
-import os
 from posixpath import abspath
-import sys
 from typing import Pattern
 from flask import *
-import csv
 from flask_sqlalchemy import SQLAlchemy
-
 from config import *
 
 from company import *
@@ -13,7 +9,6 @@ from company import *
 app=Flask(__name__)
 
 db=SQLAlchemy(app)
-
 
 
 # CONFIG

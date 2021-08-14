@@ -1,9 +1,8 @@
-
 import os
 from flask import *
 from apps import app
-from module import Company_Ark
 from config import *
+
 import csv
 from pattern import *
 import talib
