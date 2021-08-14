@@ -21,3 +21,4 @@ my_cursor.execute("show databases")
 # my_cursor.execute("SHOW ables")
 for db in my_cursor:
     print(db)
+print("========TEST=========")
