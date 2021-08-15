@@ -139,3 +139,6 @@ def qqqsnap():
 				pass
 
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+
+
+from insert import *
