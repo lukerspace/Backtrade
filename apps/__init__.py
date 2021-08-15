@@ -15,11 +15,11 @@ app.secret_key="backtrader"
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 app.config["JSON_SORT_KEYS"] = False
-app.config['SQLALCHEMY_DATABASE_URI']="mysql://root:0000@localhost:3306/companies"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = False
 app.config["SQLALCHEMY_ENGINE_OPTIONS"]={"pool_pre_ping":True}
+# app.config['SQLALCHEMY_DATABASE_URI']="mysql://root:0000@localhost:3306/companies"
 
 # SIGNAL API
 from api.api_signal import appQqqSign,appArkSign,appSpySign
