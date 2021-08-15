@@ -1,17 +1,14 @@
 import os
 import sys
 import requests
-import dotenv
 from dotenv import *
 from json import *
 import json
-
-pre_path = os.path.abspath("../backtrade")
-sys.path.append(pre_path)
-
 import config
 from config import *
 
+pre_path = os.path.abspath("../backtrade")
+sys.path.append(pre_path)
 
 load_dotenv()
 
@@ -39,34 +36,36 @@ class IEX:
         r = requests.get(url)
         return r.json()
 
+# # ARK
+ark=open('data/csv/ark.csv').readlines()
+symbols=[holding.strip() for holding in ark][1:]
+for symbol in symbols:
+    # GET_DIVIDEND
+    try:
+        stock=IEX(config.os.getenv("IEX_API"),symbol=symbol)
 
-# ark=open('data/csv/ark.csv').readlines()
-# symbols=[holding.strip() for holding in ark][1:]
-# for symbol in symbols:
-#     try:
-#         stock=IEX(config.os.getenv("IEX_API"),symbol=symbol)
+        dividend_list=stock.get_dividends()
+        dividend_dict={}
+        for i in range(len(dividend_list)):
+            dividend_dict[i]=dividend_list[i]
+        with open(pre_path+'/info/dividends/ark/{}.json'.format(symbol), 'w') as f:
+            json.dump(dividend_dict, f)
+    except:
+        pass
+    # GET_COMPANY
+    try:    
+        stock=IEX(config.os.getenv("IEX_API"),symbol=symbol)
+        company_dict=stock.get_company()
+        with open(pre_path+'/info/company/ark/{}.json'.format(symbol), 'w') as f:
+            json.dump(company_dict, f)
+    except:
+        pass
 
-#         dividend_list=stock.get_dividends()
-#         dividend_dict={}
-#         for i in range(len(dividend_list)):
-#             dividend_dict[i]=dividend_list[i]
-#         with open(pre_path+'/info/dividends/ark/{}.json'.format(symbol), 'w') as f:
-#             json.dump(dividend_dict, f)
-#     except:
-#         pass
-# for k in stock_list:
-#     try:    
-#         stock=IEX(config.os.getenv("IEX_API"),symbol=k)
-#         company_dict=stock.get_company()
-#         with open(pre_path+'/info/company/ark/{}.json'.format(k), 'w') as f:
-#             json.dump(company_dict, f)
-
-#     except:
-#         pass
-
+# # SPY
 holdings = open('data/csv/spy.csv').readlines()
 symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
 for ticker in symbols:
+    # GET_DIVIDEND
     try:
         stock=IEX(config.os.getenv("IEX_API"),symbol=ticker)        
         dividend_list=stock.get_dividends()
@@ -77,42 +76,44 @@ for ticker in symbols:
             json.dump(dividend_dict, f)
     except:
         pass
-    # try:
-        # stock=IEX(config.os.getenv("IEX_API"),symbol=i)
-        # company_dict=stock.get_company()
-        # with open(pre_path+'/info/company/spy/{}.json'.format(i), 'w') as f:
-            # json.dump(company_dict, f)
-    # except:
-        # pass
+     
+    # GET_COMPANY
+    try:
+        stock=IEX(config.os.getenv("IEX_API"),symbol=ticker)
+        company_dict=stock.get_company()
+        with open(pre_path+'/info/company/spy/{}.json'.format(ticker), 'w') as f:
+            json.dump(company_dict, f)
+    except:
+        pass
+
+# # QQQ
+holdings = open('data/csv/qqq.csv').readlines()
+symbols = [holding.split(',')[2].strip() for holding in holdings][1:]
+for ticker in symbols:
+    print(ticker)
+    # GET_DIVIDEND
+    try:
+        stock=IEX(config.os.getenv("IEX_API"),symbol=ticker)        
+        dividend_list=stock.get_dividends()
+        dividend_dict={}
+        for i in range(len(dividend_list)):
+            dividend_dict[i]=dividend_list[i]
+        with open(pre_path+'/info/dividends/qqq/{}.json'.format(ticker), 'w') as f:
+            json.dump(dividend_dict, f)
+    except:
+        pass
+     
+    # # GET_COMPANY
+    try:
+        stock=IEX(config.os.getenv("IEX_API"),symbol=ticker)
+        company_dict=stock.get_company()
+        with open(pre_path+'/info/company/qqq/{}.json'.format(ticker), 'w') as f:
+            json.dump(company_dict, f)
+    except:
+        pass
 
 
-
-
-
-
-
-
-
-
-# print(stock_list)
-# for i in stock_list:
-#     stock=IEX(config.os.getenv("IEX_API"),symbol=i)
-#     print(i)
-
-    # dividend_list=stock.get_dividends()
-    # dividend_dict={}
-    # for i in range(len(dividend_list)):
-    #     dividend_dict[i]=dividend_list[i]
-    # with open(pre_path+'/info/dividends/{}.json'.format(symbol), 'w') as f:
-    #     json.dump(dividend_dict, f)
-
-
-    # company_dict=stock.get_company()
-    # with open(pre_path+'/info/company/aapl.json', 'w') as f:
-    #     json.dump(company_dict, f)
-
-
-#TEST
+# MORE_FUNCTION(NEED PAY)
 
 # def get_stats(self):
 #     url = f"{self.BASE_URL}/stock/{self.symbol}/advanced-stats?token={self.token}"

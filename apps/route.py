@@ -8,7 +8,10 @@ from pattern import *
 import talib
 import pandas as pd
 
-
+abs_path=os.path.abspath(os.getcwd())
+abs_path=abs_path+"\\apps\\"
+sys.path.append(abs_path)
+print("=============",abs_path,"===============")
 
 # route
 @app.route("/")
@@ -141,4 +144,4 @@ def qqqsnap():
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
 
-from insert import *
+# from table.company_insert import *
