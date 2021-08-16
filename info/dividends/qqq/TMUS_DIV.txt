@@ -1,1 +1,1 @@
-{"0":{"paymentDate":1367366400000,"amount":4.06},"1":{"paymentDate":1448582400000,"amount":0.6875}}
+{"0":{"paymentDate":1367366400000,"amount":4.06}}

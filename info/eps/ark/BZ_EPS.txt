@@ -1,2 +1,1 @@
 Date,Estimate,Actual
-2021-06-14,None,None
