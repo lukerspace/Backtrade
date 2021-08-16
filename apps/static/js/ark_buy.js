@@ -9,9 +9,10 @@ async function GetData(number) {
   buy = data["data"];
   sell = selldata["data"];
 
-  const eps_url ="/api/arkeps";
-  const r_eps=await fetch(eps_url);
-  const epsdata = await r_eps.json();
+  // 
+  // const eps_url ="/api/arkeps";
+  // const r_eps=await fetch(eps_url);
+  // const epsdata = await r_eps.json();
 
 
   let title = document.getElementById("ticker");
@@ -31,9 +32,10 @@ async function GetData(number) {
     if (sell_date !== undefined) {
       // text
       title.innerText = "TICKER : " + buy[number]["ticker"];
-      ///////////////// EPS_DATA
-      const epsTickerInfo= epsdata["data"][buy[number]["ticker"]]
-      console.log(buy[number]["ticker"],epsTickerInfo);
+
+      ///////////// EPS_DATA////////////////////////////////////////////////
+      // const epsTickerInfo= epsdata["data"][buy[number]["ticker"]]
+      // console.log(buy[number]["ticker"],epsTickerInfo);
       
       // sinal_date
       date.innerText = "SIGNAL DATE : " + buy[number]["date"];

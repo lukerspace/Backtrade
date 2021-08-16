@@ -148,7 +148,7 @@ def qqqsnap():
 
 
 # ESTABLISH TABLE & INSERT DATA
-# from table.company_insert import *
+# from model.company_insert import *
 
 # FETCH THE DATA
 test=Company_Ark.query.all()
