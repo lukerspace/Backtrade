@@ -2,6 +2,7 @@ from posixpath import abspath
 from typing import Pattern
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
+import config
 from config import *
 
 
@@ -19,7 +20,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = False
 app.config["SQLALCHEMY_ENGINE_OPTIONS"]={"pool_pre_ping":True}
-# app.config['SQLALCHEMY_DATABASE_URI']="mysql://root:0000@localhost:3306/companies"
+app.config['SQLALCHEMY_DATABASE_URI']="mysql://{}:{}@localhost:3306/companies".format(config.DBUSER,config.PASSWORD)
 
 # SIGNAL API
 from api.api_signal import appQqqSign,appArkSign,appSpySign
@@ -41,4 +42,4 @@ app.register_blueprint(appArkConsolidate , url_prefix='/api')
 app.register_blueprint(appQqqConsolidate , url_prefix='/api')
 
 
-from apps import route
+from apps.route import *

@@ -28,3 +28,5 @@ API_MAX_LENGTH = 100
 
 IEX_API=os.getenv("IEX_API")
 
+PASSWORD="0000"
+DBUSER="root"

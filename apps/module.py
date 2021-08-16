@@ -16,7 +16,8 @@ class Company_Ark(db.Model):
         self.industry=industry
         self.website=website
     def __repr__(self):
-        return "<Company %r>" %self.company
+        return "{},{},{},{},{}".format(self.ticker,self.company,self.describe,self.industry,self.website)
+
 
 class Company_Spy(db.Model):
     __tablename__="spy_company"
@@ -34,7 +35,7 @@ class Company_Spy(db.Model):
         self.industry=industry
         self.website=website
     def __repr__(self):
-        return "<Company %r>" %self.company
+        return  "{},{},{},{},{}".format(self.ticker,self.company,self.describe,self.industry,self.website)
 
 class Company_Qqq(db.Model):
     __tablename__="qqq_company"
@@ -52,4 +53,6 @@ class Company_Qqq(db.Model):
         self.industry=industry
         self.website=website
     def __repr__(self):
-        return "<Company %r>" %self.company
+        return  "{},{},{},{},{}".format(self.ticker,self.company,self.describe,self.industry,self.website)
+
+

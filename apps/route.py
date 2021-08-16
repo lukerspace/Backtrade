@@ -1,22 +1,20 @@
-from apps.module import Company_Ark
 import os
 from flask import *
 from apps import app
 from config import *
-
 import csv
 from pattern import *
 import talib
 import pandas as pd
+from apps.module import *
+from apps import db
 
+# PATH
 abs_path=os.path.abspath(os.getcwd())
-# abs_path=abs_path+"\\apps\\"
-sys.path.append(abs_path)
+sys.path.append(abs_path)  # abs_path=abs_path+"\\apps\\"
 
-@app.route("/test")
-def test():
-    test=Company_Ark.query.all()
-    return test
+# DB INITIATE
+db.create_all()
 
 # route
 @app.route("/")
@@ -149,5 +147,11 @@ def qqqsnap():
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
 
-
+# ESTABLISH TABLE & INSERT DATA
 # from table.company_insert import *
+
+# FETCH THE DATA
+test=Company_Ark.query.all()
+print(test)
+print(Company_Qqq.query.first())
+print(Company_Qqq.query.all())
