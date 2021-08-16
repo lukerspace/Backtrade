@@ -4,6 +4,9 @@ from flask import *
 from datetime import *
 import pandas as pd
 
+from apps import db
+from apps.module import *
+
 abs_path=os.path.abspath(os.getcwd())
 
 
@@ -121,6 +124,4 @@ def ark_consolidate():
                 # print("{} is consolidating".format(symbol))
     api_breakout={"breakout":breakout_dict,"consolidate":consolidate_dict}
     return  jsonify({"data": api_breakout}) 
-
-
 

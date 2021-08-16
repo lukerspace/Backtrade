@@ -1,3 +1,4 @@
+from apps.module import Company_Ark
 import os
 from flask import *
 from apps import app
@@ -11,6 +12,11 @@ import pandas as pd
 abs_path=os.path.abspath(os.getcwd())
 # abs_path=abs_path+"\\apps\\"
 sys.path.append(abs_path)
+
+@app.route("/test")
+def test():
+    test=Company_Ark.query.all()
+    return test
 
 # route
 @app.route("/")
@@ -141,6 +147,7 @@ def qqqsnap():
 				pass
 
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+
 
 
 # from table.company_insert import *
