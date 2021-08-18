@@ -16,7 +16,10 @@ class Company_Ark(db.Model):
         self.industry=industry
         self.website=website
     def __repr__(self):
-        return "{},{},{},{},{}".format(self.ticker,self.company,self.describe,self.industry,self.website)
+        return  str({"ticker":"{}".format(self.ticker),"company":"{}".format(self.company),"describe":"{}".format(self.describe),\
+            "industry":"{}".format(self.industry),"website":"{}".format(self.website)})
+    # def as_dict(self):
+    #     return{c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
 class Company_Spy(db.Model):
@@ -35,7 +38,8 @@ class Company_Spy(db.Model):
         self.industry=industry
         self.website=website
     def __repr__(self):
-        return  "{},{},{},{},{}".format(self.ticker,self.company,self.describe,self.industry,self.website)
+        return  str({"ticker":"{}".format(self.ticker),"company":"{}".format(self.company),"describe":"{}".format(self.describe),\
+            "industry":"{}".format(self.industry),"website":"{}".format(self.website)})
 
 class Company_Qqq(db.Model):
     __tablename__="qqq_company"
@@ -53,6 +57,7 @@ class Company_Qqq(db.Model):
         self.industry=industry
         self.website=website
     def __repr__(self):
-        return  "{},{},{},{},{}".format(self.ticker,self.company,self.describe,self.industry,self.website)
+        return  str({"ticker":"{}".format(self.ticker),"company":"{}".format(self.company),"describe":"{}".format(self.describe),\
+            "industry":"{}".format(self.industry),"website":"{}".format(self.website)})
 
 

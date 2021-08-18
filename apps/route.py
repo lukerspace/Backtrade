@@ -151,7 +151,14 @@ def qqqsnap():
 # from model.company_insert import *
 
 # FETCH THE DATA
-test=Company_Ark.query.all()
-print(test)
-print(Company_Qqq.query.first())
-print(Company_Qqq.query.all())
+# test=Company_Ark.query.all()
+# print(jsonify(test))
+test=Company_Spy.query.first()
+# print(Company_Qqq.query.all())
+import json
+print("=====",test.describe)
+# y=jsonify(test)
+# # for i in test:
+# 	print(i)
+	# for j in i:
+		# print(j)
