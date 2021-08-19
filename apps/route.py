@@ -147,7 +147,27 @@ def qqqsnap():
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
 
-a=Company_Qqq.query.filter_by(ticker="SQ").first()
-print(a)
+# ESTABLISH TABLE & INSERT DATA
+# from model.company_insert import *
+from model.eps_insert import *
+# FETCH THE DATA
+# test=Company_Ark.query.all()
+# print(jsonify(test))
+# test=Company_Qqq.query.all()
+# # print(test)
+# # print(Company_Qqq.query.all())
+# import json
+# # print("=====",test.describe)
+# # y=jsonify(test)
+# dict={}
+# ind=0
+# for i in test:
+# 	dict[i.ticker]=i
+# # print(dict[AAPL/.website)
+# # print(type(dict))
 
+# # z=json.dumps(dict,default=lambda obj:obj.__dict__,sort_keys=True,indent=4)
+# # print(z)
+# a=Company_Qqq.query.filter_by(ticker="AAPL"().all())
+# print(a)
 

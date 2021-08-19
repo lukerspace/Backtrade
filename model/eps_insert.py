@@ -4,9 +4,10 @@ import json
 from config import *
 import pandas as pd
 
-# from apps import db 
-# from apps.module import *
-
+from apps import db 
+from apps.module import *
+import datetime
+from datetime import *
 
 ark_path="info/eps/ark/"
 ark_dir = os.listdir(ark_path)
@@ -15,11 +16,41 @@ eps={}
 for ticker in ark_dir:
     df=pd.read_csv('info/eps/ark/{}'.format(ticker))
     df=df.head(4).reset_index()
+    df["Date"]=pd.to_datetime(df["Date"],format='%Y/%m/%d')
     # print(df)
     symbol=ticker.split("_")[0]
     # print(symbol)
-    a=df.loc[:,["Date"]]
-    print(a)
+    if len(df)==0:
+        pass
+    else:
+        time_first=df.loc[0:0,["Date"]].values
+        time_second=df.loc[1:1,["Date"]].values
+        time_third=df.loc[2:2,["Date"]].values
+        time_fourth=df.loc[3:3,["Date"]].values
+        
+        est_first=df.loc[0:0,["Estimate"]]
+        est_second=df.loc[1:1,["Estimate"]]
+        est_third=df.loc[2:2,["Estimate"]]
+        est_fourth=df.loc[3:3,["Estimate"]]
+        
+        act_first=df.loc[0:0,["Actual"]]
+        act_second=df.loc[1:1,["Actual"]]
+        act_third=df.loc[2:2,["Actual"]]
+        act_fourth=df.loc[3:3,["Actual"]]
+
+        ark_eps_insert=Eps_Ark(symbol,time_first,time_second,time_third,time_fourth)
+        db.session.add(ark_eps_insert)
+        db.session.commit()
+        print(time_first)
+    # print("=============================")
+    # print(symbol)
+    # print("---------")
+    # print(time_first)
+    # print("---------")
+    # print(time_second)
+    # print("---------")
+    # print(time_fourth)
+    # print(est_first)
     # with open("info/eps/ark/{}".format(ticker)) as f:
             # for i in f.readline():
 #                 dic[ticker]=i
