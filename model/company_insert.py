@@ -20,7 +20,7 @@ for ticker in ark_dir:
             company_describe=company_data["description"][:3000]
             company_ind=company_data["industry"]
             company_web=company_data["website"]
-            # print(company_name,company_describe,company_ind,company_web)
+
             ark_company_insert=Company_Ark(company_ticker,company_name,company_describe,company_ind,company_web)
             db.session.add(ark_company_insert)
             db.session.commit()
@@ -70,17 +70,3 @@ for ticker in qqq_dir:
         print(ticker,"ERROR")
 
 
-# import mysql.connector
-# from mysql.connector import pooling
-# connection_pool =mysql.connector.pooling.MySQLConnectionPool(
-#     pool_name="mysql",
-#     pool_size=20,
-#     host="localhost",
-#     user="root",
-#     password="0000")
-# cur=connection_pool.get_connection()
-# my_cursor=cur.cursor()
-# my_cursor.execute("CREATE DATABASE company")
-# my_cursor.execute("SHOW DATABASESS")
-# for db in my_cursor:
-#     print(db)
