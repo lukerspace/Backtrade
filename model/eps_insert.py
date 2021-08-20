@@ -1,13 +1,13 @@
 import os 
 import sys
-import json
 from config import *
 import pandas as pd
+import datetime
+from datetime import *
+
 
 from apps import db 
 from apps.module import *
-import datetime
-from datetime import *
 
 ark_path="info/eps/ark/"
 ark_dir = os.listdir(ark_path)
@@ -15,97 +15,89 @@ data={}
 eps={}
 for ticker in ark_dir:
     df=pd.read_csv('info/eps/ark/{}'.format(ticker))
-    df=df.head(4).reset_index()
-    df["Date"]=pd.to_datetime(df["Date"],format='%Y/%m/%d')
-    # print(df)
+    df=df.head(3).reset_index()
+    df["Date"]=pd.to_datetime(df["Date"],format='%Y-%m-%d')
     symbol=ticker.split("_")[0]
-    # print(symbol)
-    if len(df)==0:
+
+    if len(df)!=3:
         pass
     else:
-        time_first=df.loc[0:0,["Date"]].values
-        time_second=df.loc[1:1,["Date"]].values
-        time_third=df.loc[2:2,["Date"]].values
-        time_fourth=df.loc[3:3,["Date"]].values
-        
-        est_first=df.loc[0:0,["Estimate"]]
-        est_second=df.loc[1:1,["Estimate"]]
-        est_third=df.loc[2:2,["Estimate"]]
-        est_fourth=df.loc[3:3,["Estimate"]]
-        
-        act_first=df.loc[0:0,["Actual"]]
-        act_second=df.loc[1:1,["Actual"]]
-        act_third=df.loc[2:2,["Actual"]]
-        act_fourth=df.loc[3:3,["Actual"]]
+        time_first=df.at[0,"Date"]
+        time_second=df.at[1,"Date"]
+        time_third=df.at[2,"Date"]
 
-        ark_eps_insert=Eps_Ark(symbol,time_first,time_second,time_third,time_fourth)
+        est_first=df.at[0,"Estimate"]
+        est_second=df.at[1,"Estimate"]
+        est_third=df.at[2,"Estimate"]
+      
+        act_first=df.at[0,"Actual"]
+        act_second=df.at[1,"Actual"]
+        act_third=df.at[2,"Actual"]
+      
+        ark_eps_insert=Eps_Ark(symbol,time_first,time_second,time_third,est_first,est_second,est_third,act_first,act_second,act_third)
         db.session.add(ark_eps_insert)
         db.session.commit()
-        print(time_first)
-    # print("=============================")
-    # print(symbol)
-    # print("---------")
-    # print(time_first)
-    # print("---------")
-    # print(time_second)
-    # print("---------")
-    # print(time_fourth)
-    # print(est_first)
-    # with open("info/eps/ark/{}".format(ticker)) as f:
-            # for i in f.readline():
-#                 dic[ticker]=i
-                      
-# #             company_data=json.load(f)
-#             company_ticker=company_data["symbol"]
-#             company_name=company_data["companyName"]
-#             company_describe=company_data["description"][:3000]
-#             company_ind=company_data["industry"]
-#             company_web=company_data["website"]
-#             # print(company_name,company_describe,company_ind,company_web)
-#             ark_company_insert=Company_Ark(company_ticker,company_name,company_describe,company_ind,company_web)
-#             db.session.add(ark_company_insert)
-#             db.session.commit()
-#     except:
-#         print(ticker,"ERROR")
 
 
-# spy_path="info/company/spy/"
-# spy_dir = os.listdir(spy_path)
+spy_path="info/eps/spy/"
+spy_dir = os.listdir(spy_path)
+data={}
+eps={}
+for ticker in spy_dir:
+    df=pd.read_csv('info/eps/spy/{}'.format(ticker))
+    df=df.head(3).reset_index()
+    df["Date"]=pd.to_datetime(df["Date"],format='%Y-%m-%d')
+    symbol=ticker.split("_")[0]
 
-# for ticker in spy_dir:
-# #     # print(ticker)
-#     try:
-#         with open("info/company/spy/{}".format(ticker)) as f:
-#             company_data=json.load(f)
-#             company_ticker=company_data["symbol"]
-#             company_name=company_data["companyName"]
-#             company_describe=company_data["description"][:3000]
-#             company_ind=company_data["industry"]
-#             company_web=company_data["website"]
-#             # print(company_name,company_describe,company_ind,company_web)
-#             spy_company_insert=Company_Spy(company_ticker,company_name,company_describe,company_ind,company_web)
-#             db.session.add(spy_company_insert)
-#             db.session.commit()
-#     except:
-#         print(ticker,"ERROR")
+    if len(df)!=3:
+        pass
+    else:
+        time_first=df.at[0,"Date"]
+        time_second=df.at[1,"Date"]
+        time_third=df.at[2,"Date"]
+
+        est_first=df.at[0,"Estimate"]
+        est_second=df.at[1,"Estimate"]
+        est_third=df.at[2,"Estimate"]
+      
+        act_first=df.at[0,"Actual"]
+        act_second=df.at[1,"Actual"]
+        act_third=df.at[2,"Actual"]
+      
+        spy_eps_insert=Eps_Spy(symbol,time_first,time_second,time_third,est_first,est_second,est_third,act_first,act_second,act_third)
+        db.session.add(spy_eps_insert)
+        db.session.commit()
 
 
-# qqq_path="info/company/qqq/"
-# qqq_dir = os.listdir(qqq_path)
+qqq_path="info/eps/qqq/"
+qqq_dir = os.listdir(qqq_path)
+data={}
+eps={}
+for ticker in qqq_dir:
+    df=pd.read_csv('info/eps/qqq/{}'.format(ticker))
+    df=df.head(3).reset_index()
+    df["Date"]=pd.to_datetime(df["Date"],format='%Y-%m-%d')
+    symbol=ticker.split("_")[0]
+    # print(df)
+    if len(df)!=3:
+        pass
+    else:
+        time_first=df.at[0,"Date"]
+        time_second=df.at[1,"Date"]
+        time_third=df.at[2,"Date"]
 
-# for ticker in qqq_dir:
-#     try:
-#         with open("info/company/qqq/{}".format(ticker)) as f:
-#             company_data=json.load(f)
-#             # print(company_data)
-#             company_ticker=company_data["symbol"]
-#             company_name=company_data["companyName"]
-#             company_describe=company_data["description"][:3000]
-#             company_ind=company_data["industry"]
-#             company_web=company_data["website"]
-#             # print(company_name,company_describe,company_ind,company_web)
-#             spy_company_insert=Company_Qqq(company_ticker,company_name,company_describe,company_ind,company_web)
-#             db.session.add(spy_company_insert)
-#             db.session.commit()
-#     except:
-#         print(ticker,"ERROR")
+        est_first=df.at[0,"Estimate"]
+        est_second=df.at[1,"Estimate"]
+        est_third=df.at[2,"Estimate"]
+      
+        act_first=df.at[0,"Actual"]
+        act_second=df.at[1,"Actual"]
+        act_third=df.at[2,"Actual"]
+      
+        qqq_eps_insert=Eps_Qqq(symbol,time_first,time_second,time_third,est_first,est_second,est_third,act_first,act_second,act_third)
+        db.session.add(qqq_eps_insert)
+        db.session.commit()
+
+
+
+     
