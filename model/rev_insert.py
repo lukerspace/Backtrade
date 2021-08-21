@@ -6,11 +6,8 @@ import datetime
 from datetime import *
 import json
 
-
-
 from apps import db 
 from apps.module import *
-
 
 ark_path="info/revenue/ark/"
 ark_dir = os.listdir(ark_path)

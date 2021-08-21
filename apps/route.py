@@ -72,7 +72,6 @@ def spysnap():
 
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
-
 @app.route("/arksnap")
 def arksnap():
 	pattern=request.args.get("pattern",None)
@@ -110,7 +109,6 @@ def arksnap():
 
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
-
 @app.route("/qqqsnap")
 def qqqsnap():
 	pattern=request.args.get("pattern",None)
@@ -147,10 +145,17 @@ def qqqsnap():
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
 
-# ESTABLISH TABLE & INSERT DATA
-from model.company_insert import *
-from model.eps_insert import *
-from model.rev_insert import *
+
+# # ESTABLISH TABLE & INSERT DATA
+
+# from model.company_insert import *
+# from model.eps_insert import *
+# from model.rev_insert import *
+# from model.div_insert import *
+
+
 
 # FETCH THE DATA
-# test=Company_Ark.query.all()
+
+# test=Rev_Spy.query.filter_by(ticker="AAPL").first()
+# print(test)
