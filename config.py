@@ -5,11 +5,13 @@ import sys
 abs_path=os.path.abspath(os.getcwd())
 pre_path = os.path.abspath("../backtrade/py/")
 model_path=os.path.abspath("../backtrade/apps/")
+vix_path=os.path.abspath("../backtrade/vix/")
 
 
 sys.path.append(pre_path)
 sys.path.append(abs_path)
 sys.path.append(model_path)
+sys.path.append(vix_path)
 
 print("DIRECTORY SETUP DONE")
 

@@ -8,6 +8,7 @@ import talib
 import pandas as pd
 from apps.module import *
 from apps import db
+from vix import *
 
 # PATH
 abs_path=os.path.abspath(os.getcwd())
