@@ -2,7 +2,12 @@ import numpy as np
 import pandas as pd
 import btalib
 import yfinance as yf
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+import matplotlib
+#import matplotlib.pyplot as plt
+matplotlib.use('Agg') #
+from matplotlib import pyplot as plt #
+
 import requests
 import config
 from datetime import *
