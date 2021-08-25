@@ -2,13 +2,15 @@ import os
 from flask import *
 from apps import app
 from config import *
+from vix import *
+
 import csv
 from pattern import *
 import talib
 import pandas as pd
 from apps.module import *
 from apps import db
-from vix import *
+
 
 
 # PATH
