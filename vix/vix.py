@@ -79,7 +79,7 @@ def vix_spy():
     cerebro.addstrategy(VIXStrategy)
     cerebro.run()
 
-    saveplots(cerebro, file_path = 'vix/vix_spy.png') #run it
+    saveplots(cerebro, file_path = 'apps/static/vix/spy.png') #run it
     return print("=== update the latest VIX on DATE : {} ===".format(datetime.now()))
 
 def vix_qqq():
@@ -129,7 +129,7 @@ def vix_qqq():
     cerebro.addstrategy(VIXStrategy)
     cerebro.run()
 
-    saveplots(cerebro, file_path = 'vix/vix_qqq.png') #run it
+    saveplots(cerebro, file_path = 'apps/static/vix/qqq.png') #run it
     return print("=== update the latest VIX on DATE : {} ===".format(datetime.now()))
 
 
@@ -180,7 +180,7 @@ def vix_arkk():
     cerebro.addstrategy(VIXStrategy)
     cerebro.run()
 
-    saveplots(cerebro, file_path = 'vix/vix_arkk.png') #run it
+    saveplots(cerebro, file_path = 'apps/static/vix/arkk.png') #run it
     return print("=== update the latest VIX on DATE : {} ===".format(datetime.now()))
 
 

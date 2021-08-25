@@ -10,6 +10,7 @@ from apps.module import *
 from apps import db
 from vix import *
 
+
 # PATH
 abs_path=os.path.abspath(os.getcwd())
 sys.path.append(abs_path)  # abs_path=abs_path+"\\apps\\"

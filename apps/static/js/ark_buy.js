@@ -45,6 +45,8 @@ async function GetData(number) {
       let test = document.getElementById("test");
       test.src = "./static/png/" + buy[number]["ticker"] + ".png";
 
+
+
       return (size = Object.keys(buy).length) & (id = number);
     } else {
       console.log("wrong2")
