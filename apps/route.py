@@ -2,7 +2,7 @@ import os
 from flask import *
 from apps import app
 from config import *
-from vix import *
+# from vix import *
 
 import csv
 from pattern import *
@@ -10,7 +10,6 @@ import talib
 import pandas as pd
 from apps.module import *
 from apps import db
-
 
 
 # PATH
@@ -40,6 +39,46 @@ def spy():
 @app.route("/squeeze")
 def squeeze():
 	return render_template("squeeze.html")
+
+@app.route("/fundamental",methods=["GET"])
+def fundamental():
+	
+	stock=request.args.get("symbol","AAPL")
+	# title=request.form["symbol"]
+	stock=stock.upper()
+	company=Company_Ark.query.filter_by(ticker=stock).first()
+	if company==None:
+			company=Company_Qqq.query.filter_by(ticker=stock).first()
+			if company==None:
+				company=Company_Spy.query.filter_by(ticker=stock).first()
+				if company==None:
+						company="NO COMPANY DATA IN THE DATABASE"
+
+	eps=Eps_Ark.query.filter_by(ticker=stock).first()
+	if eps==None:
+		eps=Eps_Qqq.query.filter_by(ticker=stock).first()
+		if eps==None:
+			eps=Eps_Spy.query.filter_by(ticker=stock).first()
+			if eps==None:
+					eps="NO EPS DATA IN THE DATABASE"
+
+	rev=Rev_Ark.query.filter_by(ticker=stock).first()
+	if rev==None:
+		rev=Rev_Qqq.query.filter_by(ticker=stock).first()
+		if rev==None:
+			rev=Rev_Spy.query.filter_by(ticker=stock).first()
+			if rev==None:
+					rev="NO REVENUE DATA IN THE DATABASE"
+
+	dividend=Div_Ark.query.filter_by(ticker=stock).first()
+	if dividend==None:
+		dividend=Div_Qqq.query.filter_by(ticker=stock).first()
+		if dividend==None:
+			dividend=Div_Spy.query.filter_by(ticker=stock).first()
+			if dividend==None:
+					dividend="NO REVENUE DATA IN THE DATABASE"
+	
+	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev)
 
 @app.route("/spysnap")
 def spysnap():
@@ -149,7 +188,6 @@ def qqqsnap():
 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
 
-
 # # ESTABLISH TABLE & INSERT DATA
 
 # from model.company_insert import *
@@ -161,5 +199,5 @@ def qqqsnap():
 
 # FETCH THE DATA
 
-# test=Rev_Spy.query.filter_by(ticker="AAPL").first()
-# print(test)
+test=Rev_Spy.query.filter_by(ticker="AAPL").first().to_dict()
+print("==========",dict(test["time_first"])['date'])

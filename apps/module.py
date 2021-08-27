@@ -148,7 +148,11 @@ class Rev_Spy(db.Model):
         self.time_third=time_third 
     def __repr__(self):
         return  str({"ticker":"{}".format(self.ticker),"first":"{}".format(self.time_first),"second":"{}".format(self.time_second),"third":"{}".format(self.time_third)})
-
+    def to_dict(self):
+        return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
+    
+    db.Model.to_dict=to_dict
+    
 class Rev_Qqq(db.Model):
     __tablename__="qqq_rev"
     __table_args__ = {'extend_existing': True}

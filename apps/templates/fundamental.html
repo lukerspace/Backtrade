@@ -7,6 +7,26 @@
     <title>Hello, world!</title>
 </head>
 <body>
-    {{ content }}
+    
+
+    <form action="/fundamental" method="GET">
+        TICKER : <input type="text" name="symbol" />
+        <button>SEARCH</button>
+    </form>
+
+    <h1>{{company.ticker}}</h1>
+    <div>NAME: </div>
+    <div>{{company.company}}</div>
+    <div>DESCIPTION: </div>
+    <div> {{company.describe}}</div>
+    <div>INDUSTRY:</div>
+    <div>{{company.industry}}</div>
+    <div>WEBSITE: </div>
+    <div>{{company.website}}</div>
+    <hr>
+    {{eps}}
+    <hr>
+    {{rev}}
+
 </body>
 </html>
