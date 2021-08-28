@@ -18,11 +18,11 @@ class Company_Ark(db.Model):
         self.describe=describe
         self.industry=industry
         self.website=website
+    def as_dict(self):
+        return{c.name: getattr(self, c.name) for c in self.__table__.columns}
     # def __repr__(self):
     #     return  str({"ticker":"{}".format(self.ticker),"company":"{}".format(self.company),"describe":"{}".format(self.describe),\
     #         "industry":"{}".format(self.industry),"website":"{}".format(self.website)})
-    def as_dict(self):
-        return{c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 class Company_Spy(db.Model):
     __tablename__="spy_company"
@@ -39,9 +39,6 @@ class Company_Spy(db.Model):
         self.describe=describe
         self.industry=industry
         self.website=website
-    # def __repr__(self):
-    #     return  str({"ticker":"{}".format(self.ticker),"company":"{}".format(self.company),"describe":"{}".format(self.describe),\
-    #         "industry":"{}".format(self.industry),"website":"{}".format(self.website)})
     def as_dict(self):
         return{c.name: getattr(self, c.name) for c in self.__table__.columns}
 class Company_Qqq(db.Model):
@@ -59,9 +56,6 @@ class Company_Qqq(db.Model):
         self.describe=describe
         self.industry=industry
         self.website=website
-    # def __repr__(self):
-    #     return  str({"ticker":"{}".format(self.ticker),"company":"{}".format(self.company),"describe":"{}".format(self.describe),\
-    #         "industry":"{}".format(self.industry),"website":"{}".format(self.website)})
     def as_dict(self):
         return{c.name: getattr(self, c.name) for c in self.__table__.columns}
 # # EPS

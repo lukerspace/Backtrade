@@ -61,8 +61,6 @@ def fundamental():
 			eps=Eps_Spy.query.filter_by(ticker=stock).first()
 			if eps==None:
 					eps=None
-			else:
-    				eps=eps.as_dict()
 					
 	rev=Rev_Ark.query.filter_by(ticker=stock).first()
 	if rev==None:
@@ -81,6 +79,7 @@ def fundamental():
 					dividend=None
 	
 	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev)
+
 
 @app.route("/spysnap")
 def spysnap():
@@ -202,8 +201,4 @@ def qqqsnap():
 # FETCH THE DATA
 
 # test=Rev_Spy.query.filter_by(ticker="AAPL").first().as_dict()
-# # for attr in test:
-# # 	temp_attr = {c.name: getattr(attr, c.name) for c in attr.__table__.columns}
-# # 	attraction_list.append(temp_attr)
 # print(test)
-# print(test["time_third"]["date"])

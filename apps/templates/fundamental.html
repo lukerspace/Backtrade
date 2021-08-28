@@ -59,32 +59,32 @@
         </form>
         {%if company!=None%}
             <h1>{{company.ticker}}</h1>
-            <div>NAME: </div>
-            <div>{{company.company}}</div>
-            <div>DESCIPTION: </div>
-            <div> {{company.describe}}</div>
-            <div>INDUSTRY:</div>
-            <div>{{company.industry}}</div>
-            <div>WEBSITE: </div>
-            <div>{{company.website}}</div>
+           
+            <div>Name : {{company.company}}</div>
+            
+            <div>Description : {{company.describe}}</div>
+            
+            <div>Industry : {{company.industry}}</div>
+            
+            <div>WebsiteLink : {{company.website}}</div>
             <hr>
             {%if eps!=None %}
                 <div>EPS DATE: </div>
                 <p>Date:{{eps["time_third"]["date"]}}</p>
                 <p>Estimate:{{eps["time_third"]["estimate"]}}</p>
                 <p>Actual:{{eps["time_third"]["actual"]}}</p>
-                <br>
+   
                 <p>Date:{{eps["time_second"]["date"]}}</p>
                 <p>Estimate:{{eps["time_second"]["estimate"]}}</p>
                 <p>Actual:{{eps["time_second"]["actual"]}}</p>
-                <br>
+   
                 <p>Date:{{eps["time_first"]["date"]}}</p>
                 <p>Estimate:{{eps["time_first"]["estimate"]}}</p>
                 <p>Actual:{{eps["time_first"]["actual"]}}</p>
                 <hr>
             {%endif%}
             {%if eps== None%}
-                <p>No EPS infomation in Datebase</p>
+                <p>No EPS infomation in Database</p>
                 <hr>
             {% endif %}
             {%if rev!=None %}
@@ -92,26 +92,39 @@
                 <p>Date:{{rev["time_first"]["date"]}}</p>
                 <p>Estimate:{{rev["time_first"]["estimateRevenue"]}}</p>
                 <p>Actual:{{rev["time_first"]["actualRevenue"]}}</p>
-                <br>
+   
                 <p>Date:{{rev["time_second"]["date"]}}</p>
                 <p>Estimate:{{rev["time_second"]["estimateRevenue"]}}</p>
                 <p>Actual:{{rev["time_second"]["actualRevenue"]}}</p>
-                <br>
+
                 <p>Date:{{rev["time_third"]["date"]}}</p>
                 <p>Estimate:{{rev["time_third"]["estimateRevenue"]}}</p>
                 <p>Actual:{{rev["time_third"]["actualRevenue"]}}</p>
                 <hr>
             {%endif%}
             {%if rev== None%}
-                <p>No Revenue infomation in Datebase</p>
+                <p>No Revenue infomation in Database</p>
                 <hr>
             {% endif %}
-
-            
-            
+            {%if dividend!=None %}
+                <div>Dividend</div>
+                <p>Date:{{dividend["time_first"]["date"]}}</p>
+                <p>Amount:{{dividend["time_first"]["amt"]}}</p>
+  
+                <p>Date:{{dividend["time_second"]["date"]}}</p>
+                <p>Amount:{{dividend["time_second"]["amt"]}}</p>
+               
+                <p>Date:{{dividend["time_third"]["date"]}}</p>
+                <p>Amount:{{dividend["time_third"]["amt"]}}</p>
+                <hr>
+            {%endif%}
+            {%if dividend== None%}
+                <p>No Dividend infomation in Database</p>
+                <hr>
+            {% endif %}
         {%endif%}
         {%if company==None%}
-            <p>No infomation in Datebase</p>
+            <p>No infomation in Database</p>
         {%endif%}
 
   </main>  
