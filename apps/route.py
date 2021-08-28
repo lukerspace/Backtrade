@@ -52,7 +52,7 @@ def fundamental():
 			if company==None:
 				company=Company_Spy.query.filter_by(ticker=stock).first()
 				if company==None:
-						company="NO COMPANY DATA IN THE DATABASE"
+						company=None
 
 	eps=Eps_Ark.query.filter_by(ticker=stock).first()
 	if eps==None:
@@ -60,15 +60,17 @@ def fundamental():
 		if eps==None:
 			eps=Eps_Spy.query.filter_by(ticker=stock).first()
 			if eps==None:
-					eps="NO EPS DATA IN THE DATABASE"
-
+					eps=None
+			else:
+    				eps=eps.as_dict()
+					
 	rev=Rev_Ark.query.filter_by(ticker=stock).first()
 	if rev==None:
 		rev=Rev_Qqq.query.filter_by(ticker=stock).first()
 		if rev==None:
 			rev=Rev_Spy.query.filter_by(ticker=stock).first()
 			if rev==None:
-					rev="NO REVENUE DATA IN THE DATABASE"
+					rev=None
 
 	dividend=Div_Ark.query.filter_by(ticker=stock).first()
 	if dividend==None:
@@ -76,7 +78,7 @@ def fundamental():
 		if dividend==None:
 			dividend=Div_Spy.query.filter_by(ticker=stock).first()
 			if dividend==None:
-					dividend="NO REVENUE DATA IN THE DATABASE"
+					dividend=None
 	
 	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev)
 
@@ -199,5 +201,9 @@ def qqqsnap():
 
 # FETCH THE DATA
 
-test=Rev_Spy.query.filter_by(ticker="AAPL").first().to_dict()
-print("==========",dict(test["time_first"])['date'])
+# test=Rev_Spy.query.filter_by(ticker="AAPL").first().as_dict()
+# # for attr in test:
+# # 	temp_attr = {c.name: getattr(attr, c.name) for c in attr.__table__.columns}
+# # 	attraction_list.append(temp_attr)
+# print(test)
+# print(test["time_third"]["date"])

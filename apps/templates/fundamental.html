@@ -1,32 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello, world!</title>
-</head>
-<body>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/snap.css')}}">
+    <style>
+      /* body{font-family:Arial;margin: 20px;background-color: #eeeeee;} */
+      h1.head{max-width: 1200px;width: 95%;margin: auto;padding: 8px;font-size: 28px;}
+      td{padding: 8px;}
+      .bullish{background-color: green; color:white;border-radius: 4px;}
+      .bearlish{background-color: red;color:white;border-radius: 4px;}
+      .pic{border-radius: 10px;}
+      table{margin:auto;}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">BACKTRADE</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/ark">ARK</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/spy">SPY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/qqq">QQQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#">SQUEEZE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fundamental">SEARCH</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+  
     
+    <main class="main">
+      <h1 class="head">Fundamental Analysis</h1>
+      
+        <form action="/fundamental" method="GET">
+            TICKER : <input type="text" name="symbol" />
+            <button>SEARCH</button>
+        </form>
+        {%if company!=None%}
+            <h1>{{company.ticker}}</h1>
+            <div>NAME: </div>
+            <div>{{company.company}}</div>
+            <div>DESCIPTION: </div>
+            <div> {{company.describe}}</div>
+            <div>INDUSTRY:</div>
+            <div>{{company.industry}}</div>
+            <div>WEBSITE: </div>
+            <div>{{company.website}}</div>
+            <hr>
+            {%if eps!=None %}
+                <div>EPS DATE: </div>
+                <p>Date:{{eps["time_third"]["date"]}}</p>
+                <p>Estimate:{{eps["time_third"]["estimate"]}}</p>
+                <p>Actual:{{eps["time_third"]["actual"]}}</p>
+                <br>
+                <p>Date:{{eps["time_second"]["date"]}}</p>
+                <p>Estimate:{{eps["time_second"]["estimate"]}}</p>
+                <p>Actual:{{eps["time_second"]["actual"]}}</p>
+                <br>
+                <p>Date:{{eps["time_first"]["date"]}}</p>
+                <p>Estimate:{{eps["time_first"]["estimate"]}}</p>
+                <p>Actual:{{eps["time_first"]["actual"]}}</p>
+                <hr>
+            {%endif%}
+            {%if eps== None%}
+                <p>No EPS infomation in Datebase</p>
+                <hr>
+            {% endif %}
+            {%if rev!=None %}
+                <div>Revenue</div>
+                <p>Date:{{rev["time_first"]["date"]}}</p>
+                <p>Estimate:{{rev["time_first"]["estimateRevenue"]}}</p>
+                <p>Actual:{{rev["time_first"]["actualRevenue"]}}</p>
+                <br>
+                <p>Date:{{rev["time_second"]["date"]}}</p>
+                <p>Estimate:{{rev["time_second"]["estimateRevenue"]}}</p>
+                <p>Actual:{{rev["time_second"]["actualRevenue"]}}</p>
+                <br>
+                <p>Date:{{rev["time_third"]["date"]}}</p>
+                <p>Estimate:{{rev["time_third"]["estimateRevenue"]}}</p>
+                <p>Actual:{{rev["time_third"]["actualRevenue"]}}</p>
+                <hr>
+            {%endif%}
+            {%if rev== None%}
+                <p>No Revenue infomation in Datebase</p>
+                <hr>
+            {% endif %}
 
-    <form action="/fundamental" method="GET">
-        TICKER : <input type="text" name="symbol" />
-        <button>SEARCH</button>
-    </form>
+            
+            
+        {%endif%}
+        {%if company==None%}
+            <p>No infomation in Datebase</p>
+        {%endif%}
 
-    <h1>{{company.ticker}}</h1>
-    <div>NAME: </div>
-    <div>{{company.company}}</div>
-    <div>DESCIPTION: </div>
-    <div> {{company.describe}}</div>
-    <div>INDUSTRY:</div>
-    <div>{{company.industry}}</div>
-    <div>WEBSITE: </div>
-    <div>{{company.website}}</div>
-    <hr>
-    {{eps}}
-    <hr>
-    {{rev}}
+  </main>  
+  <footer><p>COPYRIGHT ©  2021BACKTRADE </p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-</body>
+  </body>
 </html>
