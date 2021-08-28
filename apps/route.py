@@ -78,7 +78,7 @@ def fundamental():
 			if dividend==None:
 					dividend=None
 	
-	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev)
+	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev,symbol=stock)
 
 
 @app.route("/spysnap")

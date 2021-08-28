@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello, world!</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/snap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
     <style>
       /* body{font-family:Arial;margin: 20px;background-color: #eeeeee;} */
       h1.head{max-width: 1200px;width: 95%;margin: auto;padding: 8px;font-size: 28px;}
@@ -50,11 +50,11 @@
     </nav>
   
     
-    <main class="main">
-      <h1 class="head">Fundamental Analysis</h1>
+    <main class="sign">
+      <h1 class="title">Fundamental Analysis</h1>
       
-        <form action="/fundamental" method="GET">
-            TICKER : <input type="text" name="symbol" />
+        <form class="form" action="/fundamental" method="GET">
+            TICKER : <input type="text" name="symbol" placeholder="SEARCH" />
             <button>SEARCH</button>
         </form>
         {%if company!=None%}
@@ -73,7 +73,7 @@
                 <p>Date:{{eps["time_third"]["date"]}}</p>
                 <p>Estimate:{{eps["time_third"]["estimate"]}}</p>
                 <p>Actual:{{eps["time_third"]["actual"]}}</p>
-   
+                
                 <p>Date:{{eps["time_second"]["date"]}}</p>
                 <p>Estimate:{{eps["time_second"]["estimate"]}}</p>
                 <p>Actual:{{eps["time_second"]["actual"]}}</p>
@@ -122,6 +122,7 @@
                 <p>No Dividend infomation in Database</p>
                 <hr>
             {% endif %}
+            <img class="pic" src="https://finviz.com/chart.ashx?t={{symbol}}&ty=c&ta=1&p=d&s=l"/>
         {%endif%}
         {%if company==None%}
             <p>No infomation in Database</p>
