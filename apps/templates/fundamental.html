@@ -75,37 +75,57 @@
             
             <hr>
             {%if eps!=None %}
-                <div>EPS DATE: </div>
-                <p>Date:{{eps["time_third"]["date"]}}</p>
-                <p>Estimate:{{eps["time_third"]["estimate"]}}</p>
-                <p>Actual:{{eps["time_third"]["actual"]}}</p>
+                <div>EPS</div>
+                <table>
+                    <tr>
+                      <td><p>Date</p></td>
+                      <th><p> {{eps["time_third"]["date"]}}</p></th>
+                      <th><p> {{eps["time_second"]["date"]}}</p></th>
+                      <th><p> {{eps["time_first"]["date"]}}</p></th>
+                    </tr>
+                    <tr>
+                      <td>Estimate</td>
+                      <td><p>{{eps["time_third"]["estimate"]}}</p></td>
+                      <td><p>{{eps["time_second"]["estimate"]}}</p></td>
+                      <td><p>{{eps["time_first"]["estimate"]}}</p></td>
+                    </tr>
+                    <tr>
+                      <td>Actual</td>
+                      <td><p>{{eps["time_third"]["actual"]}}</p></td>
+                      <td><p>{{eps["time_second"]["actual"]}}</p></td>
+                      <td><p>{{eps["time_first"]["actual"]}}</p></td>
+                    </tr>
+                </table>
                 
-                <p>Date:{{eps["time_second"]["date"]}}</p>
-                <p>Estimate:{{eps["time_second"]["estimate"]}}</p>
-                <p>Actual:{{eps["time_second"]["actual"]}}</p>
-   
-                <p>Date:{{eps["time_first"]["date"]}}</p>
-                <p>Estimate:{{eps["time_first"]["estimate"]}}</p>
-                <p>Actual:{{eps["time_first"]["actual"]}}</p>
                 <hr>
+
             {%endif%}
             {%if eps== None%}
                 <p>No EPS infomation in Database</p>
                 <hr>
             {% endif %}
             {%if rev!=None %}
-                <div>Revenue</div>
-                <p>Date:{{rev["time_first"]["date"]}}</p>
-                <p>Estimate:{{rev["time_first"]["estimateRevenue"]}}</p>
-                <p>Actual:{{rev["time_first"]["actualRevenue"]}}</p>
-   
-                <p>Date:{{rev["time_second"]["date"]}}</p>
-                <p>Estimate:{{rev["time_second"]["estimateRevenue"]}}</p>
-                <p>Actual:{{rev["time_second"]["actualRevenue"]}}</p>
-
-                <p>Date:{{rev["time_third"]["date"]}}</p>
-                <p>Estimate:{{rev["time_third"]["estimateRevenue"]}}</p>
-                <p>Actual:{{rev["time_third"]["actualRevenue"]}}</p>
+                <div>REVENUE</div>
+                <table>
+                    <tr>
+                      <td><p>Date</p></td>
+                      <th><p> {{rev["time_first"]["date"]}}</p></th>
+                      <th><p> {{rev["time_second"]["date"]}}</p></th>
+                      <th><p> {{rev["time_third"]["date"]}}</p></th>
+                    </tr>
+                    <tr>
+                      <td>Estimate</td>
+                      <td><p>{{rev["time_first"]["estimateRevenue"]}}</p></td>
+                      <td><p>{{rev["time_second"]["estimateRevenue"]}}</p></td>
+                      <td><p>{{rev["time_third"]["estimateRevenue"]}}</p></td>
+                    </tr>
+                    <tr>
+                      <td>Actual</td>
+                      <td><p>{{rev["time_first"]["actualRevenue"]}}</p></td>
+                      <td><p>{{rev["time_second"]["actualRevenue"]}}</p></td>
+                      <td><p>{{rev["time_third"]["actualRevenue"]}}</p></td>
+                    </tr>
+                  </table>
                 <hr>
             {%endif%}
             {%if rev== None%}
@@ -113,15 +133,21 @@
                 <hr>
             {% endif %}
             {%if dividend!=None %}
-                <div>Dividend</div>
-                <p>Date:{{dividend["time_first"]["date"]}}</p>
-                <p>Amount:{{dividend["time_first"]["amt"]}}</p>
-  
-                <p>Date:{{dividend["time_second"]["date"]}}</p>
-                <p>Amount:{{dividend["time_second"]["amt"]}}</p>
-               
-                <p>Date:{{dividend["time_third"]["date"]}}</p>
-                <p>Amount:{{dividend["time_third"]["amt"]}}</p>
+                <div>DIVIDEND</div>
+                <table>
+                    <tr>
+                      <td><p>Date</p></td>
+                      <th><p> {{dividend["time_first"]["date"]}}</p></th>
+                      <th><p> {{dividend["time_second"]["date"]}}</p></th>
+                      <th><p> {{dividend["time_third"]["date"]}}</p></th>
+                    </tr>
+                    <tr>
+                      <td>Dividend Amount</td>
+                      <td><p>{{dividend["time_first"]["amt"]}}</p></td>
+                      <td><p>{{dividend["time_second"]["amt"]}}</p></td>
+                      <td><p>{{dividend["time_third"]["amt"]}}</p></td>
+                    </tr>
+                  </table>
                 <hr>
             {%endif%}
             {%if dividend== None%}
