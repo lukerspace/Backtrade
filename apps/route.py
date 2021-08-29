@@ -16,6 +16,11 @@ from apps import db
 abs_path=os.path.abspath(os.getcwd())
 sys.path.append(abs_path)  # abs_path=abs_path+"\\apps\\"
 
+# LOGO
+with open("./apps/static/logo/logo.json") as f:
+	json_str=f.read()
+	logo=json.loads(json_str)
+
 # DB INITIATE
 db.create_all()
 
@@ -42,10 +47,14 @@ def squeeze():
 
 @app.route("/fundamental",methods=["GET"])
 def fundamental():
-	
-	stock=request.args.get("symbol","AAPL")
+	stock=request.args.get("symbol","MSFT")
 	# title=request.form["symbol"]
 	stock=stock.upper()
+	try:
+		image=logo[stock]
+	except:
+		image=None
+        		
 	company=Company_Ark.query.filter_by(ticker=stock).first()
 	if company==None:
 			company=Company_Qqq.query.filter_by(ticker=stock).first()
@@ -78,7 +87,7 @@ def fundamental():
 			if dividend==None:
 					dividend=None
 	
-	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev,symbol=stock)
+	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev,symbol=stock,image=image)
 
 
 @app.route("/spysnap")

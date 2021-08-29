@@ -40,7 +40,7 @@
               <a class="nav-link" href="/qqq">QQQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#">SQUEEZE</a>
+              <a class="nav-link" href="/squeeze">SQUEEZE</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/fundamental">SEARCH</a>
@@ -59,14 +59,17 @@
         </form>
         {%if company!=None%}
             <h1>{{company.ticker}}</h1>
-           
+            {%if company!=None%}
+              <img src={{image}}></img>
+            {%endif%}
             <div>Name : {{company.company}}</div>
             
             <div>Description : {{company.describe}}</div>
             
             <div>Industry : {{company.industry}}</div>
             
-            <div>WebsiteLink : {{company.website}}</div>
+            <div>WebsiteLink : {{company.website}} </div>
+            
             <hr>
             {%if eps!=None %}
                 <div>EPS DATE: </div>
