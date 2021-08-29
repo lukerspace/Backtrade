@@ -40,6 +40,10 @@ def ark():
 @app.route("/spy")
 def spy():
 	return render_template("spy.html")
+	
+@app.route("/vix")
+def vix():
+	return render_template("vix.html")
 
 @app.route("/squeeze")
 def squeeze():
