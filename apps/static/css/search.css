@@ -148,3 +148,8 @@ tr:nth-child(even) {
   background-color: #dddddd;
   
 }
+
+.pic{
+  align-items: center;
+  width: 1000px;
+}

@@ -14,6 +14,8 @@ async function GetData(number) {
   let date = document.getElementById("date");
   let pic = document.getElementById("img");
   let root = document.getElementById("root");
+  let link=document.getElementById("link")
+
   let symbol = buy[number]["ticker"];
 
   let sellindex = [];
@@ -32,6 +34,10 @@ async function GetData(number) {
       ////////////////////////////////////////////
       let test = document.getElementById("test");
       test.src = "./static/png/" + buy[number]["ticker"] + ".png";
+
+      // link
+      link.href="/fundamental?symbol="+buy[number]["ticker"]
+
 
       ///////////////////////////////
       return (size = Object.keys(buy).length) & (id = number);

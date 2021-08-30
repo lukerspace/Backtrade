@@ -139,3 +139,18 @@ footer p{
   /* color:blue; */
 }
 
+a.link {
+  color:black;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  width: 1200px;
+  font-weight: bolder;
+}
+
+h1.t{
+  margin:auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+}
