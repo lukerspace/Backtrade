@@ -2,7 +2,7 @@ import os
 from flask import *
 from apps import app
 from config import *
-from vix import *
+# from vix import *
 
 import csv
 from pattern import *

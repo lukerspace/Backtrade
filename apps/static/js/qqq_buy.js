@@ -24,6 +24,8 @@ async function GetData(number) {
     sellindex.push(sell[i]["ticker"]);
   }
   const sell_date_exist = sellindex.findIndex((element) => element == symbol);
+  if (sell_date_exist==-1){
+    console.log("NO SellDate & SKIP : " +symbol)}
   if (sell_date_exist !==-1) {
     const sell_date = sell[sell_date_exist]["date"];
     if (sell_date) {
@@ -32,21 +34,22 @@ async function GetData(number) {
       date.innerText = "SIGNAL DATE : " + buy[number]["date"];
       pic.src = "https://finviz.com/chart.ashx?t=" + buy[number]["ticker"];
       root.innerText = "PREVIOUS SELL SIGNAL : " + sell_date;
-      ////////////////////////////////////////////
+      
+      //chart
       let test = document.getElementById("test");
       test.src = "./static/png/" + buy[number]["ticker"] + ".png";
 
       // link
       link.href="/fundamental?symbol="+buy[number]["ticker"]
 
-
-      ///////////////////////////////
+      // length
       return (size = Object.keys(buy).length) & (id = number);
     } else {
-      console.log("wrong2")
+      console.log("SELL_DATE PROBLEM")
       //pass
     }
   } else {
+    id=number
     GetData(id + 2);
   }
 }
