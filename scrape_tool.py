@@ -103,6 +103,7 @@ class IndexScraper:
         num = len(self.tickers)
         start = 0
         end = 0
+        
         while start < num:
             end = min(end + config.API_MAX_LENGTH, num)
             self.get_daily_bars(self.tickers[start:end], self.path)

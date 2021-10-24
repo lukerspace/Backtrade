@@ -1,1 +1,1 @@
-{"0":{"date":"2021-08-11","actualRevenue":null,"estimateRevenue":20150000.0},"1":{"date":"2021-05-11","actualRevenue":18628000.0,"estimateRevenue":null},"2":{"date":"2021-02-25","actualRevenue":21748000.0,"estimateRevenue":16760000.0000000019},"3":{"date":"2020-11-12","actualRevenue":18208000.0,"estimateRevenue":18840000.0},"4":{"date":"2020-08-25","actualRevenue":10569000.0,"estimateRevenue":15220000.0}}
+{}

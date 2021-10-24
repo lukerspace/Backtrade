@@ -10,5 +10,3 @@ scraper.start()
 
 scraper.set_index_ticker('spy')
 scraper.start()
-
-
