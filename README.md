@@ -1,14 +1,14 @@
-### BACKTRADED
-### USING BACKTRADING TO FIND THE POTENTIAL BULLISH MARKET.
+# BACKTRADED
+### Using the Backtraded to find potential oppurtunity.
+### LOGIC:
 
-＃LOGIC :
-＃ORDER THE DATE THAT MACD > SIGNAL & MACD TURN POSITIVE WITH GOLDEN CROSS AND DEATH CROSS CHART
+1. Order the date that MACD > SIGNAL & MACD turn Positive
 
+2. Golden cross & Death cross chart
 
-1. TICKERS INCLUDE THE FOLLOWING FUND
-   ARKK ARKF ARKG ARKQ ARKW ARKX
-   SPY
-   QQQ
+### Scope
+1. All the tickers are in the following fund
+   ARKK ARKF ARKG ARKQ ARKW ARKX SPY QQQ
 
 2. Technique Scanner follow the library
    https://mrjbq7.github.io/ta-lib/func_groups/pattern_recognition.html
@@ -17,10 +17,10 @@
 3. TA-LIB
    https://www.lfd.uci.edu/~gohlke/pythonlibs/
 
-#Operating:
-
+### Operating:
 Python main.py update data / Python app.py
 
+### Views
 <img src="data/readme/2.png" />
 <img src=data/readme/3.png />
 <img src=data/readme/1.png />
