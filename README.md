@@ -1,6 +1,6 @@
 # BACKTRADED
 ### Using the Backtraded to find potential oppurtunity.
-### LOGIC:
+### Logic
 
 1. Order the date that MACD > SIGNAL & MACD turn Positive
 
