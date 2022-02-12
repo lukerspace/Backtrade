@@ -1,12 +1,11 @@
 # BACKTRADED
-### Using the Backtraded to find potential oppurtunity.
-### Logic
+### Execute the Backtraded to find Potential Oppurtunity.
 
 1. Order the date that MACD > SIGNAL & MACD turn Positive
 
 2. Golden cross & Death cross chart
 
-### Scope
+### Overview
 1. All the tickers are in the following fund
    ARKK ARKF ARKG ARKQ ARKW ARKX SPY QQQ
 
@@ -17,7 +16,7 @@
 3. TA-LIB
    https://www.lfd.uci.edu/~gohlke/pythonlibs/
 
-### Operating:
+### Execute
 Python main.py update data / Python app.py
 
 ### Views
