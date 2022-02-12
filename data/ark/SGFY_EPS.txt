@@ -1,8 +1,0 @@
-Date,Estimate,Actual
-2021-08-10,0.04,None
-2021-05-11,-0.02,-0.14
-2021-03-25,0.04,None
-2021-03-24,None,None
-2021-03-08,None,None
-2021-02-13,None,None
-2021-02-12,None,None

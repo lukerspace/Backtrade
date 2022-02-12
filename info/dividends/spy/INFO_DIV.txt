@@ -1,0 +1,1 @@
+{"0":{"paymentDate":1580860800000,"amount":0.17},"1":{"paymentDate":1588118400000,"amount":0.17},"2":{"paymentDate":1596067200000,"amount":0.17},"3":{"paymentDate":1603929600000,"amount":0.17},"4":{"paymentDate":1611792000000,"amount":0.2},"5":{"paymentDate":1619740800000,"amount":0.2},"6":{"paymentDate":1627516800000,"amount":0.2}}

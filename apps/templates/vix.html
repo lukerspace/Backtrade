@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
+    <script src="{{url_for('static',filename='js/squeeze.js')}}"></script>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+        <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">BACKTRADE</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/ark">ARK</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/spy">SPY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/qqq">QQQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/squeeze">SQUEEZE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fundamental">SEARCH</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vix">VIX</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    
+        
+        <main class="vix">
+            <h1 class="title">VIX BACKTRADE</h1>
+            <a>In VIX backtrade we buy when $VIX is above $30 & sell below $20</a>
+            <table>
+                <div>
+                    <img src="./static/vix/arkk.png">
+                    <div>ARKK</div>
+                    
+                    <img src="./static/vix/spy.png">
+                    <div>SPY</div>
+                    
+                    <img src="./static/vix/qqq.png">
+                    <div>QQQ</div>
+                </div>
+            </table>
+        </main>
+
+
+
+        <footer><p>COPYRIGHT ©  2021BACKTRADE </p></footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
