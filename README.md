@@ -1,4 +1,4 @@
-# BACKTRADED
+# Backtrade
 ### Execute the Backtraded to find Potential Oppurtunity.
 
 1. Order the date that MACD > SIGNAL & MACD turn Positive
