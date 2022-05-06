@@ -12,10 +12,10 @@ abs_path=os.path.abspath(os.getcwd())
 def is_consolidate(df,symbol):
     # df["ticker"]=symbol
     monthly_close=df[-30:]
-    monthly_volume=monthly_close["Volume"].mean()
+    monthly_volume=monthly_close["volume"].mean()
     
     latest_close=df[-15:]
-    latest_volume=latest_close["Volume"].mean()
+    latest_volume=latest_close["volume"].mean()
 
     latest_max=latest_close["Close"].max()
     latest_min=latest_close["Close"].min()

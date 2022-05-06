@@ -5,7 +5,7 @@ from config import *
 from vix import *
 
 import csv
-from pattern import *
+# from pattern import *
 import talib
 import pandas as pd
 from apps.module import *
@@ -45,9 +45,9 @@ def spy():
 def vix():
 	return render_template("vix.html")
 
-@app.route("/squeeze")
-def squeeze():
-	return render_template("squeeze.html")
+# @app.route("/squeeze")
+# def squeeze():
+# 	return render_template("squeeze.html")
 
 @app.route("/fundamental",methods=["GET"])
 def fundamental():
@@ -94,112 +94,112 @@ def fundamental():
 	return render_template("fundamental.html", company=company,eps=eps,dividend=dividend,rev=rev,symbol=stock,image=image)
 
 
-@app.route("/spysnap")
-def spysnap():
-	pattern=request.args.get("pattern",None)
-	stocks={}
-	with open(abs_path+"\\data\\csv\\spy.csv") as f:
-		for row in csv.reader(f):
-			stocks[row[2]]={
-				"company":row[1]
-			}
-	if "Ticker" in stocks:
-		del stocks["Ticker"]
+# @app.route("/spysnap")
+# def spysnap():
+# 	pattern=request.args.get("pattern",None)
+# 	stocks={}
+# 	with open(abs_path+"\\data\\csv\\spy.csv") as f:
+# 		for row in csv.reader(f):
+# 			stocks[row[2]]={
+# 				"company":row[1]
+# 			}
+# 	if "Ticker" in stocks:
+# 		del stocks["Ticker"]
 
-	if pattern:
-		file1=os.listdir(abs_path+"\\data\\spy")
+# 	if pattern:
+# 		file1=os.listdir(abs_path+"\\data\\spy")
 
-		for filename in file1:
-			df=pd.read_csv(abs_path+"\\data\\spy\\{}".format(filename))
-			# df=df.head()
-			function_style=getattr(talib,pattern)
-			symbol=filename.split(".")[0]
-			try:
-				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
-				last=style.tail(1).values[0]
-				if last >0:
-					stocks[symbol][pattern]="bullish"
-				elif last<0:
-					stocks[symbol][pattern]="bearlish"
-				else:
-					stocks[symbol][pattern]=None
-					# print("{} trigger style : {}".format(filename,url))
-			except:
-				pass
+# 		for filename in file1:
+# 			df=pd.read_csv(abs_path+"\\data\\spy\\{}".format(filename))
+# 			# df=df.head()
+# 			function_style=getattr(talib,pattern)
+# 			symbol=filename.split(".")[0]
+# 			try:
+# 				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
+# 				last=style.tail(1).values[0]
+# 				if last >0:
+# 					stocks[symbol][pattern]="bullish"
+# 				elif last<0:
+# 					stocks[symbol][pattern]="bearlish"
+# 				else:
+# 					stocks[symbol][pattern]=None
+# 					# print("{} trigger style : {}".format(filename,url))
+# 			except:
+# 				pass
 
-	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+# 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
-@app.route("/arksnap")
-def arksnap():
-	pattern=request.args.get("pattern",None)
-	stocks={}
-	with open(abs_path+"\\data\\csv\\ark.csv") as f:
-		for row in csv.reader(f):
-    			# print(row)
-			stocks[row[0]]={
-				"company":row[0]
+# @app.route("/arksnap")
+# def arksnap():
+# 	pattern=request.args.get("pattern",None)
+# 	stocks={}
+# 	with open(abs_path+"\\data\\csv\\ark.csv") as f:
+# 		for row in csv.reader(f):
+#     			# print(row)
+# 			stocks[row[0]]={
+# 				"company":row[0]
 
-			}
-	if "Ticker" in stocks:
-		del stocks["Ticker"]
+# 			}
+# 	if "Ticker" in stocks:
+# 		del stocks["Ticker"]
 
-	if pattern:
-		file1=os.listdir(abs_path+"\\data\\ark")
+# 	if pattern:
+# 		file1=os.listdir(abs_path+"\\data\\ark")
 
-		for filename in file1:
-			df=pd.read_csv(abs_path+"\\data\\ark\\{}".format(filename))
-			# df=df.head()
-			function_style=getattr(talib,pattern)
-			symbol=filename.split(".")[0]
-			try:
-				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
-				last=style.tail(1).values[0]
-				if last >0:
-					stocks[symbol][pattern]="bullish"
-				elif last<0:
-					stocks[symbol][pattern]="bearlish"
-				else:
-					stocks[symbol][pattern]=None
-					# print("{} trigger style : {}".format(filename,url))
-			except:
-				pass
+# 		for filename in file1:
+# 			df=pd.read_csv(abs_path+"\\data\\ark\\{}".format(filename))
+# 			# df=df.head()
+# 			function_style=getattr(talib,pattern)
+# 			symbol=filename.split(".")[0]
+# 			try:
+# 				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
+# 				last=style.tail(1).values[0]
+# 				if last >0:
+# 					stocks[symbol][pattern]="bullish"
+# 				elif last<0:
+# 					stocks[symbol][pattern]="bearlish"
+# 				else:
+# 					stocks[symbol][pattern]=None
+# 					# print("{} trigger style : {}".format(filename,url))
+# 			except:
+# 				pass
 
-	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+# 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
-@app.route("/qqqsnap")
-def qqqsnap():
-	pattern=request.args.get("pattern",None)
-	stocks={}
-	with open(abs_path+"\\data\\csv\\qqq.csv") as f:
-		for row in csv.reader(f):
-			stocks[row[2].replace(" ","")]={
-				"company":row[2].replace(" ","")
-			}
-		# print(stocks)
-	if "HoldingTicker" in stocks:
-		del stocks["HoldingTicker"]
-		# print(stocks)
-	if pattern:
-		file1=os.listdir(abs_path+"\\data\\qqq")
+# @app.route("/qqqsnap")
+# def qqqsnap():
+# 	pattern=request.args.get("pattern",None)
+# 	stocks={}
+# 	with open(abs_path+"\\data\\csv\\qqq.csv") as f:
+# 		for row in csv.reader(f):
+# 			stocks[row[2].replace(" ","")]={
+# 				"company":row[2].replace(" ","")
+# 			}
+# 		# print(stocks)
+# 	if "HoldingTicker" in stocks:
+# 		del stocks["HoldingTicker"]
+# 		# print(stocks)
+# 	if pattern:
+# 		file1=os.listdir(abs_path+"\\data\\qqq")
 	
-		for filename in file1:
-			try:
-				df=pd.read_csv(abs_path+"\\data\\qqq\\{}".format(filename))
-				function_style=getattr(talib,pattern)
-				symbol=filename.split(".")[0]
-				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
-				last=style.tail(1).values[0]
-				if last >0:
-					stocks[symbol][pattern]="bullish"
-				elif last<0:
-					stocks[symbol][pattern]="bearlish"
-				else:
-					stocks[symbol][pattern]=None
-					# print("{} trigger style : {}".format(filename,url))
-			except:
-				pass
+# 		for filename in file1:
+# 			try:
+# 				df=pd.read_csv(abs_path+"\\data\\qqq\\{}".format(filename))
+# 				function_style=getattr(talib,pattern)
+# 				symbol=filename.split(".")[0]
+# 				style=function_style(df["Open"],df["High"],df["Low"],df["Close"])
+# 				last=style.tail(1).values[0]
+# 				if last >0:
+# 					stocks[symbol][pattern]="bullish"
+# 				elif last<0:
+# 					stocks[symbol][pattern]="bearlish"
+# 				else:
+# 					stocks[symbol][pattern]=None
+# 					# print("{} trigger style : {}".format(filename,url))
+# 			except:
+# 				pass
 
-	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
+# 	return render_template("snap.html",patterns=patterns ,stocks=stocks , current_style=pattern)
 
 
 # # ESTABLISH TABLE & INSERT DATA

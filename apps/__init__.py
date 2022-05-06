@@ -27,19 +27,18 @@ from api.api_signal import appQqqSign,appArkSign,appSpySign
 # EPS API
 # from api.api_eps import appArkEps
 # Consolidate
-from api.api_consolidate import appSpyConsolidate,appArkConsolidate,appQqqConsolidate
+# from api.api_consolidate import appSpyConsolidate,appArkConsolidate,appQqqConsolidate
 
 
 # REGISTER
 app.register_blueprint(appQqqSign, url_prefix='/api')
 app.register_blueprint(appArkSign, url_prefix='/api')
 app.register_blueprint(appSpySign, url_prefix='/api')
-# REGITSTER EPS
-# app.register_blueprint(appArkEps, url_prefix='/api')
+
 # REGISTER CONSOLIDATE
-app.register_blueprint(appSpyConsolidate , url_prefix='/api')
-app.register_blueprint(appArkConsolidate , url_prefix='/api')
-app.register_blueprint(appQqqConsolidate , url_prefix='/api')
+# app.register_blueprint(appSpyConsolidate , url_prefix='/api')
+# app.register_blueprint(appArkConsolidate , url_prefix='/api')
+# app.register_blueprint(appQqqConsolidate , url_prefix='/api')
 
 
 from apps.route import *

@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import btalib
 import yfinance as yf
+from alpaca_trade_api import REST,TimeFrame
 
 import matplotlib
 matplotlib.use('Agg') #
@@ -10,10 +11,15 @@ from matplotlib import pyplot as plt #
 
 import requests
 import config
-from datetime import *
+import datetime
 from tqdm.auto import tqdm
 import yahoo_fin.stock_info as si
 import re
+
+start=datetime.date(2020,12,31)
+end=datetime.date.today()+datetime.timedelta(days=-2)
+api=REST(key_id=config.API_KEY,secret_key=config.SECRET_KEY,base_url=config.BARS_URL)
+
 
 class IndexScraper:
     sma_period = 5
@@ -131,26 +137,43 @@ class IndexScraper:
 
         print(self.index_ticker.upper() + ' IS FINISHED')
 
+
+
+
     @staticmethod
     def get_daily_bars(tickers, directory):
-        tickers_str = ",".join(tickers)
-        day_bars_url = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, tickers_str)
-        r = requests.get(day_bars_url, headers=config.HEADERS)
-        data = r.json()
+        
+        # tickers_str = ",".join(tickers)
+        # day_bars_url = '{}/day?symbols={}&limit=300'.format(config.BARS_URL, tickers_str)
+        # r = requests.get(day_bars_url, headers=config.HEADERS)
+        # data = r.json()
 
-        for symbol in data:
-            file_path = directory + '/{}.txt'.format(symbol)
-            f = open(file_path, 'w')
-            f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
-            for bar in data[symbol]:
-                t = datetime.fromtimestamp(bar['t'])
-                day = t.strftime('%Y-%m-%d')
+        # for symbol in data:
+        #     file_path = directory + '/{}.txt'.format(symbol)
+        #     f = open(file_path, 'w')
+        #     f.write('Date,Open,High,Low,Close,Volume,OpenInterest\n')
+        #     for bar in data[symbol]:
+        #         t = datetime.fromtimestamp(bar['t'])
+        #         day = t.strftime('%Y-%m-%d')
 
-                line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
-                f.write(line)
-            f.close()
-            print('{} daily_quote is updated'.format(symbol))
-
+        #         line = '{},{},{},{},{},{},{}\n'.format(day, bar['o'], bar['h'], bar['l'], bar['c'], bar['v'], 0.00)
+        #         f.write(line)
+        #     f.close()
+        #     print('{} daily_quote is updated'.format(symbol))
+        
+        err=[]
+        for symbol in tickers:
+            try:
+                bar=api.get_bars(symbol,TimeFrame.Day,start.isoformat(),end.isoformat()).df
+                bar=bar.reset_index().rename(columns={"low":"Low", "timestamp":"Date","close":"Close","high":"High","open":"Open"})
+                bar["Date"]=bar["Date"].dt.strftime('%Y-%m-%d').reset_index(drop=True)
+                bar.set_index('Date', inplace=True) 
+                # print(bar)
+                bar.to_csv(directory+"/"+str(symbol).upper()+".txt")
+                print('{} daily_quote is updated'.format(symbol))
+            except:
+                err.append(symbol)
+        print(err)
     @staticmethod
     def get_earning(ticker, file_path):
         f = open(file_path, 'w')
