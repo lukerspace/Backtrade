@@ -20,8 +20,7 @@
 Python main.py update data / Python app.py
 
 ### Views
-<img src="data/readme/2.png" />
-<img src=data/readme/3.png />
-<img src=data/readme/1.png />
-<img src=data/readme/4.png />
-<img src=data/readme/5.png />
+<img src="apps/static/readme/1.png" />
+<img src="apps/static/readme/2.png" />
+<img src="apps/static/readme/3.png" />
+<img src="apps/static/readme/4.png" />
